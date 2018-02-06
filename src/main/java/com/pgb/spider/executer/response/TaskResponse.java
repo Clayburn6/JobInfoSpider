@@ -50,7 +50,7 @@ public class TaskResponse implements SpiderResponse {
 
     private Document parseDocument() throws IOException {
         if(this.document == null){
-            this.document = Jsoup.parse(Optional.ofNullable(this.getContent()).orElse(""));
+            this.document = Jsoup.parse( this.getContent() == null ? "" : this.getContent());
         }
         return this.document;
     }
@@ -133,14 +133,14 @@ public class TaskResponse implements SpiderResponse {
         }
     }
 
-    public Map<String,Elements> select() throws IOException {
-        Document doc = this.parseDocument();
-        Map<String, Elements> results = new HashMap<String,Elements>();
-        Optional.ofNullable(this.selects).orElse(new ArrayList<String>()).forEach(cssquery ->{
-            results.put(cssquery, doc.select(cssquery));
-        });
-        return results;
-    }
+//    public Map<String,Elements> select() throws IOException {
+//        Document doc = this.parseDocument();
+//        Map<String, Elements> results = new HashMap<String,Elements>();
+//        Optional.ofNullable(this.selects).orElse(new ArrayList<String>()).forEach(cssquery ->{
+//            results.put(cssquery, doc.select(cssquery));
+//        });
+//        return results;
+//    }
 
     public Elements select(String cssSelect) throws IOException {
         return this.parseDocument().select(cssSelect);

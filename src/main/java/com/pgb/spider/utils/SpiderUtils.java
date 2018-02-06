@@ -4,6 +4,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
 
 /**
  * @author Clayburn
@@ -23,14 +24,12 @@ public class SpiderUtils {
 
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
-            final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
-                    .configure() // 默认使用src文件夹下的hibernate.cfg.xml进行配置，若更改了路径，要附加上包路径如："/com/example/hibernate.cfg.xml"
-                    .build();
+            Configuration config = new Configuration().configure();
+                    // 默认使用src文件夹下的hibernate.cfg.xml进行配置，若更改了路径，要附加上包路径如："/com/example/hibernate.cfg.xml"
             try {
-                sessionFactory = new MetadataSources( registry ).buildMetadata().buildSessionFactory();
+                sessionFactory = config.buildSessionFactory();
             }
             catch (Exception e) {
-                StandardServiceRegistryBuilder.destroy( registry );
             }
             return sessionFactory;
         } else {

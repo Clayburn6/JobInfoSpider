@@ -16,7 +16,7 @@ public class JobInfoSpiderApplication {
         String cockie = "";
 
         SpiderConfig config = new SpiderConfig()
-                .setThread(4)
+                .setThread(5)
                 .setHttpClient(OkHttpClient.class)
                 .setCookie(cockie)
                 .setAutoClose(true)
