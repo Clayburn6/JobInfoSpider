@@ -1,0 +1,150 @@
+package com.pgb.spider.executer;
+
+import com.pgb.spider.config.Constants;
+import com.pgb.spider.utils.NameUtils;
+import org.apache.commons.lang.StringUtils;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+/**
+ * @author Clayburn
+ * @date : 2018/1/16 18:12
+ * @description 爬虫任务描述类
+ */
+public class Task {
+    //每一个任务都会生成一个编号，编号是一个递增的连续序列
+    private String id = NameUtils.name(Task.class);
+    //每一个任务都会有一个分组，如果没有设置，默认为 default
+    private String group = Constants.APP_TASK_GROUP_DEFAULT;
+    private String url;
+    private Map<String, Object> params;
+    private List<String> selects;
+    private Object extr;
+
+    public Task(String url, Map<String, Object> params) {
+        this.url = url;
+        this.params = params;
+    }
+
+    public Task(String url) {
+        this.url = url;
+    }
+
+    public Task(String url, String group) {
+        this.url = url;
+        this.group = group;
+    }
+
+    public Task(String url, String group, Map<String, Object> params) {
+        this.group = group;
+        this.url = url;
+        this.params = params;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public Task setGroup(String group) {
+        this.group = group;
+        return this;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public Task setId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public String getUrl() {
+        if (this.getParams().isEmpty()) {
+            return url;
+        } else {
+            List<String> paramsList = this.getParams().entrySet().stream().map(entity -> String.format("%s=%s", entity.getKey(), entity.getValue())).collect(Collectors.toList());
+            String param = StringUtils.join(paramsList.toArray(), "&");
+            return String.format("%s?%s", url, param);
+        }
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public Map<String, Object> getParams() {
+        if (this.params == null) {
+            this.params = new HashMap<String, Object>();
+        }
+        return params;
+    }
+
+    public void setParams(Map<String, Object> params) {
+        this.params = params;
+    }
+
+    public List<String> getSelects() {
+        return selects;
+    }
+
+    public Task addSelect(String cssSelect) {
+        this.selects = Optional.ofNullable(this.selects).orElse(new ArrayList<String>());
+        this.selects.add(cssSelect);
+        return this;
+    }
+
+    public Object getExtr() {
+        return extr;
+    }
+
+    public Task setExtr(Object extr) {
+        this.extr = extr;
+        return this;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id='" + id + '\'' +
+                ", group='" + group + '\'' +
+                ", url='" + url + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o){ return true;}
+        if (!(o instanceof Task)) {
+            return false;
+        }
+
+        Task task = (Task) o;
+
+        if (!getId().equals(task.getId())){ return false;}
+        if (!getGroup().equals(task.getGroup())) {
+            return false;
+        }
+        if (!getUrl().equals(task.getUrl())) {
+            return false;
+        }
+        if (getParams() != null ? !getParams().equals(task.getParams()) : task.getParams() != null){ return false;}
+        if (getSelects() != null ? !getSelects().equals(task.getSelects()) : task.getSelects() != null) {
+            return false;
+        }
+        return getExtr().equals(task.getExtr());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getId().hashCode();
+        result = 31 * result + getGroup().hashCode();
+        result = 31 * result + getUrl().hashCode();
+        result = 31 * result + (getParams() != null ? getParams().hashCode() : 0);
+        result = 31 * result + (getSelects() != null ? getSelects().hashCode() : 0);
+        result = 31 * result + getExtr().hashCode();
+        return result;
+    }
+}
