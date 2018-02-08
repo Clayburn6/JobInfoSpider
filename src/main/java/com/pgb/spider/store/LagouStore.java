@@ -58,6 +58,7 @@ public class LagouStore implements IStore {
         jobItem.setExperience(exprience);
         jobItem.setDegree(degree);
         jobItem.setType(type);
+        jobItem.setUrl(response.getTask().getUrl());
         System.out.println(jobItem);
 
         Session session = SpiderUtils.getSessionFactory().openSession();

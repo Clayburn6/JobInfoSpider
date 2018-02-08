@@ -43,7 +43,7 @@ public class JobInfoSpiderContext {
             config.print();
             this.thread = config.getThread();
             for (int i = 0; i < thread; i++) {
-                TaskExecuter executer = new TaskExecuter(queue, this.bulidHttpClient(), this.config.getStore().newInstance(), this.config.getTaskErrorHandler().newInstance(), this.config.getThreadSleep(), this.config.isAutoClose());
+                TaskExecuter executer = new TaskExecuter(queue, this.bulidHttpClient(), this.config.getStore().newInstance(), this.config.getCrawl().newInstance(), this.config.getTaskErrorHandler().newInstance(), this.config.getThreadSleep(), this.config.isAutoClose());
                 logger.info("new thread:" + executer.getId());
                 service.execute(executer);
             }

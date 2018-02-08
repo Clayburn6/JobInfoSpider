@@ -58,7 +58,7 @@ public class CookieManager implements CookieJar {
             cookies.put("unick", builder10.build());
             Cookie.Builder builder11 = new Cookie.Builder().name("gate_login_token").value("4989770c290f880736332b545e6e5ba6ab6744e9d1481658").domain("lagou.com");
             cookies.put("gate_login_token", builder11.build());
-            Cookie.Builder builder12 = new Cookie.Builder().name("index_location_city").value("%E5%8C%97%E4%BA%AC").domain("lagou.com");
+            Cookie.Builder builder12 = new Cookie.Builder().name("index_location_city").value("%E6%B7%B1%E5%9C%B3").domain("lagou.com");
             cookies.put("index_location_city", builder12.build());
             Cookie.Builder builder13 = new Cookie.Builder().name("_gat").value("1").domain("lagou.com");
             cookies.put("_gat", builder13.build());

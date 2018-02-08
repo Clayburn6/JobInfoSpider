@@ -23,6 +23,15 @@ public class JobItem {
     private String experience; //经验
     private String degree; //学历
     private String type; // 职位类别
+    private String url;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     public Integer getId() {
         return id;

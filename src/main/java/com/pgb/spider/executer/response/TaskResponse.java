@@ -25,7 +25,7 @@ public class TaskResponse implements SpiderResponse {
     private String message;
     private String content;
     private byte[] contentBytes;
-    private String charset;
+    private String charset = "utf-8";
 
     @Override
     public String getContent() throws IOException {

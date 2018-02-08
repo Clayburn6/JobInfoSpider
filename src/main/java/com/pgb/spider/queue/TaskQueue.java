@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
 
 /**
@@ -20,8 +20,8 @@ public class TaskQueue implements CrawlQueue {
 
     private Logger logger = LoggerFactory.getLogger(TaskQueue.class);
 
-    private BlockingQueue<Task> queue;
-    private BlockingQueue<Task> faildQueue;
+    private BlockingDeque<Task> queue;
+    private BlockingDeque<Task> faildQueue;
     private Map<Task,Integer> faildCounter;
 
     private static TaskQueue taskQueue;
@@ -46,7 +46,7 @@ public class TaskQueue implements CrawlQueue {
         if(this.queue.isEmpty()){
             logger.info(Thread.currentThread().getName() + " queue is empty");
         }
-        Task task = this.queue.poll();
+        Task task = this.queue.pollLast();
         logger.info(Thread.currentThread().getName() + " pull task " + task);
         return task;
     }
@@ -56,21 +56,21 @@ public class TaskQueue implements CrawlQueue {
         if(this.queue.isEmpty()){
             logger.info(Thread.currentThread().getName() + " queue is empty");
         }
-        Task task = this.queue.take();
+        Task task = this.queue.takeLast();
         logger.info(Thread.currentThread().getName() + " take task " + task);
         return task;
     }
 
     @Override
     public void push(Task task) throws InterruptedException {
-        this.queue.put(task);
+        this.queue.putLast(task);
         logger.info(Thread.currentThread().getName() + " push task " + task);
     }
 
     @Override
     public void pushAll(List<Task> tasks) throws InterruptedException {
         for (Task task : tasks) {
-            this.queue.put(task);
+            this.queue.putLast(task);
         }
         logger.info(Thread.currentThread().getName() + " put task list " + tasks.size());
     }

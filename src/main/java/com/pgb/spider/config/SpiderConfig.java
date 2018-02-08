@@ -1,5 +1,7 @@
 package com.pgb.spider.config;
 
+import com.pgb.spider.crawl.Crawl;
+import com.pgb.spider.crawl.LagouCrawl;
 import com.pgb.spider.generators.MapGenerator;
 import com.pgb.spider.generators.StringGenerator;
 import com.pgb.spider.http.client.HttpClient;
@@ -35,6 +37,8 @@ public class SpiderConfig {
     //private Boolean showHttpClientProgress = Constants.HTTP_SHOWHTTPCLIENTPROGRESS;
     // 存储，默认为打印
     private Class<? extends IStore> store = Constants.STORE;
+    // 爬去策略
+    private Class<? extends Crawl> crawl;
     // cookie
     private String cookie;
     // cookie启动器，默认为NOCookieGenerator
@@ -115,6 +119,10 @@ public class SpiderConfig {
 
     public Class<? extends IStore> getStore() {
         return store;
+    }
+
+    public Class<? extends Crawl> getCrawl() {
+        return LagouCrawl.class;
     }
 
     public SpiderConfig setStore(Class<? extends IStore> store) {

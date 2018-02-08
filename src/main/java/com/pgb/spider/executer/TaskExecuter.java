@@ -1,5 +1,6 @@
 package com.pgb.spider.executer;
 
+import com.pgb.spider.crawl.Crawl;
 import com.pgb.spider.executer.response.TaskErrorResponse;
 import com.pgb.spider.executer.response.TaskResponse;
 import com.pgb.spider.http.client.HttpClient;
@@ -38,8 +39,9 @@ public class TaskExecuter implements Runnable {
     private String id;
     private boolean autoClose;
     private int sleep;
+    private Crawl crawl;
 
-    public TaskExecuter(CrawlQueue queue, HttpClient httpClient, IStore store, ITaskErrorHandler errorHandler, int sleep, boolean autoClose) {
+    public TaskExecuter(CrawlQueue queue, HttpClient httpClient, IStore store, Crawl crawl, ITaskErrorHandler errorHandler, int sleep, boolean autoClose) {
         this.queue = queue;
         this.httpClient = httpClient;
         this.store = store;
@@ -47,6 +49,7 @@ public class TaskExecuter implements Runnable {
         this.errorHandler = errorHandler;
         this.autoClose = autoClose;
         this.sleep = sleep;
+        this.crawl = crawl;
     }
 
     @Override
@@ -69,22 +72,20 @@ public class TaskExecuter implements Runnable {
                 logger.info(this.getId()+" GET - "+task);
                 TaskResponse response = this.httpClient.proxy().doGet(task);
                 response.setQueue(this.queue);
-                List<String> cookies = response.getResponse().headers("Set-Cookie");
-                Arrays.toString(cookies.toArray());
-                Cookie cookie = Cookie.parse(HttpUrl.get(URI.create(task.getUrl())), "");
                 if(response.isEmpty()){
                     this.errorHandler.error(new TaskErrorResponse(response));
                 }else{
-                    if (task.getUrl().matches("http(s)?://www.lagou.com(/)?")) {
-                        // 第一步 将首页所有的 <https://www.lagou.com/zhaopin/*>的url添加到队列
-                        addTask(response, 1);
-                    } else if (task.getUrl().matches("https://www.lagou.com/zhaopin/[^0-9]*(/.*)+")) {
-                        // 第二步 找到该网页下所有的<https://www.lagou.com/jobs/\\d+.html>
-                        addTask(response, 2);
-                    } else if (task.getUrl().matches("https://www.lagou.com/jobs/(\\d)+.html")) {
-                        // 第三步解析目标网页
-                        this.store.store(response);
-                    }
+                    crawl.crawl(this.queue, task, response, this.store);
+//                    if (task.getUrl().matches("http(s)?://www.lagou.com(/)?")) {
+//                        // 第一步 将首页所有的 <https://www.lagou.com/zhaopin/*>的url添加到队列
+//                        addTask(response, 1);
+//                    } else if (task.getUrl().matches("https://www.lagou.com/zhaopin/[^0-9]*(/.*)+")) {
+//                        // 第二步 找到该网页下所有的<https://www.lagou.com/jobs/\\d+.html>
+//                        addTask(response, 2);
+//                    } else if (task.getUrl().matches("https://www.lagou.com/jobs/(\\d)+.html")) {
+//                        // 第三步解析目标网页
+//                        this.store.store(response);
+//                    }
                 }
                 response.getResponse().close();
             } catch (Exception e) {
