@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>职位详情</title>
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script type = "text/javascript">
+        var loc = location.href;
+        var n1 = loc.length;//地址的总长度
+        var n2 = loc.indexOf("=");//取得=号的位置
+        var id = loc.substr(n2+1, n1-n2);//从=号后面的内容
+        $.ajax({
+            url: "http://localhost:8080/query/detail?id=" + id,
+            type: "get",
+            dataType: "json",
+            success: function (result) {
+                var title = result.title;
+                var element_h3 = document.createElement("h3");
+                element_h3.innerHTML = title;
+
+                document.body.appendChild(element_h3);
+            },
+            error: function (result) {
+                alert("数据加载失败");
+            }
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

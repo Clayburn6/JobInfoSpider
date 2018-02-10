@@ -10,4 +10,6 @@ import org.springframework.data.domain.Page;
  */
 public interface QueryService {
     Page<JobItem> query(String title, String money, String company, Integer pageIndex, Integer pageSize);
+
+    JobItem queryDetail(Integer id);
 }

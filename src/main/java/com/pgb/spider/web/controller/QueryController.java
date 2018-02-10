@@ -26,6 +26,11 @@ public class QueryController {
         return queryService.query("", "", "", pageIndex, pageSize);
     }
 
+    @GetMapping(path = "/detail")
+    public JobItem queryDetail(Integer id) {
+        return queryService.queryDetail(id);
+    }
+
     @GetMapping(path = "/hello")
     @ResponseBody
     public String test() {

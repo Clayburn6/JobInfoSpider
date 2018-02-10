@@ -22,4 +22,9 @@ public class QueryServiceImpl implements QueryService {
     public Page<JobItem> query(String title, String money, String company, Integer pageIndex, Integer pageSize) {
         return queryDao.getByTitleLikeAndCompanyLikeAndAndMoneyLikeAndExperienceLike("%%", "%%", "%%", "%%", new PageRequest(pageIndex, pageSize));
     }
+
+    @Override
+    public JobItem queryDetail(Integer id) {
+        return queryDao.getById(id);
+    }
 }

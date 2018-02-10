@@ -1,19 +1,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>职位列表</title>
     <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
     <script type="text/javascript">
+        $(function () {
+            //添加popstate事件
+            $(window).on("popstate", query_by_title_company_money);
+        });
+
         var totalPages = 0;
         var number = 0;
         var size = 10;
         function query_by_title_company_money() {
-            var title = $("#job_title").htmlText
-            var company = $("#job_company").htmlText
-            var money = $("#job_money").htmlText
+            var title = $("#job_title").val();
+            var company = $("#job_company").val();
+            var money = $("#job_money").val();
+
+            // 首先获取url
+            var curUrl = location.href;
+            if (!curUrl.split("?")[1]) { // 如果没有带参数
+                // 修改历史记录中当前url，带上默认参数
+                history.replaceState(null, "", curUrl + "?title=" + title + "&company=" + company + "&money=" + money
+                    + "&pageIndex=" + number + "&pageSize=" + size);
+            }
+            var params = "?" + location.href.split("?")[1];
                 $.ajax({
-                    url: "http://localhost:8080/query/query?title=" + title + "&company=" + company + "&money=" + money
-                        + "&pageIndex=" + number + "&pageSize=" + size,
+//                    url: "http://localhost:8080/query/query?title=" + title + "&company=" + company + "&money=" + money
+//                        + "&pageIndex=" + number + "&pageSize=" + size,
+                    url: "http://localhost:8080/query/query" + params,
                     type: "get",
                     dataType: "json",
                     success: function (result) {
@@ -33,6 +48,8 @@
                             var degree = result.content[i].degree;
 
                             var element_li = document.createElement("li");
+                            element_li.setAttribute("onclick", "jobDetail('"+ result.content[i].id+"')");
+
                             var element_div_whole = document.createElement("div"); // 包围整个外层的
                             var element_div_cp = document.createElement("div"); // 包围company的
                             var element_div_cp_other = document.createElement("div"); // 包围title，experience，degree，money
@@ -76,7 +93,11 @@
             } else {
                 number = number + 1;
             }
-
+            var title = $("#job_title").htmlText;
+            var company = $("#job_company").htmlText;
+            var money = $("#job_money").htmlText;
+            history.pushState(null, "", location.href.split("?")[0] + "?title=" + title + "&company=" + company
+                + "&money=" + money + "&pageIndex=" + number + "&pageSize=" + size);
             query_by_title_company_money()
         }
         function prePage() {
@@ -85,12 +106,21 @@
             } else {
                 number = number - 1;
             }
+            var title = $("#job_title").htmlText;
+            var company = $("#job_company").htmlText;
+            var money = $("#job_money").htmlText;
+            history.pushState(null, "", location.href.split("?")[0] + "?title=" + title + "&company=" + company
+                + "&money=" + money + "&pageIndex=" + number + "&pageSize=" + size);
             query_by_title_company_money()
+        }
+
+        function jobDetail(id) {
+            location.href = "http://localhost:8080/detail.html?id=" + id;
         }
 
     </script>
 </head>
-<body>
+<body onload="query_by_title_company_money()">
 <input type="text" id="job_title">
 <input type="text" id="job_company">
 <input type="text" id="job_money">
