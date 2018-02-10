@@ -19,7 +19,7 @@ public class QueryServiceImpl implements QueryService {
     private QueryDao queryDao;
 
     @Override
-    public Page<JobItem> query() {
-        return queryDao.getByTitleLikeAndCompanyLikeAndAndMoneyLikeAndExperienceLike("%%", "%%", "%%", "%%", new PageRequest(0, 10));
+    public Page<JobItem> query(String title, String money, String company, Integer pageIndex, Integer pageSize) {
+        return queryDao.getByTitleLikeAndCompanyLikeAndAndMoneyLikeAndExperienceLike("%%", "%%", "%%", "%%", new PageRequest(pageIndex, pageSize));
     }
 }

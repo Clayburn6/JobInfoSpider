@@ -22,8 +22,8 @@ public class QueryController {
     private QueryService queryService;
 
     @GetMapping(path = "/query")
-    public Page<JobItem> query() {
-        return queryService.query();
+    public Page<JobItem> query(String title, String money, String company, Integer pageIndex, Integer pageSize) {
+        return queryService.query("", "", "", pageIndex, pageSize);
     }
 
     @GetMapping(path = "/hello")

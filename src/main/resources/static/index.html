@@ -2,39 +2,105 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
     <script type="text/javascript">
-        $(function () {
-            $("#btnget").click(function () {
+        var totalPages = 0;
+        var number = 0;
+        var size = 10;
+        function query_by_title_company_money() {
+            var title = $("#job_title").htmlText
+            var company = $("#job_company").htmlText
+            var money = $("#job_money").htmlText
                 $.ajax({
+                    url: "http://localhost:8080/query/query?title=" + title + "&company=" + company + "&money=" + money
+                        + "&pageIndex=" + number + "&pageSize=" + size,
                     type: "get",
                     dataType: "json",
-                    url: "http://localhost:8080/query/query",
-                    success: function (msg) {
-                        var str = "";
-                        for (i in msg.content) {
-                            str += "<tr><td>" + msg.content[i].id
-                                    + "</td><td>" + msg.content[i].title + "</td></tr>";
+                    success: function (result) {
+                        totalPages = result.totalPages;
+                        number = result.number;
+                        size = result.size;
 
+                        $("ul li").each(function () {
+                            $(this).remove();
+                        })
+
+                        for (var i = 0; i < result.content.length; i++) {
+                            var title = result.content[i].title;
+                            var money = result.content[i].money;
+                            var company = result.content[i].company;
+                            var experience = result.content[i].experience;
+                            var degree = result.content[i].degree;
+
+                            var element_li = document.createElement("li");
+                            var element_div_whole = document.createElement("div"); // 包围整个外层的
+                            var element_div_cp = document.createElement("div"); // 包围company的
+                            var element_div_cp_other = document.createElement("div"); // 包围title，experience，degree，money
+
+                            var element_div_title = document.createElement("div"); // 包围title
+                            var element_div_h3 = document.createElement("h3");
+                            element_div_h3.innerHTML = title;
+                            element_div_title.appendChild(element_div_h3)
+
+                            var element_div_med = document.createElement("div"); // 包围money,experient, degree
+                            var element_span_m = document.createElement("span");
+                            element_span_m.innerHTML = money;
+
+                            element_div_med.innerHTML = experience + "" + degree;
+                            element_div_med.appendChild(element_span_m);
+
+                            element_div_cp_other.appendChild(element_div_title).appendChild(element_div_med);
+
+                            var element_span_cp = document.createElement("span");
+                            element_span_cp.innerHTML = company;
+
+                            element_div_cp.appendChild(element_span_cp);
+
+                            element_div_whole.appendChild(element_div_cp_other).appendChild(element_div_cp);
+
+                            element_li.appendChild(element_div_whole);
+
+                            var element_ul = document.getElementById("job_list");
+                            element_ul.appendChild(element_li);
                         }
-                        $("tbody").append(str);
+                    },
+                    error: function (data) {
+                        alert("数据加载失败");
                     }
-                });
-            });
-        });
+                })
+        }
+        
+        function nextPage() {
+            if (number + 1 > totalPages) {
+                number = totalPages;
+            } else {
+                number = number + 1;
+            }
+
+            query_by_title_company_money()
+        }
+        function prePage() {
+            if (number - 1 < 0) {
+                number = 0;
+            } else {
+                number = number - 1;
+            }
+            query_by_title_company_money()
+        }
 
     </script>
 </head>
 <body>
-<table>
-    <thead>
-    <tr>
-        <td>id</td>
-        <td>title</td>
-    </tr>
-    </thead>
-    <tbody></tbody>
-</table>
-<input id="btnget" type="button" value="加载数据" />
+<input type="text" id="job_title">
+<input type="text" id="job_company">
+<input type="text" id="job_money">
+<input type="button" value="查询" id="query_button" onclick="query_by_title_company_money()">
+<div class="s_position_list " id="s_position_list">
+    <!-- 切换分站 -->
+    <ul class="item_con_list" id="job_list">
+    </ul>
+</div>
+<input type="button" value="上一页" id="prePage" onclick="prePage()">
+<input type="button" value="下一页" id="nextPage" onclick="nextPage()">
 </body>
 </html>

@@ -9,5 +9,5 @@ import org.springframework.data.domain.Page;
  * @description
  */
 public interface QueryService {
-    Page<JobItem> query();
+    Page<JobItem> query(String title, String money, String company, Integer pageIndex, Integer pageSize);
 }
