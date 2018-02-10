@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnget").click(function () {
+                $.ajax({
+                    type: "get",
+                    dataType: "json",
+                    url: "http://localhost:8080/query/query",
+                    success: function (msg) {
+                        var str = "";
+                        for (i in msg.content) {
+                            str += "<tr><td>" + msg.content[i].id
+                                    + "</td><td>" + msg.content[i].title + "</td></tr>";
+
+                        }
+                        $("tbody").append(str);
+                    }
+                });
+            });
+        });
+
+    </script>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td>id</td>
+        <td>title</td>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<input id="btnget" type="button" value="加载数据" />
+</body>
+</html>
