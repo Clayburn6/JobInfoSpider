@@ -12,8 +12,8 @@ import org.springframework.stereotype.Repository;
  * @description
  */
 public interface QueryDao extends JpaRepository<JobItem, Integer>{
-    Page<JobItem> getByTitleLikeAndCompanyLikeAndAndMoneyLikeAndExperienceLike(String title, String company,
-                                                                               String money, String experience, Pageable pageable);
+    Page<JobItem> getByTitleLikeAndCompanyLikeAndAndMoneyLike(String title,
+                                                              String company, String money, Pageable pageable);
 
     JobItem getById(Integer id);
 }

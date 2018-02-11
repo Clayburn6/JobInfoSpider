@@ -23,7 +23,7 @@ public class QueryController {
 
     @GetMapping(path = "/query")
     public Page<JobItem> query(String title, String money, String company, Integer pageIndex, Integer pageSize) {
-        return queryService.query("", "", "", pageIndex, pageSize);
+        return queryService.query(title, money, company, pageIndex, pageSize);
     }
 
     @GetMapping(path = "/detail")

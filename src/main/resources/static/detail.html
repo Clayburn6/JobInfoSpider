@@ -14,11 +14,18 @@
             type: "get",
             dataType: "json",
             success: function (result) {
-                var title = result.title;
-                var element_h3 = document.createElement("h3");
-                element_h3.innerHTML = title;
+                $("#job_title").text(result.title);
+                $("#job_company").text(result.company);
+                $("#job_type").text(result.type);
+                $("#job_experience").text(result.experience);
+                $("#job_money").text(result.money);
+                $("#job_place").text(result.place);
 
-                document.body.appendChild(element_h3);
+                var desc = result.desc + "";
+                console.log(desc);
+                desc = desc.replace(/\s+/g, "<br/>");
+                $("#job_desc").html(desc);
+                $("#job_url").attr("href", result.url);
             },
             error: function (result) {
                 alert("数据加载失败");
@@ -27,6 +34,13 @@
     </script>
 </head>
 <body>
-
+<label>职位名称：</label><span id="job_title"></span><br>
+<label>所属公司：</label><span id="job_company"></span><br>
+<label>任职类型：</label><span id="job_type"></span><br>
+<label>经验要求：</label><span id="job_experience"></span><br>
+<label>薪资待遇：</label><span id="job_money"></span><br>
+<label>工作地点：</label><span id="job_place"></span><br>
+<label>职位描述：</label><p id="job_desc"></p><br>
+<label>原网页地址：</label><a id="job_url" href="">点我访问拉钩网原网页</a><br>
 </body>
 </html>

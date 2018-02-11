@@ -88,14 +88,14 @@
         }
         
         function nextPage() {
-            if (number + 1 > totalPages) {
-                number = totalPages;
+            if (number + 1 >= totalPages) {
+                number = totalPages - 1;
             } else {
                 number = number + 1;
             }
-            var title = $("#job_title").htmlText;
-            var company = $("#job_company").htmlText;
-            var money = $("#job_money").htmlText;
+            var title = $("#job_title").val();
+            var company = $("#job_company").val();
+            var money = $("#job_money").val();
             history.pushState(null, "", location.href.split("?")[0] + "?title=" + title + "&company=" + company
                 + "&money=" + money + "&pageIndex=" + number + "&pageSize=" + size);
             query_by_title_company_money()
@@ -106,9 +106,18 @@
             } else {
                 number = number - 1;
             }
-            var title = $("#job_title").htmlText;
-            var company = $("#job_company").htmlText;
-            var money = $("#job_money").htmlText;
+            var title = $("#job_title").val();
+            var company = $("#job_company").val();
+            var money = $("#job_money").val();
+            history.pushState(null, "", location.href.split("?")[0] + "?title=" + title + "&company=" + company
+                + "&money=" + money + "&pageIndex=" + number + "&pageSize=" + size);
+            query_by_title_company_money()
+        }
+        
+        function query() {
+            var title = $("#job_title").val();
+            var company = $("#job_company").val();
+            var money = $("#job_money").val();
             history.pushState(null, "", location.href.split("?")[0] + "?title=" + title + "&company=" + company
                 + "&money=" + money + "&pageIndex=" + number + "&pageSize=" + size);
             query_by_title_company_money()
@@ -121,10 +130,10 @@
     </script>
 </head>
 <body onload="query_by_title_company_money()">
-<input type="text" id="job_title">
-<input type="text" id="job_company">
-<input type="text" id="job_money">
-<input type="button" value="查询" id="query_button" onclick="query_by_title_company_money()">
+<label>职位名称：</label><input type="text" id="job_title"><br/>
+<label>公司名称：</label><input type="text" id="job_company"><br/>
+<label>薪资要求：</label><input type="text" id="job_money"><br/>
+<input type="button" value="查询" id="query_button" onclick="query()">
 <div class="s_position_list " id="s_position_list">
     <!-- 切换分站 -->
     <ul class="item_con_list" id="job_list">
