@@ -3,6 +3,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>职位列表</title>
     <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         $(function () {
             //添加popstate事件
@@ -49,6 +52,7 @@
 
                             var element_li = document.createElement("li");
                             element_li.setAttribute("onclick", "jobDetail('"+ result.content[i].id+"')");
+                            element_li.setAttribute("class", "list-group-item");
 
                             var element_div_whole = document.createElement("div"); // 包围整个外层的
                             var element_div_cp = document.createElement("div"); // 包围company的
@@ -136,7 +140,7 @@
 <input type="button" value="查询" id="query_button" onclick="query()">
 <div class="s_position_list " id="s_position_list">
     <!-- 切换分站 -->
-    <ul class="item_con_list" id="job_list">
+    <ul class="list-group" id="job_list">
     </ul>
 </div>
 <input type="button" value="上一页" id="prePage" onclick="prePage()">
