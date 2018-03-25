@@ -24,7 +24,7 @@ import java.util.List;
 @RequestMapping(path = "/validate", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class TokenCheckController {
     private static final Logger logger = LoggerFactory.getLogger(TokenCheckController.class);
-
+    private static final String token = "Penggongbo023";
     /**
      * 微信服务器会以get方式请求服务器，并传入signature、timestamp、nonce、echostr四个参数
      * 验证接口配置信息
@@ -42,7 +42,6 @@ public class TokenCheckController {
                            @RequestParam(name = "timestamp", defaultValue = "") String timestamp,
                            @RequestParam(name = "nonce", defaultValue = "") String nonce,
                            @RequestParam(name = "echostr", defaultValue = "") String echostr) {
-        String token = "F0932398023";
         List<String> list = new ArrayList<>();
         list.add(timestamp);
         list.add(token);
