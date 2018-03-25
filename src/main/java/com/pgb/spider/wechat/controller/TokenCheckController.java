@@ -1,5 +1,6 @@
 package com.pgb.spider.wechat.controller;
 
+import org.apache.commons.lang.StringUtils;
 import org.hibernate.annotations.Parameter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,9 +41,13 @@ public class TokenCheckController {
     @RequestMapping(path = "check-token", method = RequestMethod.GET)
     public void checkToken(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String signature = request.getParameter("signature");
+        signature = StringUtils.isBlank(signature) ? "" : signature;
         String timestamp = request.getParameter("timestamp");
+        timestamp = StringUtils.isBlank(timestamp) ? "" : timestamp;
         String nonce = request.getParameter("nonce");
+        nonce = StringUtils.isBlank(nonce) ? "" : nonce;
         String echostr = request.getParameter("echostr");
+        echostr = StringUtils.isBlank(echostr) ? "" : echostr;
 
         response.getWriter().write(echostr);
         /*
