@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,10 +39,13 @@ public class TokenCheckController {
      * @param nonce 随机数
      * @param echostr 随机字符串，用于返回给微信服务器作比较
      */
+    @RequestMapping(path = "check-token", method = RequestMethod.GET)
     public String checkToken(@RequestParam(name = "signature", defaultValue = "") String signature,
                            @RequestParam(name = "timestamp", defaultValue = "") String timestamp,
                            @RequestParam(name = "nonce", defaultValue = "") String nonce,
                            @RequestParam(name = "echostr", defaultValue = "") String echostr) {
+        return echostr;
+        /*
         List<String> list = new ArrayList<>();
         list.add(timestamp);
         list.add(token);
@@ -72,6 +76,7 @@ public class TokenCheckController {
         } else {
             return null;
         }
+        */
 
     }
     //将加密后的字节数组变成字符串
