@@ -34,7 +34,8 @@ public class TokenCheckController {
      */
     @RequestMapping(path="/wechat", method = RequestMethod.POST)
     public void processWeChatRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        response.getWriter().print("已收到消息");
+        logger.info("收到消息");
+        response.getWriter().write("已收到消息");
     }
 
     /**
