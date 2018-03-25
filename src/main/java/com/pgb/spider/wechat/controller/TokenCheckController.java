@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -34,17 +36,15 @@ public class TokenCheckController {
      * 2. 将三个参数字符串拼接成一个字符串进行sha1加密
      * 3. 开发者获得加密后的字符串可与signature对比，标识该请求来源于微信
      *
-     * @param signature 微信加密签名
-     * @param timestamp 时间戳
-     * @param nonce 随机数
-     * @param echostr 随机字符串，用于返回给微信服务器作比较
      */
     @RequestMapping(path = "check-token", method = RequestMethod.GET)
-    public String checkToken(@RequestParam(name = "signature", defaultValue = "") String signature,
-                           @RequestParam(name = "timestamp", defaultValue = "") String timestamp,
-                           @RequestParam(name = "nonce", defaultValue = "") String nonce,
-                           @RequestParam(name = "echostr", defaultValue = "") String echostr) {
-        return echostr;
+    public void checkToken(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        String signature = request.getParameter("signature");
+        String timestamp = request.getParameter("timestamp");
+        String nonce = request.getParameter("nonce");
+        String echostr = request.getParameter("echostr");
+
+        response.getWriter().write(echostr);
         /*
         List<String> list = new ArrayList<>();
         list.add(timestamp);
