@@ -25,10 +25,18 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping(path = "/validate", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class TokenCheckController {
     private static final Logger logger = LoggerFactory.getLogger(TokenCheckController.class);
     private static final String token = "Penggongbo023";
+
+    /**
+     * 响应微信服务器发来的请求
+     */
+    @RequestMapping(path="/wechat", method = RequestMethod.POST)
+    public void processWeChatRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        response.getWriter().print("已收到消息");
+    }
+
     /**
      * 微信服务器会以get方式请求服务器，并传入signature、timestamp、nonce、echostr四个参数
      * 验证接口配置信息
@@ -38,7 +46,7 @@ public class TokenCheckController {
      * 3. 开发者获得加密后的字符串可与signature对比，标识该请求来源于微信
      *
      */
-    @RequestMapping(path = "check-token", method = RequestMethod.GET)
+    @RequestMapping(path = "/wechat", method = RequestMethod.GET)
     public void checkToken(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String signature = request.getParameter("signature");
         signature = StringUtils.isBlank(signature) ? "" : signature;
