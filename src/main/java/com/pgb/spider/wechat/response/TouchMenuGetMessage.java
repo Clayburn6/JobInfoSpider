@@ -1,6 +1,10 @@
 package com.pgb.spider.wechat.response;
 
+
+import com.pgb.spider.wechat.xom.AdapterCDATA;
+
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.io.Serializable;
 
 /**
@@ -12,16 +16,22 @@ import java.io.Serializable;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "xml")
 public class TouchMenuGetMessage implements Serializable {
+    @XmlJavaTypeAdapter(AdapterCDATA.class)
     @XmlElement(name = "ToUserName")
     private String toUserName;
+    @XmlJavaTypeAdapter(AdapterCDATA.class)
     @XmlElement(name = "FromUserName")
     private String fromUserName;
+    @XmlJavaTypeAdapter(AdapterCDATA.class)
     @XmlElement(name = "CreateTime")
     private String createTime;
+    @XmlJavaTypeAdapter(AdapterCDATA.class)
     @XmlElement(name = "MsgType")
     private String msgType;
+    @XmlJavaTypeAdapter(AdapterCDATA.class)
     @XmlElement(name = "Content")
     private String content;
+    @XmlJavaTypeAdapter(AdapterCDATA.class)
     @XmlElement(name = "MsgId")
     private String msgId;
 

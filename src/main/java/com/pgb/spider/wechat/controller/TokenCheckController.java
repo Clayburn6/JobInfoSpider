@@ -1,6 +1,7 @@
 package com.pgb.spider.wechat.controller;
 
 import com.pgb.spider.wechat.response.TouchMenuGetMessage;
+import com.sun.xml.internal.bind.marshaller.CharacterEscapeHandler;
 import org.apache.commons.lang.StringUtils;
 import org.hibernate.annotations.Parameter;
 import org.slf4j.Logger;
@@ -15,7 +16,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
+import java.io.IOException;
 import java.io.StringWriter;
+import java.io.Writer;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -45,7 +48,7 @@ public class TokenCheckController {
         message.setFromUserName("omNBi0q0duJpkVVq-FrZBU0rJJvc"); // 发送方账号（一个openid）
         message.setToUserName("PENGGB007"); // 开发者微信号
         message.setCreateTime(System.currentTimeMillis() + ""); // 当前时间
-        message.setContent("验证成功");
+        message.setContent("HELLO");
         message.setMsgId("234234234");
         message.setMsgType("text");
 
@@ -54,6 +57,17 @@ public class TokenCheckController {
         // output pretty printed
         jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         jaxbMarshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
+        jaxbMarshaller.setProperty(Marshaller.JAXB_FRAGMENT, true); // 去掉报头
+        jaxbMarshaller.setProperty("com.sun.xml.internal.bind.marshaller.CharacterEscapeHandler",
+                new CharacterEscapeHandler(){
+                    @Override
+                    public void escape(char[] ch, int start,
+                                       int length, boolean isAttVal,
+                                       Writer writer) throws IOException
+                    {
+                        writer.write(ch, start, length);
+                    }
+                });
 
         StringWriter writer = new StringWriter();
         try{
