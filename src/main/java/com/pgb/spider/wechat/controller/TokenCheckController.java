@@ -45,7 +45,7 @@ public class TokenCheckController {
     public void processWeChatRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
         logger.info("收到消息");
         TouchMenuGetMessage message = new TouchMenuGetMessage();
-        message.setFromUserName("PENGGB007");
+        message.setFromUserName("gh_95f3a5d4657d");
         message.setToUserName("omNBi0q0duJpkVVq-FrZBU0rJJvc");
         message.setCreateTime(System.currentTimeMillis() + ""); // 当前时间
         message.setContent("HELLO");
