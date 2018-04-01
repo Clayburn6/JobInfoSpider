@@ -1,39 +1,46 @@
-package com.pgb.spider.wechat.response;
-
+package com.pgb.spider.wechat.xom.request;
 
 import com.pgb.spider.wechat.xom.AdapterCDATA;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.io.Serializable;
 
 /**
  * @author Clayburn
- * @date : 2018/4/1 16:14
- * @description 点击菜单拉取消息时的时间推送
+ * @date : 2018/4/1 18:25
+ * @description 订阅或取消订阅请求
  */
-
-@XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "xml")
-public class TouchMenuGetMessage implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Subscribe implements Serializable {
+    // 关注公众号人的微信号
     @XmlJavaTypeAdapter(AdapterCDATA.class)
     @XmlElement(name = "ToUserName")
     private String toUserName;
+
+    // 关注公众号人对应这个公众号的openid
     @XmlJavaTypeAdapter(AdapterCDATA.class)
     @XmlElement(name = "FromUserName")
     private String fromUserName;
+
+    // 创建事件
     @XmlJavaTypeAdapter(AdapterCDATA.class)
     @XmlElement(name = "CreateTime")
     private String createTime;
+
+    // 消息类型 event
     @XmlJavaTypeAdapter(AdapterCDATA.class)
     @XmlElement(name = "MsgType")
     private String msgType;
+
+    // 事件类型 subscribe(订阅)、unsubscribe(取消订阅)
     @XmlJavaTypeAdapter(AdapterCDATA.class)
-    @XmlElement(name = "Content")
-    private String content;
-    @XmlJavaTypeAdapter(AdapterCDATA.class)
-    @XmlElement(name = "MsgId")
-    private String msgId;
+    @XmlElement(name = "Event")
+    private String event;
 
     public String getToUserName() {
         return toUserName;
@@ -67,19 +74,11 @@ public class TouchMenuGetMessage implements Serializable {
         this.msgType = msgType;
     }
 
-    public String getContent() {
-        return content;
+    public String getEvent() {
+        return event;
     }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getMsgId() {
-        return msgId;
-    }
-
-    public void setMsgId(String msgId) {
-        this.msgId = msgId;
+    public void setEvent(String event) {
+        this.event = event;
     }
 }

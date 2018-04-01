@@ -1,15 +1,12 @@
 package com.pgb.spider.wechat.controller;
 
-import com.pgb.spider.wechat.response.TouchMenuGetMessage;
+import com.pgb.spider.wechat.xom.response.TextResponse;
 import com.sun.xml.internal.bind.marshaller.CharacterEscapeHandler;
 import org.apache.commons.lang.StringUtils;
-import org.hibernate.annotations.Parameter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,12 +16,6 @@ import javax.xml.bind.Marshaller;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
 
 /**
  * @author Clayburn
@@ -43,8 +34,9 @@ public class TokenCheckController {
      */
     @RequestMapping(path="/wechat", method = RequestMethod.POST)
     public void processWeChatRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        logger.info("收到消息");
-        TouchMenuGetMessage message = new TouchMenuGetMessage();
+        logger.info("收到来自微信服务器的消息");
+
+        TextResponse message = new TextResponse();
         message.setFromUserName("gh_95f3a5d4657d");
         message.setToUserName("omNBi0q0duJpkVVq-FrZBU0rJJvc");
         message.setCreateTime(System.currentTimeMillis() + ""); // 当前时间
