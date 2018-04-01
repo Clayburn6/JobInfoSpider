@@ -20,10 +20,10 @@ public class TouchMenuGetMessage implements Serializable {
     private String createTime;
     @XmlElement(name = "MsgType")
     private String msgType;
-    @XmlElement(name = "Event")
-    private String event;
-    @XmlElement(name = "EventKey")
-    private String eventKey;
+    @XmlElement(name = "Content")
+    private String content;
+    @XmlElement(name = "MsgId")
+    private String msgId;
 
     public String getToUserName() {
         return toUserName;
@@ -57,19 +57,19 @@ public class TouchMenuGetMessage implements Serializable {
         this.msgType = msgType;
     }
 
-    public String getEvent() {
-        return event;
+    public String getContent() {
+        return content;
     }
 
-    public void setEvent(String event) {
-        this.event = event;
+    public void setContent(String content) {
+        this.content = content;
     }
 
-    public String getEventKey() {
-        return eventKey;
+    public String getMsgId() {
+        return msgId;
     }
 
-    public void setEventKey(String eventKey) {
-        this.eventKey = eventKey;
+    public void setMsgId(String msgId) {
+        this.msgId = msgId;
     }
 }

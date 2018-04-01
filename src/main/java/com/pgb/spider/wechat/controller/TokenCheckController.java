@@ -45,9 +45,9 @@ public class TokenCheckController {
         message.setFromUserName("omNBi0q0duJpkVVq-FrZBU0rJJvc"); // 发送方账号（一个openid）
         message.setToUserName("PENGGB007"); // 开发者微信号
         message.setCreateTime(System.currentTimeMillis() + ""); // 当前时间
-        message.setEvent("CLICK");
-        message.setEventKey("VPGB_Find_Work");
-        message.setMsgType("event");
+        message.setContent("验证成功");
+        message.setMsgId("234234234");
+        message.setMsgType("text");
 
         JAXBContext jaxbContext = JAXBContext.newInstance(message.getClass());
         Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
