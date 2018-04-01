@@ -42,12 +42,12 @@ public class TokenCheckController {
     public void processWeChatRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
         logger.info("收到消息");
         TouchMenuGetMessage message = new TouchMenuGetMessage();
-        message.setFromUserName("a");
-        message.setToUserName("a");
-        message.setCreateTime(System.currentTimeMillis() + "");
-        message.setEvent("cc");
-        message.setEventKey("bbb");
-        message.setMsgType("ddd");
+        message.setFromUserName("omNBi0q0duJpkVVq-FrZBU0rJJvc"); // 发送方账号（一个openid）
+        message.setToUserName("PENGGB007"); // 开发者微信号
+        message.setCreateTime(System.currentTimeMillis() + ""); // 当前时间
+        message.setEvent("CLICK");
+        message.setEventKey("VPGB_Find_Work");
+        message.setMsgType("event");
 
         JAXBContext jaxbContext = JAXBContext.newInstance(message.getClass());
         Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
