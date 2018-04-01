@@ -1,5 +1,6 @@
 package com.pgb.spider.wechat.controller;
 
+import com.pgb.spider.wechat.response.TouchMenuGetMessage;
 import org.apache.commons.lang.StringUtils;
 import org.hibernate.annotations.Parameter;
 import org.slf4j.Logger;
@@ -12,10 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Marshaller;
+import java.io.StringWriter;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -31,11 +36,33 @@ public class TokenCheckController {
 
     /**
      * 响应微信服务器发来的请求
+     * xml的格式返回
      */
     @RequestMapping(path="/wechat", method = RequestMethod.POST)
     public void processWeChatRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
         logger.info("收到消息");
-        response.getWriter().write("已收到消息");
+        TouchMenuGetMessage message = new TouchMenuGetMessage();
+        message.setFromUserName("a");
+        message.setToUserName("a");
+        message.setCreateTime(System.currentTimeMillis() + "");
+        message.setEvent("cc");
+        message.setEventKey("bbb");
+        message.setMsgType("ddd");
+
+        JAXBContext jaxbContext = JAXBContext.newInstance(message.getClass());
+        Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+        // output pretty printed
+        jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        jaxbMarshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
+
+        StringWriter writer = new StringWriter();
+        try{
+            jaxbMarshaller.marshal(message, writer);
+            response.getWriter().write(writer.toString());
+        } finally {
+            writer.close();
+        }
+        //response.getWriter().write("已收到消息");
     }
 
     /**
