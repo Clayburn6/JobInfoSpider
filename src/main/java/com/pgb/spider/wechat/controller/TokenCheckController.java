@@ -16,6 +16,11 @@ import javax.xml.bind.Marshaller;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author Clayburn
@@ -91,8 +96,7 @@ public class TokenCheckController {
         String echostr = request.getParameter("echostr");
         echostr = StringUtils.isBlank(echostr) ? "" : echostr;
 
-        response.getWriter().write(echostr);
-        /*
+
         List<String> list = new ArrayList<>();
         list.add(timestamp);
         list.add(token);
@@ -119,11 +123,11 @@ public class TokenCheckController {
         }
         // 开发者获得加密后的字符串可与signature对比
         if (tmpStr != null && tmpStr.equals(signature.toUpperCase())) {
-            return echostr;
+            response.getWriter().write(echostr);
+            return;
         } else {
-            return null;
+            return;
         }
-        */
 
     }
     //将加密后的字节数组变成字符串
