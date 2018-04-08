@@ -36,9 +36,6 @@ public class TextMessageServiceImpl implements TextMessageService {
         response.setMsgType(MsgType.text.getCode());
         response.setMsgId("2394792374");
 
-        textRequestDao.save(new TextRequest());
-
-
         String result = JAXBUtils.marshal(response);
 
         logger.info("响应消息的内容是：" + result);
