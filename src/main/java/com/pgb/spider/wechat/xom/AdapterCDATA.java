@@ -17,6 +17,6 @@ public class AdapterCDATA extends XmlAdapter<String, String> {
     @Override
     public String unmarshal(String arg0) throws Exception
     {
-        return arg0.substring(8, arg0.length() - 3);
+        return arg0;
     }
 }
