@@ -63,41 +63,5 @@ public class WeChatMessageDispatcherController {
         // 设置编码
         response.setCharacterEncoding("UTF-8");
         response.getWriter().write(result);
-        /*
-        logger.info(requestBody);
-        TextResponse message = new TextResponse();
-        message.setFromUserName("gh_95f3a5d4657d");
-        message.setToUserName("omNBi0q0duJpkVVq-FrZBU0rJJvc");
-        message.setCreateTime(System.currentTimeMillis() + ""); // 当前时间
-        message.setContent("HELLO");
-        message.setMsgId("234234234");
-        message.setMsgType("text");
-
-        JAXBContext jaxbContext = JAXBContext.newInstance(message.getClass());
-        Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-        // output pretty printed
-        jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-        jaxbMarshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
-        jaxbMarshaller.setProperty(Marshaller.JAXB_FRAGMENT, true); // 去掉报头
-        jaxbMarshaller.setProperty("com.sun.xml.internal.bind.marshaller.CharacterEscapeHandler",
-                new CharacterEscapeHandler(){
-                    @Override
-                    public void escape(char[] ch, int start,
-                                       int length, boolean isAttVal,
-                                       Writer writer) throws IOException
-                    {
-                        writer.write(ch, start, length);
-                    }
-                });
-
-        StringWriter writer = new StringWriter();
-        try{
-            jaxbMarshaller.marshal(message, writer);
-            response.getWriter().write(writer.toString());
-        } finally {
-            writer.close();
-        }
-        //response.getWriter().write("已收到消息");
-        */
     }
 }
