@@ -3,6 +3,8 @@ package com.pgb.spider.wechat.controller;
 import com.pgb.spider.wechat.dom.DomUtils;
 import com.pgb.spider.wechat.eumeration.MsgType;
 import com.pgb.spider.wechat.service.EventMessageService;
+import com.pgb.spider.wechat.service.TextMessageService;
+import com.pgb.spider.wechat.xom.request.TextRequest;
 import com.pgb.spider.wechat.xom.response.TextResponse;
 import com.sun.xml.internal.bind.marshaller.CharacterEscapeHandler;
 import org.slf4j.Logger;
@@ -33,6 +35,9 @@ public class WeChatMessageDispatcherController {
     @Autowired
     private EventMessageService eventMessageService;
 
+    @Autowired
+    private TextMessageService textMessageService;
+
     /**
      * 响应微信服务器发来的请求
      * xml的格式返回
@@ -50,9 +55,10 @@ public class WeChatMessageDispatcherController {
                 result = eventMessageService.dealWithEventMessage(requestBody);
                 break;
             case text: // 文本消息
+                result = textMessageService.dealWithText(requestBody);
                 break;
             default: // 回复"success"
-
+                result = "success";
         }
         // 设置编码
         response.setCharacterEncoding("UTF-8");

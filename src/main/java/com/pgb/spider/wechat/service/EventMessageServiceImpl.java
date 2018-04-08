@@ -33,10 +33,12 @@ public class EventMessageServiceImpl implements EventMessageService {
         switch (event) {
             case subscribe:
                 return dealWithSubScribe(xml);
-            case unsubscribe:
-                break;
+            case unsubscribe: // 取消订阅，暂不做处理
+                return "success";
             case CLICK:
                 break;
+            default:
+                return "success";
         }
         return null;
     }
