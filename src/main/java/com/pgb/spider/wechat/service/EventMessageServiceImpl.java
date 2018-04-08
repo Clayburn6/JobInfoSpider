@@ -68,6 +68,7 @@ public class EventMessageServiceImpl implements EventMessageService {
 
         logger.info("响应消息的内容是：" + result);
 
+
         return result;
     }
 }
