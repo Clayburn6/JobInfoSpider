@@ -2,6 +2,7 @@ package com.pgb.spider.wechat.service;
 
 import com.pgb.spider.wechat.dao.SubscribeDao;
 import com.pgb.spider.wechat.dom.DomUtils;
+import com.pgb.spider.wechat.eumeration.Constant;
 import com.pgb.spider.wechat.eumeration.EventType;
 import com.pgb.spider.wechat.eumeration.MsgType;
 import com.pgb.spider.wechat.xom.JAXBUtils;
@@ -53,32 +54,20 @@ public class EventMessageServiceImpl implements EventMessageService {
         logger.info("处理订阅事件");
         // 用jaxb将String转成object
         Subscribe subscribe = JAXBUtils.unmarshal(xml, Subscribe.class);
-        logger.info("持久化订阅消息, 内容：" + subscribe.toString());
+        logger.info("持久化订阅消息, 内容：\n" + subscribe.toString());
         subscribeDao.save(subscribe);
-        // todo 将微信号和openid单独存储，用于群发消息时使用
         // 生成xml消息
-        // todo msgId未定义
         TextResponse response = new TextResponse();
         response.setToUserName(subscribe.getFromUserName());
         response.setFromUserName(subscribe.getToUserName());
         response.setCreateTime(System.currentTimeMillis() + "");
-        response.setContent("欢迎订阅！此公众号为湖北经济学院毕业设计——大数据采集系统的职位查询公众号。\n" +
-                "\n" +
-                "如果您是首次订阅我的公众号，请点击个人中心设置您对为职位的要求，即可使用此公众号的功能。也可以编辑发送【职位名称】+【薪资要求】+【期望公司】来设置您的个人信息。设置好个人信息后，我们定期为您推送符合您要求的工作信息。\n" +
-                "\n" +
-                "下面是对此公众号功能的一些介绍。\n" +
-                "【找工作】\n" +
-                "    在您设置了个人信息后，点击找工作，即可获取满足您条件的一批工作。\n" +
-                "【换一批】\n" +
-                "    在您设置了个人信息后，点击换一批，即可获取不同的工作信息。\n" +
-                "【个人中心】\n" +
-                "    用于设置您的个人信息。");
+        response.setContent(Constant.WELCOME_INFO);
         response.setMsgType(MsgType.text.getCode());
-        response.setMsgId("2394792374");
+        response.setMsgId(System.currentTimeMillis() + "");
 
         String result = JAXBUtils.marshal(response);
 
-        logger.info("响应消息的内容是：" + result);
+        logger.info("响应消息, msgId = " + response.getMsgId());
 
 
         return result;

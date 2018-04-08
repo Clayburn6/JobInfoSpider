@@ -4,6 +4,7 @@ package com.pgb.spider.wechat.service;
 import com.pgb.spider.wechat.dao.TextRequestDao;
 import com.pgb.spider.wechat.dao.UserInfoDao;
 import com.pgb.spider.wechat.entity.UserInfo;
+import com.pgb.spider.wechat.eumeration.Constant;
 import com.pgb.spider.wechat.eumeration.MsgType;
 import com.pgb.spider.wechat.xom.JAXBUtils;
 import com.pgb.spider.wechat.xom.request.TextRequest;
@@ -30,7 +31,7 @@ public class TextMessageServiceImpl implements TextMessageService {
         logger.info("处理文本消息");
         TextRequest request = JAXBUtils.unmarshal(xml, TextRequest.class);
 
-        logger.info("持久化文本消息, 内容：" + request.toString());
+        logger.info("持久化文本消息, 内容：\n" + request.toString());
         textRequestDao.save(request);
 
         TextResponse response = new TextResponse();
@@ -39,13 +40,12 @@ public class TextMessageServiceImpl implements TextMessageService {
         response.setCreateTime(System.currentTimeMillis() + "");
 
         response.setMsgType(MsgType.text.getCode());
-        response.setMsgId("2394792374");
+        response.setMsgId(System.currentTimeMillis() + "");
 
         String content = request.getContent();
         String resultContent = null;
         if (!content.matches("【.+】\\+【.+】\\+【.+】")) {
-            resultContent = "您说得我不是太懂！如果您是想设置个人信息，请按照如下格式设置：\n" +
-                    "【职位名称】+【薪资要求】+【期望公司】";
+            resultContent = Constant.SET_USERINFO;
         } else {
             // 解析content中的内容
             String[] strArray = content.split("\\+");
@@ -72,7 +72,7 @@ public class TextMessageServiceImpl implements TextMessageService {
 
         String result = JAXBUtils.marshal(response);
 
-        logger.info("响应消息的内容是：" + result);
+        logger.info("响应消息, msgId = " + response.getMsgId());
 
 
         return result;
