@@ -48,10 +48,9 @@ public class EventMessageServiceImpl implements EventMessageService {
         logger.info("处理订阅事件");
         // 用jaxb将String转成object
         Subscribe subscribe = JAXBUtils.unmarshal(xml, Subscribe.class);
-        logger.info("持久化订阅消息");
+        logger.info("持久化订阅消息, 内容：" + subscribe.toString());
         subscribeDao.save(subscribe);
         // todo 将微信号和openid单独存储，用于群发消息时使用
-
         // 生成xml消息
         // todo 订阅的消息模板尚未完成, msgId未定义
         TextResponse response = new TextResponse();
@@ -64,7 +63,7 @@ public class EventMessageServiceImpl implements EventMessageService {
 
         String result = JAXBUtils.marshal(response);
 
-
+        logger.info("响应消息的内容是：" + result);
 
         return result;
     }

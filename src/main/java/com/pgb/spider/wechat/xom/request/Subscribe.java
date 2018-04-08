@@ -93,4 +93,16 @@ public class Subscribe implements Serializable {
     public void setEvent(String event) {
         this.event = event;
     }
+
+    @Override
+    public String toString() {
+        return "Subscribe{" +
+                "id=" + id +
+                ", toUserName='" + toUserName + '\'' +
+                ", fromUserName='" + fromUserName + '\'' +
+                ", createTime='" + createTime + '\'' +
+                ", msgType='" + msgType + '\'' +
+                ", event='" + event + '\'' +
+                '}';
+    }
 }
