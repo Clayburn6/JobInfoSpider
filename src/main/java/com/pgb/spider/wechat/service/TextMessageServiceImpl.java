@@ -2,6 +2,8 @@ package com.pgb.spider.wechat.service;
 
 
 import com.pgb.spider.wechat.dao.TextRequestDao;
+import com.pgb.spider.wechat.dao.UserInfoDao;
+import com.pgb.spider.wechat.entity.UserInfo;
 import com.pgb.spider.wechat.eumeration.MsgType;
 import com.pgb.spider.wechat.xom.JAXBUtils;
 import com.pgb.spider.wechat.xom.request.TextRequest;
@@ -19,6 +21,9 @@ public class TextMessageServiceImpl implements TextMessageService {
     @Autowired
     private TextRequestDao textRequestDao;
 
+    @Autowired
+    private UserInfoDao userInfoDao;
+
     @Override
     @Transactional
     public String dealWithText(String xml) throws Exception {
@@ -32,9 +37,38 @@ public class TextMessageServiceImpl implements TextMessageService {
         response.setToUserName(request.getFromUserName());
         response.setFromUserName(request.getToUserName());
         response.setCreateTime(System.currentTimeMillis() + "");
-        response.setContent("正在开发中，请稍后");
+
         response.setMsgType(MsgType.text.getCode());
         response.setMsgId("2394792374");
+
+        String content = request.getContent();
+        String resultContent = null;
+        if (!content.matches("【.+】\\+【.+】\\+【.+】")) {
+            resultContent = "您说得我不是太懂！如果您是想设置个人信息，请按照如下格式设置：\n" +
+                    "【职位名称】+【薪资要求】+【期望公司】";
+        } else {
+            // 解析content中的内容
+            String[] strArray = content.split("//+");
+            for (int i = 0; i < strArray.length; i++) {
+                strArray[i] = strArray[i].substring(1, strArray[i].length() - 1);
+            }
+            String title = strArray[0];
+            String salary = strArray[1];
+            String company = strArray[2];
+            logger.info("用户的信息为： title = " + title + ", salary = " + salary + ", company = " + company);
+
+            UserInfo userInfo = new UserInfo();
+            userInfo.setWechatCode(request.getToUserName());
+            userInfo.setOpenid(request.getFromUserName());
+            userInfo.setTitle(title);
+            userInfo.setSalary(Integer.parseInt(salary));
+            userInfo.setCompany(company);
+
+            userInfoDao.save(userInfo);
+
+            resultContent = "您的信息我们已经了解，请尽情使用吧！";
+        }
+        response.setContent(resultContent);
 
         String result = JAXBUtils.marshal(response);
 

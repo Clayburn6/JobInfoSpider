@@ -17,7 +17,6 @@ import javax.xml.bind.JAXBException;
 import java.util.Date;
 
 @Service
-@Transactional
 public class EventMessageServiceImpl implements EventMessageService {
     private final static Logger logger = LoggerFactory.getLogger(EventMessageServiceImpl.class);
 
@@ -26,6 +25,7 @@ public class EventMessageServiceImpl implements EventMessageService {
 
 
     @Override
+    @Transactional
     public String dealWithEventMessage(String xml) throws Exception {
         // 解析消息，分一下是那种类型的事件消息
         String code = DomUtils.selectXmlByTagName(xml, "Event");
