@@ -107,4 +107,17 @@ public class TextRequest implements Serializable {
     public void setMsgId(String msgId) {
         this.msgId = msgId;
     }
+
+    @Override
+    public String toString() {
+        return "TextRequest{" +
+                "id=" + id +
+                ", toUserName='" + toUserName + '\'' +
+                ", fromUserName='" + fromUserName + '\'' +
+                ", createTime='" + createTime + '\'' +
+                ", msgType='" + msgType + '\'' +
+                ", content='" + content + '\'' +
+                ", msgId='" + msgId + '\'' +
+                '}';
+    }
 }
