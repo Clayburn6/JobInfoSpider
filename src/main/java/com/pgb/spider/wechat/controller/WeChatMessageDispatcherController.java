@@ -54,7 +54,8 @@ public class WeChatMessageDispatcherController {
             default: // 回复"success"
 
         }
-
+        // 设置编码
+        response.setCharacterEncoding("iso8859-1");
         response.getWriter().write(result);
         /*
         logger.info(requestBody);

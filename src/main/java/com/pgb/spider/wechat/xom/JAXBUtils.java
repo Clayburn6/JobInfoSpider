@@ -17,7 +17,7 @@ import java.io.Writer;
  * @description
  */
 public class JAXBUtils {
-    public final static String CHARSET_NAME = "UTF-8";
+    public final static String CHARSET_NAME = "iso8859-1";
     private static StringWriter writer = new StringWriter();
     private static StringReader reader = null;
 
