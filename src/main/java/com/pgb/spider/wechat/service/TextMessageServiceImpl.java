@@ -43,7 +43,7 @@ public class TextMessageServiceImpl implements TextMessageService {
 
         String content = request.getContent();
         String resultContent = null;
-        if (!content.matches("【.+】\\\\+【.+】\\\\+【.+】")) {
+        if (!content.matches("【.+】\\+【.+】\\+【.+】")) {
             resultContent = "您说得我不是太懂！如果您是想设置个人信息，请按照如下格式设置：\n" +
                     "【职位名称】+【薪资要求】+【期望公司】";
         } else {
