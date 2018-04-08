@@ -12,10 +12,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import javax.xml.bind.JAXBException;
 import java.util.Date;
 
 @Service
+@Transactional
 public class EventMessageServiceImpl implements EventMessageService {
     private final static Logger logger = LoggerFactory.getLogger(EventMessageServiceImpl.class);
 
@@ -44,6 +46,7 @@ public class EventMessageServiceImpl implements EventMessageService {
      * @param xml
      * @return
      */
+
     private String dealWithSubScribe(String xml) throws JAXBException {
         logger.info("处理订阅事件");
         // 用jaxb将String转成object
