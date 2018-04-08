@@ -10,7 +10,7 @@
         var n2 = loc.indexOf("=");//取得=号的位置
         var id = loc.substr(n2+1, n1-n2);//从=号后面的内容
         $.ajax({
-            url: "http://localhost/query/detail?id=" + id,
+            url: "http://penggb.top/query/detail?id=" + id,
             type: "get",
             dataType: "json",
             success: function (result) {
