@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Transactional
 public class TextMessageServiceImpl implements TextMessageService {
     private static final Logger logger = LoggerFactory.getLogger(TextMessageServiceImpl.class);
 
@@ -21,6 +20,7 @@ public class TextMessageServiceImpl implements TextMessageService {
     private TextRequestDao textRequestDao;
 
     @Override
+    @Transactional
     public String dealWithText(String xml) throws Exception {
         logger.info("处理文本消息");
         TextRequest request = JAXBUtils.unmarshal(xml, TextRequest.class);
