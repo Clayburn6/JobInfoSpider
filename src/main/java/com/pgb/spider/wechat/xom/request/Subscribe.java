@@ -2,10 +2,8 @@ package com.pgb.spider.wechat.xom.request;
 
 import com.pgb.spider.wechat.xom.AdapterCDATA;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.persistence.*;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.io.Serializable;
 
@@ -16,7 +14,13 @@ import java.io.Serializable;
  */
 @XmlRootElement(name = "xml")
 @XmlAccessorType(XmlAccessType.FIELD)
+@Entity
+@Table(name = "subcribe")
 public class Subscribe implements Serializable {
+    @Id
+    @GeneratedValue
+    @XmlTransient
+    private Integer id;
     // 关注公众号人的微信号
     @XmlJavaTypeAdapter(AdapterCDATA.class)
     @XmlElement(name = "ToUserName")
@@ -41,6 +45,14 @@ public class Subscribe implements Serializable {
     @XmlJavaTypeAdapter(AdapterCDATA.class)
     @XmlElement(name = "Event")
     private String event;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getToUserName() {
         return toUserName;
