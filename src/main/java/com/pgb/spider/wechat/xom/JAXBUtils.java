@@ -1,11 +1,15 @@
 package com.pgb.spider.wechat.xom;
 
+import com.sun.xml.internal.bind.marshaller.CharacterEscapeHandler;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.io.Writer;
 
 /**
  * @author Clayburn
@@ -23,6 +27,17 @@ public class JAXBUtils {
         // output pretty printed
         jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         jaxbMarshaller.setProperty(Marshaller.JAXB_ENCODING, CHARSET_NAME);
+        jaxbMarshaller.setProperty(Marshaller.JAXB_FRAGMENT, true); // 去掉报头
+        jaxbMarshaller.setProperty("com.sun.xml.internal.bind.marshaller.CharacterEscapeHandler",
+                new CharacterEscapeHandler(){
+                    @Override
+                    public void escape(char[] ch, int start,
+                                       int length, boolean isAttVal,
+                                       Writer writer) throws IOException
+                    {
+                        writer.write(ch, start, length);
+                    }
+                });
 
         writer.flush();
         jaxbMarshaller.marshal(obj, writer);
