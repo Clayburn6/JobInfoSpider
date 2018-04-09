@@ -52,14 +52,10 @@ public class WeChatMessageDispatcherController {
         String result = "";
         switch (msgType) {
             case event: // 事件消息
-                logger.info(result);
                 result = eventMessageService.dealWithEventMessage(requestBody);
-                logger.info(result);
                 break;
             case text: // 文本消息
-                logger.info(result);
                 result = textMessageService.dealWithText(requestBody);
-                logger.info(result);
                 break;
             default: // 回复"success"
                 result = "success";
@@ -67,5 +63,6 @@ public class WeChatMessageDispatcherController {
         // 设置编码
         response.setCharacterEncoding("UTF-8");
         response.getWriter().write(result);
+        response.getWriter().flush();
     }
 }
