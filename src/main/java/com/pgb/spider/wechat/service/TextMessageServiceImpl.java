@@ -44,7 +44,8 @@ public class TextMessageServiceImpl implements TextMessageService {
 
         String content = request.getContent();
         if (!content.matches("【.+】\\+【.+】\\+【.+】")) {
-            response.setContent(Constant.SET_USERINFO);
+            response.setContent("您说得我不是太懂！如果您是想设置个人信息，请按照如下格式设置：\n" +
+                    "【职位名称】+【薪资要求】+【期望公司】");
         } else {
             // 解析content中的内容
             String[] strArray = content.split("\\+");

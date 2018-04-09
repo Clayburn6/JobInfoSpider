@@ -70,7 +70,17 @@ public class EventMessageServiceImpl implements EventMessageService {
         response.setToUserName(subscribe.getFromUserName());
         response.setFromUserName(subscribe.getToUserName());
         response.setCreateTime(System.currentTimeMillis() + "");
-        response.setContent(Constant.WELCOME_INFO);
+        response.setContent("欢迎订阅！此公众号为湖北经济学院毕业设计——大数据采集系统的职位查询公众号。\n" +
+                "\n" +
+                "如果您是首次订阅我的公众号，请点击个人中心设置您对为职位的要求，即可使用此公众号的功能。也可以编辑发送【职位名称】+【薪资要求】+【期望公司】来设置您的个人信息。设置好个人信息后，我们定期为您推送符合您要求的工作信息。\n" +
+                "\n" +
+                "下面是对此公众号功能的一些介绍。\n" +
+                "【找工作】\n" +
+                "    在您设置了个人信息后，点击找工作，即可获取满足您条件的一批工作。\n" +
+                "【换一批】\n" +
+                "    在您设置了个人信息后，点击换一批，即可获取不同的工作信息。\n" +
+                "【个人中心】\n" +
+                "    用于设置您的个人信息。");
         response.setMsgType(MsgType.text.getCode());
         response.setMsgId(System.currentTimeMillis() + "");
 
@@ -127,7 +137,17 @@ public class EventMessageServiceImpl implements EventMessageService {
 
         if (userInfo == null) {
             logger.info("用户未设置个人信息，提示用户先设置个人信息");
-            response.setContent(Constant.WARNING_SET_USERINFO);
+            response.setContent("你还没有设置个人信息， 请点击个人中心设置您对为职位的要求，即可使用此公众号的功能。也可以编辑发送【职位名称】+【薪资要求】+【期望公司】来设置您的个人信息。设置好个人信息后，我们定期为您推送符合您要求的工作信息。\n" +
+                    "\n" +
+                    "如果您是首次订阅我的公众号，请点击个人中心设置您对为职位的要求，即可使用此公众号的功能。也可以编辑发送【职位名称】+【薪资要求】+【期望公司】来设置您的个人信息。设置好个人信息后，我们定期为您推送符合您要求的工作信息。\n" +
+                    "\n" +
+                    "下面是对此公众号功能的一些介绍。\n" +
+                    "【找工作】\n" +
+                    "    在您设置了个人信息后，点击找工作，即可获取满足您条件的一批工作。\n" +
+                    "【换一批】\n" +
+                    "    在您设置了个人信息后，点击换一批，即可获取不同的工作信息。\n" +
+                    "【个人中心】\n" +
+                    "    用于设置您的个人信息。");
         }
 
         switch (eventKey) {
