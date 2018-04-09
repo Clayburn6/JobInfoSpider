@@ -45,21 +45,21 @@ public class WeChatMessageDispatcherController {
     @RequestMapping(path="/wechat", method = RequestMethod.POST)
     public void processWeChatRequest(HttpServletRequest request, HttpServletResponse response, @RequestBody String requestBody) throws Exception {
         logger.info("收到来自微信服务器的消息");
-
+        logger.info(requestBody);
         // 开始dom解析,将消息进行分类
         String code = DomUtils.selectXmlByTagName(requestBody, "MsgType"); // 查看消息类型
         MsgType msgType = MsgType.fromCode(code);
         String result = "";
         switch (msgType) {
             case event: // 事件消息
-                logger.debug(result);
+                logger.info(result);
                 result = eventMessageService.dealWithEventMessage(requestBody);
-                logger.debug(result);
+                logger.info(result);
                 break;
             case text: // 文本消息
-                logger.debug(result);
+                logger.info(result);
                 result = textMessageService.dealWithText(requestBody);
-                logger.debug(result);
+                logger.info(result);
                 break;
             default: // 回复"success"
                 result = "success";
