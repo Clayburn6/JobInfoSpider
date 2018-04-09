@@ -59,7 +59,7 @@ public class EventMessageServiceImpl implements EventMessageService {
      * @return
      */
 
-    private String dealWithSubScribe(String xml) throws JAXBException {
+    private String dealWithSubScribe(String xml) throws JAXBException, IOException {
         logger.info("处理订阅事件");
         // 用jaxb将String转成object
         Subscribe subscribe = JAXBUtils.unmarshal(xml, Subscribe.class);

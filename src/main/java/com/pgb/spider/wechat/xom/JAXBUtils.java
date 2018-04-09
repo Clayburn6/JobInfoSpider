@@ -18,10 +18,10 @@ import java.io.Writer;
  */
 public class JAXBUtils {
     public final static String CHARSET_NAME = "utf-8";
-    private static StringWriter writer = new StringWriter();
+    //private static StringWriter writer = new StringWriter();
     private static StringReader reader = null;
 
-    public static String marshal(Object obj) throws JAXBException {
+    public static String marshal(Object obj) throws JAXBException, IOException {
         JAXBContext jaxbContext = JAXBContext.newInstance(obj.getClass());
         Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
         // output pretty printed
@@ -38,10 +38,12 @@ public class JAXBUtils {
                         writer.write(ch, start, length);
                     }
                 });
-
-        writer.flush();
+        StringWriter writer = new StringWriter();
+        //writer.close();
         jaxbMarshaller.marshal(obj, writer);
-        return writer.toString();
+        String res = writer.toString();
+        writer.close();
+        return res;
     }
 
     public static <T> T unmarshal(String xml, Class<T> cls) throws JAXBException {

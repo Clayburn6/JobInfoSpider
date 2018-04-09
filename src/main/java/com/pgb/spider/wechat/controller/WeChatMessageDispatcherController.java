@@ -29,6 +29,7 @@ import java.io.Writer;
  */
 
 @Controller
+@ResponseBody
 public class WeChatMessageDispatcherController {
     private static final Logger logger = LoggerFactory.getLogger(WeChatMessageDispatcherController.class);
 
@@ -43,7 +44,7 @@ public class WeChatMessageDispatcherController {
      * xml的格式返回
      */
     @RequestMapping(path="/wechat", method = RequestMethod.POST)
-    public void processWeChatRequest(HttpServletRequest request, HttpServletResponse response, @RequestBody String requestBody) throws Exception {
+    public String processWeChatRequest(HttpServletRequest request, @RequestBody String requestBody) throws Exception {
         logger.info("收到来自微信服务器的消息");
         logger.info(requestBody);
         // 开始dom解析,将消息进行分类
@@ -60,9 +61,6 @@ public class WeChatMessageDispatcherController {
             default: // 回复"success"
                 result = "success";
         }
-        // 设置编码
-        response.setCharacterEncoding("UTF-8");
-        response.getWriter().write(result);
-        response.getWriter().flush();
+        return result;
     }
 }
