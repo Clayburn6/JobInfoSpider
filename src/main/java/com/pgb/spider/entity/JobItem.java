@@ -15,15 +15,43 @@ public class JobItem {
     private Integer id;
     private String title;
     private String money;
+    private Integer minMoney;
+    private Integer maxMoney;
     private String company;
     private String place;
-    @Column(name = "description")
+    @Lob
+    @Column(name = "description", length = 16777215)
     private String desc;
     private String nature;//性质
     private String experience; //经验
     private String degree; //学历
     private String type; // 职位类别
     private String url;
+    private String fromWhere;
+
+    public Integer getMaxMoney() {
+        return maxMoney;
+    }
+
+    public void setMaxMoney(Integer maxMoney) {
+        this.maxMoney = maxMoney;
+    }
+
+    public String getFromWhere() {
+        return fromWhere;
+    }
+
+    public void setFromWhere(String fromWhere) {
+        this.fromWhere = fromWhere;
+    }
+
+    public Integer getMinMoney() {
+        return minMoney;
+    }
+
+    public void setMinMoney(Integer minMoney) {
+        this.minMoney = minMoney;
+    }
 
     public String getUrl() {
         return url;

@@ -59,7 +59,18 @@ public class LagouStore implements IStore {
         jobItem.setDegree(degree);
         jobItem.setType(type);
         jobItem.setUrl(response.getTask().getUrl());
+        jobItem.setFromWhere("Lagou");
         System.out.println(jobItem);
+
+        // 设置薪资范围
+        money = money.toLowerCase();
+        if (money.matches("(\\d)+k-(\\d)+k")) {
+            String[] strArray = money.split("-");
+            if (strArray != null && strArray.length == 2) {
+                jobItem.setMinMoney(Integer.parseInt(strArray[0].replace("k", "")));
+                jobItem.setMaxMoney(Integer.parseInt(strArray[1].replace("k", "")));
+            }
+        }
 
         Session session = SpiderUtils.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();

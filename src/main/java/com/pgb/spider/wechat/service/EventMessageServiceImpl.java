@@ -136,4 +136,29 @@ public class EventMessageServiceImpl implements EventMessageService {
                 return "success";
         }
     }
+
+    /**
+     * 处理自定义菜单里面“找工作按钮”，查询符合条件的数据，并编辑成xml返回给微信服务器
+     * @param title
+     * @param money
+     * @param company
+     * @return
+     */
+    private String findWork(String title, String money, String company) {
+
+
+        return null;
+    }
+
+    /**
+     * 处理自定义菜单里面“换一批“按钮”，查询符合条件的数据，并编辑成xml返回给微信服务器
+     * @param title
+     * @param money
+     * @param company
+     * @return
+     */
+    private String freshWork(String title, String money, String company) {
+
+        return null;
+    }
 }
