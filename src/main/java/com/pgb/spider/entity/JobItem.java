@@ -11,22 +11,35 @@ import javax.persistence.*;
 @Table(name = "job_info")
 public class JobItem {
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    @Column(name = "title")
     private String title;
+    @Column(name = "money")
     private String money;
+    @Column(name = "min_money")
     private Integer minMoney;
+    @Column(name = "max_money")
     private Integer maxMoney;
+    @Column(name = "company")
     private String company;
+    @Column(name = "place")
     private String place;
     @Lob
     @Column(name = "description", length = 16777215)
     private String desc;
+    @Column(name = "nature")
     private String nature;//性质
+    @Column(name = "experience")
     private String experience; //经验
+    @Column(name = "degree")
     private String degree; //学历
+    @Column(name = "type")
     private String type; // 职位类别
+    @Column(name = "url")
     private String url;
+    @Column(name = "from_where")
     private String fromWhere;
 
     public Integer getMaxMoney() {
