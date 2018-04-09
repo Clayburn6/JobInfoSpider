@@ -57,14 +57,21 @@ public class TextMessageServiceImpl implements TextMessageService {
             String company = strArray[2];
             logger.info("用户的信息为： title = " + title + ", salary = " + salary + ", company = " + company);
 
-            UserInfo userInfo = new UserInfo();
-            userInfo.setWechatCode(request.getToUserName());
-            userInfo.setOpenid(request.getFromUserName());
-            userInfo.setTitle(title);
-            userInfo.setSalary(Integer.parseInt(salary));
-            userInfo.setCompany(company);
-
-            userInfoDao.save(userInfo);
+            // 看用户表中是否存在
+            UserInfo userInfo = userInfoDao.findByWechatCodeAndOpenid(request.getToUserName(), request.getFromUserName());
+            if (userInfo == null) {
+                userInfo = new UserInfo();
+                userInfo.setWechatCode(request.getToUserName());
+                userInfo.setOpenid(request.getFromUserName());
+                userInfo.setTitle(title);
+                userInfo.setSalary(Integer.parseInt(salary));
+                userInfo.setCompany(company);
+                userInfoDao.save(userInfo);
+            } else {
+                userInfo.setTitle(title);
+                userInfo.setSalary(Integer.parseInt(salary));
+                userInfo.setCompany(company);
+            }
 
             resultContent = "您的信息我们已经了解，请尽情使用吧！";
         }
