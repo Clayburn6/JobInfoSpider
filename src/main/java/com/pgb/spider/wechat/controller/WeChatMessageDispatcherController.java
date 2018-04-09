@@ -52,10 +52,14 @@ public class WeChatMessageDispatcherController {
         String result = "";
         switch (msgType) {
             case event: // 事件消息
+                logger.debug(result);
                 result = eventMessageService.dealWithEventMessage(requestBody);
+                logger.debug(result);
                 break;
             case text: // 文本消息
+                logger.debug(result);
                 result = textMessageService.dealWithText(requestBody);
+                logger.debug(result);
                 break;
             default: // 回复"success"
                 result = "success";
