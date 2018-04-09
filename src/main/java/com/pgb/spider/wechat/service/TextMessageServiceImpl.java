@@ -43,9 +43,8 @@ public class TextMessageServiceImpl implements TextMessageService {
         response.setMsgId(System.currentTimeMillis() + "");
 
         String content = request.getContent();
-        String resultContent = null;
         if (!content.matches("【.+】\\+【.+】\\+【.+】")) {
-            resultContent = Constant.SET_USERINFO;
+            response.setContent(Constant.SET_USERINFO);
         } else {
             // 解析content中的内容
             String[] strArray = content.split("\\+");
@@ -72,10 +71,9 @@ public class TextMessageServiceImpl implements TextMessageService {
                 userInfo.setSalary(Integer.parseInt(salary));
                 userInfo.setCompany(company);
             }
-
-            resultContent = "您的信息我们已经了解，请尽情使用吧！";
+            response.setContent("您的信息我们已经了解，请尽情使用吧！");
         }
-        response.setContent(resultContent);
+
 
         String result = JAXBUtils.marshal(response);
 
