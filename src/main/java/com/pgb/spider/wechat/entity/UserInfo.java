@@ -28,6 +28,16 @@ public class UserInfo implements Serializable {
     // 期望公司
     private String company;
 
+    private Boolean deleteFlag = false;
+
+    public Boolean getDeleteFlag() {
+        return deleteFlag;
+    }
+
+    public void setDeleteFlag(Boolean deleteFlag) {
+        this.deleteFlag = deleteFlag;
+    }
+
     public Integer getId() {
         return id;
     }

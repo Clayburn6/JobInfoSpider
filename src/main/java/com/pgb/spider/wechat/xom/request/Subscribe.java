@@ -46,6 +46,17 @@ public class Subscribe implements Serializable {
     @XmlElement(name = "Event")
     private String event;
 
+    @XmlTransient
+    private Boolean deleteFlag = false;
+
+    public Boolean getDeleteFlag() {
+        return deleteFlag;
+    }
+
+    public void setDeleteFlag(Boolean deleteFlag) {
+        this.deleteFlag = deleteFlag;
+    }
+
     public Integer getId() {
         return id;
     }
