@@ -17,12 +17,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.xml.sax.SAXException;
 
 import javax.xml.bind.JAXBException;
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.util.Date;
 
 @Service
 public class EventMessageServiceImpl implements EventMessageService {
@@ -97,7 +94,7 @@ public class EventMessageServiceImpl implements EventMessageService {
 
         subscribeDao.save(subscribe);
 
-        UserInfo userInfo = userInfoDao.findByWechatCodeAndOpenid(subscribe.getToUserName(), subscribe.getFromUserName());
+        UserInfo userInfo = userInfoDao.findByWechatCodeAndOpenidAndDeleteFlagFalse(subscribe.getToUserName(), subscribe.getFromUserName());
         userInfo.setDeleteFlag(true);
         logger.info("用户已逻辑删除删除， openid = " + subscribe.getFromUserName() + ", 微信号 = " + subscribe.getToUserName());
 
@@ -115,7 +112,7 @@ public class EventMessageServiceImpl implements EventMessageService {
 
         EventKey eventKey = EventKey.fromCode(menuClick.getEventKey());
 
-        UserInfo userInfo = userInfoDao.findByWechatCodeAndOpenid(menuClick.getToUserName(), menuClick.getFromUserName());
+        UserInfo userInfo = userInfoDao.findByWechatCodeAndOpenidAndDeleteFlagFalse(menuClick.getToUserName(), menuClick.getFromUserName());
 
         // 生成xml消息
         TextResponse response = new TextResponse();

@@ -57,7 +57,7 @@ public class TextMessageServiceImpl implements TextMessageService {
             logger.info("用户的信息为： title = " + title + ", salary = " + salary + ", company = " + company);
 
             // 看用户表中是否存在
-            UserInfo userInfo = userInfoDao.findByWechatCodeAndOpenid(request.getToUserName(), request.getFromUserName());
+            UserInfo userInfo = userInfoDao.findByWechatCodeAndOpenidAndDeleteFlagFalse(request.getToUserName(), request.getFromUserName());
             if (userInfo == null) {
                 userInfo = new UserInfo();
                 userInfo.setWechatCode(request.getToUserName());
