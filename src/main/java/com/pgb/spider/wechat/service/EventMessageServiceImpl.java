@@ -168,13 +168,13 @@ public class EventMessageServiceImpl implements EventMessageService {
         Integer pageIndex = random.nextInt() % totalPages + 1;
 
         List<JobItem> resultList = complexQueryDao.findJobItemList(title, money, company, pageIndex, 5);
-        StringBuilder sb = new StringBuilder("为您提供如下岗位的信息：");
+        StringBuilder sb = new StringBuilder("为您提供如下岗位的信息：\n");
 
         for (JobItem jobItem : resultList) {
-            sb.append("\n【职位名称】：\n" + jobItem.getTitle());
-            sb.append("\n【薪资待遇】：\n" + jobItem.getMoney());
-            sb.append("\n【招聘单位】：\n" + jobItem.getCompany());
-            sb.append("\n【岗位要求】：\n点击<a href=\"http://www.penggb.top/query/detail?id=" + jobItem.getId() + "\">这里</a>访问详情");
+            sb.append("\n【职位名称】\n" + jobItem.getTitle());
+            sb.append("\n【薪资待遇】\n" + jobItem.getMoney());
+            sb.append("\n【招聘单位】\n" + jobItem.getCompany());
+            sb.append("\n【岗位要求】\n点击<a href=\"http://www.penggb.top/query/detail?id=" + jobItem.getId() + "\">这里</a>访问详情");
             sb.append("\n");
         }
 
