@@ -3,37 +3,56 @@ package com.pgb.spider.web.dao;
 import com.pgb.spider.entity.JobItem;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
-import java.util.HashMap;
+import javax.persistence.Query;
+import java.math.BigInteger;
 import java.util.List;
-import java.util.Map;
 
+
+@Repository
 public class ComplexQueryDaoImpl implements ComplexQueryDao {
     @Autowired
     private EntityManager entityManager;
 
     @Override
     public List<JobItem> findJobItemList(String title, Integer money, String company, Integer pageIndex, Integer pageSize) {
-        StringBuilder sb = new StringBuilder("");
-        sb.append("from JobItem where 1 = 1 ");
-        Map<String, Object> map = new HashMap<String, Object>();
+
+        StringBuilder sql = new StringBuilder("select * from job_info where 1 = 1 ");
+
         if (StringUtils.isNotBlank(title)) {
-            sb.append(" and title like :title ");
-            map.put("title", "%" + title + "%");
+            sql.append(" and title like '%" + title + "%'");
         }
         if (money != null) {
-            sb.append(" and minMoney > :money and maxMoney < :money ");
-            map.put("money", money);
+            sql.append(" and min_money <= " + (money / 1000) + " and max_money >= " + (money / 1000));
         }
         if (StringUtils.isNotBlank(company)) {
-            sb.append(" and company like :company ");
-            map.put("company", "%" + company + "%");
+            sql.append(" and company like '%" + company + "%'");
         }
-        String hql = "select * " + sb.toString();
-        String countHql = "select count(*) " + sb.toString();
 
-        
-        return null;
+        sql.append(" limit " + (pageIndex - 1) + ", " + pageSize);
+
+        Query query = entityManager.createNativeQuery(sql.toString());
+        return query.getResultList();
+    }
+
+    @Override
+    public Integer countJobItem(String title, Integer money, String company) {
+        StringBuilder sql = new StringBuilder("select count(*) from job_info where 1 = 1 ");
+
+        if (StringUtils.isNotBlank(title)) {
+            sql.append(" and title like '%" + title + "%'");
+        }
+        if (money != null) {
+            sql.append(" and min_money <= " + (money / 1000) + " and max_money >= " + (money / 1000));
+        }
+        if (StringUtils.isNotBlank(company)) {
+            sql.append(" and company like '%" + company + "%'");
+        }
+
+        Query query = entityManager.createNativeQuery(sql.toString());
+
+        return ((BigInteger)query.getSingleResult()).intValue();
     }
 }

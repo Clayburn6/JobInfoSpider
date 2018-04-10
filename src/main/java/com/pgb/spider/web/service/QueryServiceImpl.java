@@ -1,11 +1,16 @@
 package com.pgb.spider.web.service;
 
 import com.pgb.spider.entity.JobItem;
+import com.pgb.spider.web.dao.ComplexQueryDao;
 import com.pgb.spider.web.dao.QueryDao;
+import com.pgb.spider.web.utils.Pagination;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+import org.springframework.core.convert.converter.Converter;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
+
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * @author Clayburn
@@ -18,9 +23,17 @@ public class QueryServiceImpl implements QueryService {
     @Autowired
     private QueryDao queryDao;
 
+    @Autowired
+    private ComplexQueryDao complexQueryDao;
+
     @Override
-    public Page<JobItem> query(String title, String money, String company, Integer pageIndex, Integer pageSize) {
-        return queryDao.getByTitleLikeAndCompanyLikeAndAndMoneyLike("%" + title + "%", "%" + company + "%", "%"+  money +"%", new PageRequest(pageIndex, pageSize));
+    public Pagination<JobItem> query(String title, Integer money, String company, Integer pageIndex, Integer pageSize) {
+        List<JobItem> jobItemList = complexQueryDao.findJobItemList(title, money, company, pageIndex, pageSize);
+        Integer count = complexQueryDao.countJobItem(title, money, company);
+
+        Pagination<JobItem> result = new Pagination<JobItem>(pageIndex, count % pageSize == 0 ? count / pageSize : count / pageSize + 1, pageSize, jobItemList);
+
+        return result;
     }
 
     @Override

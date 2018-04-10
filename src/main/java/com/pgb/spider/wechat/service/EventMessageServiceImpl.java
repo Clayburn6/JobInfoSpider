@@ -1,5 +1,6 @@
 package com.pgb.spider.wechat.service;
 
+import com.pgb.spider.web.dao.ComplexQueryDao;
 import com.pgb.spider.wechat.dao.SubscribeDao;
 import com.pgb.spider.wechat.dao.UserInfoDao;
 import com.pgb.spider.wechat.dom.DomUtils;
@@ -30,6 +31,9 @@ public class EventMessageServiceImpl implements EventMessageService {
 
     @Autowired
     private UserInfoDao userInfoDao;
+
+    @Autowired
+    private ComplexQueryDao complexQueryDao;
 
 
     @Override
@@ -145,7 +149,7 @@ public class EventMessageServiceImpl implements EventMessageService {
      * @return
      */
     private String findWork(String title, String money, String company) {
-
+        
 
         return null;
     }

@@ -2,6 +2,7 @@ package com.pgb.spider.web.controller;
 
 import com.pgb.spider.entity.JobItem;
 import com.pgb.spider.web.service.QueryService;
+import com.pgb.spider.web.utils.Pagination;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.MediaType;
@@ -22,7 +23,7 @@ public class QueryController {
     private QueryService queryService;
 
     @GetMapping(path = "/query")
-    public Page<JobItem> query(String title, String money, String company, Integer pageIndex, Integer pageSize) {
+    public Pagination<JobItem> query(String title, Integer money, String company, Integer pageIndex, Integer pageSize) {
         return queryService.query(title, money, company, pageIndex, pageSize);
     }
 

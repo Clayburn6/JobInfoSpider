@@ -5,7 +5,6 @@ import org.springframework.data.repository.NoRepositoryBean;
 
 import java.util.List;
 
-@NoRepositoryBean
 public interface ComplexQueryDao {
     /**
      * 条件查询职位信息
@@ -16,5 +15,8 @@ public interface ComplexQueryDao {
      * @param pageSize
      * @return
      */
-    public List<JobItem> findJobItemList(String title, Integer money, String company, Integer pageIndex, Integer pageSize);
+    List<JobItem> findJobItemList(String title, Integer money, String company, Integer pageIndex, Integer pageSize);
+
+
+    Integer countJobItem(String title, Integer money, String company);
 }
