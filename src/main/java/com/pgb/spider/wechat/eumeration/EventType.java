@@ -5,7 +5,8 @@ import org.apache.commons.lang.StringUtils;
 public enum EventType {
     subscribe("subscribe", "订阅事件"), // 订阅
     unsubscribe("unsubscribe", "取消订阅事件"), // 取消订阅
-    CLICK("CLICK", "自定义菜单事件");
+    CLICK("CLICK", "自定义菜单事件"),
+    VIEW("VIEW", "跳转网页");
 
     private String code;
     private String description;
