@@ -1,5 +1,6 @@
 package com.pgb.spider.wechat.service;
 
+import com.pgb.spider.entity.JobItem;
 import com.pgb.spider.web.dao.ComplexQueryDao;
 import com.pgb.spider.wechat.dao.SubscribeDao;
 import com.pgb.spider.wechat.dao.UserInfoDao;
@@ -21,6 +22,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
+import java.util.List;
+import java.util.Random;
 
 @Service
 public class EventMessageServiceImpl implements EventMessageService {
@@ -111,7 +114,7 @@ public class EventMessageServiceImpl implements EventMessageService {
      * @return
      * @throws JAXBException
      */
-    private String dealWithClick(String xml) throws JAXBException {
+    private String dealWithClick(String xml) throws JAXBException, IOException {
         MenuClick menuClick = JAXBUtils.unmarshal(xml, MenuClick.class);
 
         EventKey eventKey = EventKey.fromCode(menuClick.getEventKey());
@@ -129,16 +132,20 @@ public class EventMessageServiceImpl implements EventMessageService {
         if (userInfo == null) {
             logger.info("用户未设置个人信息，提示用户先设置个人信息");
             response.setContent(Constant.WARNING_SET_USERINFO);
+        } else {
+            switch (eventKey) {
+                case VPGB_Find_Work:
+                    response.setContent(findWork(userInfo.getTitle(), userInfo.getSalary(), userInfo.getCompany()));
+                    break;
+                case VPGB_Refresh_Work:
+                    response.setContent(freshWork(userInfo.getTitle(), userInfo.getSalary(), userInfo.getCompany()));
+                    break;
+                default:
+                    return "success";
+            }
         }
 
-        switch (eventKey) {
-            case VPGB_Find_Work:
-                return "success";
-            case VPGB_Refresh_Work:
-                return "success";
-            default:
-                return "success";
-        }
+        return JAXBUtils.marshal(response);
     }
 
     /**
@@ -148,10 +155,28 @@ public class EventMessageServiceImpl implements EventMessageService {
      * @param company
      * @return
      */
-    private String findWork(String title, String money, String company) {
-        
+    private String findWork(String title, Integer money, String company) {
+        Integer count = complexQueryDao.countJobItem(title, money, company);
+        // 求出总页数
+        Integer totalPages = count % 5 == 0 ? count / 10 : count / 10 + 1;
+        Random random = new Random(System.currentTimeMillis());
 
-        return null;
+        // 页码随机
+        Integer pageIndex = random.nextInt() % totalPages + 1;
+
+        List<JobItem> resultList = complexQueryDao.findJobItemList(title, money, company, pageIndex, 5);
+        StringBuilder sb = new StringBuilder("为您提供如下岗位的信息：");
+
+        for (JobItem jobItem : resultList) {
+            sb.append("【职位名称】：\n" + jobItem.getTitle());
+            sb.append("【薪资待遇】：\n" + jobItem.getMoney());
+            sb.append("【招聘单位】：\n" + jobItem.getCompany());
+            sb.append("【岗位要求】：\n详细请访问" + "www.penggb.top/query/detail?id=" + jobItem.getId());
+            sb.append("\n");
+        }
+
+
+        return sb.toString();
     }
 
     /**
@@ -161,8 +186,8 @@ public class EventMessageServiceImpl implements EventMessageService {
      * @param company
      * @return
      */
-    private String freshWork(String title, String money, String company) {
+    private String freshWork(String title, Integer money, String company) {
 
-        return null;
+        return findWork(title, money, company);
     }
 }
