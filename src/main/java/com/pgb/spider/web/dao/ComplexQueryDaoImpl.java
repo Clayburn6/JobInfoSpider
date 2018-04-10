@@ -33,7 +33,7 @@ public class ComplexQueryDaoImpl implements ComplexQueryDao {
 
         sql.append(" limit " + (pageIndex - 1) + ", " + pageSize);
 
-        Query query = entityManager.createNativeQuery(sql.toString());
+        Query query = entityManager.createNativeQuery(sql.toString(), JobItem.class);
         return query.getResultList();
     }
 

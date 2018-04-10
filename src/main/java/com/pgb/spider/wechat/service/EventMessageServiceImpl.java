@@ -157,6 +157,9 @@ public class EventMessageServiceImpl implements EventMessageService {
      */
     private String findWork(String title, Integer money, String company) {
         Integer count = complexQueryDao.countJobItem(title, money, company);
+        if (count == null || count == 0) {
+            return "暂时没有符合您条件的信息";
+        }
         // 求出总页数
         Integer totalPages = count % 5 == 0 ? count / 10 : count / 10 + 1;
         Random random = new Random(System.currentTimeMillis());

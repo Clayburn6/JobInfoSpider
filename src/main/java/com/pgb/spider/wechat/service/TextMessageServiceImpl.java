@@ -43,7 +43,7 @@ public class TextMessageServiceImpl implements TextMessageService {
         response.setMsgId(System.currentTimeMillis() + "");
 
         String content = request.getContent();
-        if (!content.matches("【.+】\\+【.+】\\+【.+】")) {
+        if (!content.matches("【.*】\\+【.*】\\+【.*】")) {
             response.setContent(Constant.SET_USERINFO);
         } else {
             // 解析content中的内容
