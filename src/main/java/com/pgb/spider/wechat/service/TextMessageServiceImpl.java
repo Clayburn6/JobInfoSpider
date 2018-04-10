@@ -63,7 +63,11 @@ public class TextMessageServiceImpl implements TextMessageService {
                 userInfo.setWechatCode(request.getToUserName());
                 userInfo.setOpenid(request.getFromUserName());
                 userInfo.setTitle(title);
-                userInfo.setSalary(Integer.parseInt(salary));
+                try {
+                    userInfo.setSalary(Integer.parseInt(salary));
+                } catch (Exception e) {
+                    userInfo.setSalary(null);
+                }
                 userInfo.setCompany(company);
                 userInfoDao.save(userInfo);
             } else {
