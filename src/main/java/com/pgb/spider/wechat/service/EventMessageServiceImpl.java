@@ -174,7 +174,7 @@ public class EventMessageServiceImpl implements EventMessageService {
             sb.append("\n【职位名称】\n" + jobItem.getTitle());
             sb.append("\n【薪资待遇】\n" + jobItem.getMoney());
             sb.append("\n【招聘单位】\n" + jobItem.getCompany());
-            sb.append("\n【岗位要求】\n点击<a href=\"http://penggb.top/query/detail?id=" + jobItem.getId() + "\">这里</a>访问详情");
+            sb.append("\n【岗位要求】\n点击<a href=\"http://penggb.top/detail.html?id=" + jobItem.getId() + "\">这里</a>访问详情");
             sb.append("\n");
         }
 
