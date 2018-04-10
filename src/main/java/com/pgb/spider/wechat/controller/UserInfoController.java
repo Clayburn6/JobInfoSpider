@@ -16,4 +16,9 @@ public class UserInfoController {
     public void setUserInfo(String title, Integer salary, String company ) {
         logger.info("{} + {} + {}", title, salary, company);
     }
+
+    @RequestMapping(value ="/wechat/getCode", method = RequestMethod.GET)
+    public void getWechatCode(String code) {
+        logger.info("{}", code);
+    }
 }
