@@ -16,4 +16,10 @@ public class Constant {
             "    用于设置您的个人信息。";
 
     public static final String WARNING_SET_USERINFO = "你还没有设置个人信息， 请点击个人中心设置您对为职位的要求，即可使用此公众号的功能。也可以编辑发送【职位名称】+【薪资要求】+【期望公司】来设置您的个人信息。设置好个人信息后，我们定期为您推送符合您要求的工作信息。";
+
+    public static final String appid = "wx2aab304f3597214c";
+
+    public static final String appsecret = "b5573b8c3563af835da6f2d784c3ce50";
+
+    public static final String redirect_uri = "http%3a%2f%2fpenggb.top%2fwechat%2fgetOpenid";
 }

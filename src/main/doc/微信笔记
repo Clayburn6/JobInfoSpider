@@ -1,1 +1,3 @@
 https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx2aab304f3597214c&redirect_uri=http%3a%2f%2fpenggb.top%2fuserinfo.html&response_type=code&scope=snsapi_base&state=test#wechat_redirect
+
+https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx2aab304f3597214c&redirect_uri=http%3a%2f%2fpenggb.top%2fwechat%2fgetCode&response_type=code&scope=snsapi_base&state=test#wechat_redirect
