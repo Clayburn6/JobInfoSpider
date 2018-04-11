@@ -43,13 +43,14 @@ public class UserInfoController {
                 if (cookie.getName().equals("openid")) {
                     String openid = cookie.getValue();
                     if (StringUtils.isNotBlank(openid)) {
+                        logger.info("再cookie中获取到openid = {}", openid);
                         response.sendRedirect("/userinfo.html");
                         return;
                     }
                 }
             }
         }
-
+        logger.info("再cookie中未找到openid，重定向请求微信服务器");
         // 没找到openid的cookie，重定向去请求微信服务器
         response.sendRedirect(UrlUtils.getCodeUrl());
     }
@@ -68,6 +69,8 @@ public class UserInfoController {
 
         JSONObject jsonObject = JSONObject.fromObject(jsonString);
         OpenIdResponse openIdResponse = (OpenIdResponse) JSONObject.toBean(jsonObject, OpenIdResponse.class);
+
+        logger.info("微信服务器响应内容是：\n{}", openIdResponse.toString());
 
         String openid = openIdResponse.getOpenid();
         Cookie cookie = new Cookie("openid", openid);
