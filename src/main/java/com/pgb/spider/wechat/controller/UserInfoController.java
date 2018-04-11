@@ -38,12 +38,14 @@ public class UserInfoController {
     public void setUserInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Cookie[] cookies= request.getCookies();
 
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("openid")) {
-                String openid = cookie.getValue();
-                if (StringUtils.isNotBlank(openid)) {
-                    response.sendRedirect("/userinfo.html");
-                    return;
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("openid")) {
+                    String openid = cookie.getValue();
+                    if (StringUtils.isNotBlank(openid)) {
+                        response.sendRedirect("/userinfo.html");
+                        return;
+                    }
                 }
             }
         }
