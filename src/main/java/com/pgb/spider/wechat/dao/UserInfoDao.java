@@ -11,4 +11,6 @@ public interface UserInfoDao extends JpaRepository<UserInfo, Integer> {
      * @return
      */
     UserInfo findByWechatCodeAndOpenidAndDeleteFlagFalse(String wechatCode, String openid);
+
+    UserInfo getByOpenidAndDeleteFlagFalse(String openid);
 }
