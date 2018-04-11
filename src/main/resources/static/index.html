@@ -9,15 +9,15 @@
 
     <script type="text/javascript">
 
-        $(function () {
-            //添加popstate事件
-            $(window).on("popstate", query_by_title_company_money);
-        });
+//        $(function () {
+//            //添加popstate事件
+//            $(window).on("popstate", query_by_title_company_money);
+//        });
 
         var totalPages = 0;
         var number = 1;
         var size = 10;
-        function query_by_title_company_money() {
+        function query_by_title_company_money(){
             var title = $("#job_title").val();
             var company = $("#job_company").val();
             var money = $("#job_money").val();
@@ -39,9 +39,11 @@
                         number = result.number;
                         size = result.size;
 
+                        /*
                         $("#position_list").each(function () {
-                            $(this).remove();
+                            $(this).empty();
                         })
+                        */
 
                         for (var i = 0; i < result.content.length; i++) {
                             var title = result.content[i].title;
@@ -57,21 +59,20 @@
                                 <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
                             </div>
                              */
-
                             var element_div_cell = document.createElement("div"); // 包围每个列表元素的
                             element_div_cell.setAttribute("class", "weui-media-box weui-media-box_text");
 
                             var element_h4_title = document.createElement("h4"); // 包围列表元素标题
                             element_h4_title.setAttribute("class", "weui-media-box__title");
-                            element_h4_title.innerHTML = title;
+                            element_h4_title.innerHTML = ''+ title ;
 
                             var element_p_req = document.createElement("p"); // 包围岗位要求的
                             element_p_req.setAttribute("class", "weui-media-box__desc")
-                            element_p_req.innerHTML = (degree + experience + money);
+                            element_p_req.innerHTML = '' + (degree + experience + money);
 
                             var element_p_company = document.createElement("p") // 包围招聘单位的
-                            element_p_req.setAttribute("class", "weui-media-box__desc")
-                            element_p_company.innerHTML = company;
+                            element_p_company.setAttribute("class", "weui-media-box__desc")
+                            element_p_company.innerHTML = '' + company;
 
                             element_div_cell.appendChild(element_h4_title);
                             element_div_cell.appendChild(element_p_req);
@@ -98,7 +99,7 @@
             var money = $("#job_money").val();
             history.pushState(null, "", location.href.split("?")[0] + "?title=" + title + "&company=" + company
                 + "&money=" + money + "&pageIndex=" + number + "&pageSize=" + size);
-            query_by_title_company_money()
+            query_by_title_company_money();
         }
         function prePage() {
             if (number - 1 < 0) {
@@ -111,7 +112,7 @@
             var money = $("#job_money").val();
             history.pushState(null, "", location.href.split("?")[0] + "?title=" + title + "&company=" + company
                 + "&money=" + money + "&pageIndex=" + number + "&pageSize=" + size);
-            query_by_title_company_money()
+            query_by_title_company_money();
         }
         
         function query() {
@@ -120,7 +121,7 @@
             var money = $("#job_money").val();
             history.pushState(null, "", location.href.split("?")[0] + "?title=" + title + "&company=" + company
                 + "&money=" + money + "&pageIndex=" + number + "&pageSize=" + size);
-            query_by_title_company_money()
+            query_by_title_company_money();
         }
 
         function jobDetail(id) {
@@ -129,7 +130,7 @@
 
         $(function(){
             var $searchBar = $('#searchBar'),
-                $searchCance = $('#searchCance'),
+                $searchCancel = $('#searchCance'),
                 $searchText = $('#searchText'),
                 $searchInput = $('#searchInput'),
                 $searchClear = $('#searchClear');
@@ -151,14 +152,13 @@
                 $searchInput.focus();
             });
 
-            $searchCance.on('click', function(){
+            $searchCancel.on('click', function(){
                 cancelSearch();
                 $searchInput.blur();
             });
         });
 
     </script>
-
 
 </head>
 <!-- onload="query_by_title_company_money() -->
@@ -184,20 +184,17 @@
         <div class="weui-panel weui-panel_access">
             <div class="weui-panel__bd">
                 <div id = "position_list">
+                    <!--
                     <div class="weui-media-box weui-media-box_text">
                         <h4 class="weui-media-box__title">标题一</h4>
                         <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
                         <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
                     </div>
-                    <div class="weui-media-box weui-media-box_text">
-                        <h4 class="weui-media-box__title">标题二</h4>
-                        <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
-                        <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
-                    </div>
+                    -->
                 </div>
 
                 <div class="weui-panel__ft">
-                    <a href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
+                    <a href="javascript:void(0);" onclick="nextPage()" class="weui-cell weui-cell_access weui-cell_link">
                         <div class="weui-cell__bd">查看更多</div>
                         <span class="weui-cell__ft"></span>
                     </a>
