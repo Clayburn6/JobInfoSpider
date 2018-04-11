@@ -6,7 +6,9 @@
     <title>职位列表</title>
     <link rel="stylesheet" href="./css/weui.css"/>
     <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+
     <script type="text/javascript">
+
         $(function () {
             //添加popstate事件
             $(window).on("popstate", query_by_title_company_money);
@@ -64,16 +66,18 @@
                             element_h4_title.innerHTML = title;
 
                             var element_p_req = document.createElement("p"); // 包围岗位要求的
+                            element_p_req.setAttribute("class", "weui-media-box__desc")
                             element_p_req.innerHTML = (degree + experience + money);
 
                             var element_p_company = document.createElement("p") // 包围招聘单位的
+                            element_p_req.setAttribute("class", "weui-media-box__desc")
                             element_p_company.innerHTML = company;
 
                             element_div_cell.appendChild(element_h4_title);
                             element_div_cell.appendChild(element_p_req);
                             element_div_cell.appendChild(element_p_company);
 
-                            $("#position_list").appendChild(element_div_cell);
+                            $("#position_list").append(element_div_cell);
 
                         }
                     },
@@ -152,10 +156,13 @@
                 $searchInput.blur();
             });
         });
+
     </script>
+
+
 </head>
 <!-- onload="query_by_title_company_money() -->
-<body nontouchstart onload="query_by_title_company_money()">
+<body nontouchstart >
 <div class="page">
     <div class="page__bd">
         <div class="weui-search-bar" id="searchBar">
@@ -175,41 +182,18 @@
 
 
         <div class="weui-panel weui-panel_access">
-            <div class="weui-panel__bd" id = "position_list">
-                <div class="weui-media-box weui-media-box_text">
-                    <h4 class="weui-media-box__title">标题一</h4>
-                    <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
-                    <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
-                </div>
-                <div class="weui-media-box weui-media-box_text">
-                    <h4 class="weui-media-box__title">标题二</h4>
-                    <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
-                    <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
-                </div>
-                <div class="weui-media-box weui-media-box_text">
-                    <h4 class="weui-media-box__title">标题二</h4>
-                    <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
-                    <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
-                </div>
-                <div class="weui-media-box weui-media-box_text">
-                    <h4 class="weui-media-box__title">标题二</h4>
-                    <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
-                    <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
-                </div>
-                <div class="weui-media-box weui-media-box_text">
-                    <h4 class="weui-media-box__title">标题二</h4>
-                    <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
-                    <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
-                </div>
-                <div class="weui-media-box weui-media-box_text">
-                    <h4 class="weui-media-box__title">标题二</h4>
-                    <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
-                    <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
-                </div>
-                <div class="weui-media-box weui-media-box_text">
-                    <h4 class="weui-media-box__title">标题二</h4>
-                    <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
-                    <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+            <div class="weui-panel__bd">
+                <div id = "position_list">
+                    <div class="weui-media-box weui-media-box_text">
+                        <h4 class="weui-media-box__title">标题一</h4>
+                        <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                        <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                    </div>
+                    <div class="weui-media-box weui-media-box_text">
+                        <h4 class="weui-media-box__title">标题二</h4>
+                        <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                        <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                    </div>
                 </div>
 
                 <div class="weui-panel__ft">
