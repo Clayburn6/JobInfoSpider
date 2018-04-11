@@ -21,11 +21,11 @@ public class QueryController {
 
     @GetMapping(path = "/query")
     public Pagination<JobItem> query(@RequestParam(name = "title", required = false) String title,
-                                     @RequestParam(name = "money", required = false) Integer money,
+                                     @RequestParam(name = "money", required = false) String money,
                                      @RequestParam(name = "company", required = false) String company,
                                      @RequestParam(name = "pageIndex", defaultValue = "1") Integer pageIndex,
                                      @RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize) {
-        return queryService.query(title, money, company, pageIndex, pageSize);
+        return queryService.query(title, null, company, pageIndex, pageSize);
     }
 
     @GetMapping(path = "/detail")
