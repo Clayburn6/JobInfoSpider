@@ -25,7 +25,7 @@ public class QueryController {
                                      @RequestParam(name = "company", required = false) String company,
                                      @RequestParam(name = "pageIndex", defaultValue = "1") Integer pageIndex,
                                      @RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize) {
-        return queryService.query(title, null, company, pageIndex, pageSize);
+        return queryService.query(null, null, null, pageIndex, pageSize);
     }
 
     @GetMapping(path = "/detail")
