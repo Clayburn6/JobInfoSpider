@@ -69,6 +69,12 @@ public class EventMessageServiceImpl implements EventMessageService {
         Subscribe subscribe = JAXBUtils.unmarshal(xml, Subscribe.class);
         logger.info("持久化订阅消息, 内容：\n" + subscribe.toString());
         subscribeDao.save(subscribe);
+        // 在userInfo中也添加这个表
+        UserInfo userInfo = new UserInfo();
+        userInfo.setWechatCode(subscribe.getToUserName());
+        userInfo.setOpenid(subscribe.getFromUserName());
+        userInfoDao.save(userInfo);
+
         // 生成xml消息
         TextResponse response = new TextResponse();
         response.setToUserName(subscribe.getFromUserName());
