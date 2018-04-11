@@ -6,10 +6,7 @@ import com.pgb.spider.web.utils.Pagination;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author Clayburn
@@ -23,7 +20,11 @@ public class QueryController {
     private QueryService queryService;
 
     @GetMapping(path = "/query")
-    public Pagination<JobItem> query(String title, Integer money, String company, Integer pageIndex, Integer pageSize) {
+    public Pagination<JobItem> query(@RequestParam(name = "title", required = false) String title,
+                                     @RequestParam(name = "money", required = false) Integer money,
+                                     @RequestParam(name = "company", required = false) String company,
+                                     @RequestParam(name = "pageIndex", defaultValue = "1") Integer pageIndex,
+                                     @RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize) {
         return queryService.query(title, money, company, pageIndex, pageSize);
     }
 
