@@ -2,7 +2,7 @@ package com.pgb.spider.wechat.eumeration;
 
 public class UrlUtils {
     public static String getCodeUrl() {
-        return "https://open.weixin.qq.com/connect/oauth2/authorize?" + Constant.appid + "&redirect_uri=" +
+        return "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + Constant.appid + "&redirect_uri=" +
                 Constant.redirect_uri + "&response_type=code&scope=snsapi_base&state=test#wechat_redirect";
     }
 
