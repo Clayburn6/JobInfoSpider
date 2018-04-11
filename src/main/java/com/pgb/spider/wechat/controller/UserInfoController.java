@@ -34,7 +34,7 @@ public class UserInfoController {
         然后获取到了openid设置cookie，再重定向到userinfo.html
      */
 
-    @RequestMapping(value = "/wechat/setUserInfo", method = RequestMethod.POST)
+    @RequestMapping(value = "/wechat/setUserInfo", method = RequestMethod.GET)
     public void setUserInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Cookie[] cookies= request.getCookies();
 
