@@ -136,7 +136,7 @@ public class EventMessageServiceImpl implements EventMessageService {
         response.setMsgType(MsgType.text.getCode());
         response.setMsgId(System.currentTimeMillis() + "");
 
-        if (userInfo == null && StringUtils.isBlank(userInfo.getTitle())) {
+        if (userInfo == null || StringUtils.isBlank(userInfo.getTitle())) {
             logger.info("用户未设置个人信息，提示用户先设置个人信息");
             response.setContent(Constant.WARNING_SET_USERINFO);
         } else {
