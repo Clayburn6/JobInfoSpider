@@ -14,6 +14,7 @@ import com.pgb.spider.wechat.xom.JAXBUtils;
 import com.pgb.spider.wechat.xom.request.MenuClick;
 import com.pgb.spider.wechat.xom.request.Subscribe;
 import com.pgb.spider.wechat.xom.response.TextResponse;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -135,16 +136,13 @@ public class EventMessageServiceImpl implements EventMessageService {
         response.setMsgType(MsgType.text.getCode());
         response.setMsgId(System.currentTimeMillis() + "");
 
-        if (userInfo == null) {
+        if (userInfo == null && StringUtils.isBlank(userInfo.getTitle())) {
             logger.info("用户未设置个人信息，提示用户先设置个人信息");
             response.setContent(Constant.WARNING_SET_USERINFO);
         } else {
             switch (eventKey) {
                 case VPGB_Find_Work:
                     response.setContent(findWork(userInfo.getTitle(), userInfo.getSalary(), userInfo.getCompany()));
-                    break;
-                case VPGB_Refresh_Work:
-                    response.setContent(freshWork(userInfo.getTitle(), userInfo.getSalary(), userInfo.getCompany()));
                     break;
                 default:
                     return "success";
@@ -186,17 +184,5 @@ public class EventMessageServiceImpl implements EventMessageService {
 
 
         return sb.toString();
-    }
-
-    /**
-     * 处理自定义菜单里面“换一批“按钮”，查询符合条件的数据，并编辑成xml返回给微信服务器
-     * @param title
-     * @param money
-     * @param company
-     * @return
-     */
-    private String freshWork(String title, Integer money, String company) {
-
-        return findWork(title, money, company);
     }
 }
