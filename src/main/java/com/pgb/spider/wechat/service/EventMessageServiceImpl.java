@@ -171,7 +171,7 @@ public class EventMessageServiceImpl implements EventMessageService {
         Random random = new Random(System.currentTimeMillis());
 
         // 页码随机
-        Integer pageIndex = random.nextInt() % totalPages + 1;
+        Integer pageIndex = random.nextInt(totalPages) + 1;
 
         List<JobItem> resultList = complexQueryDao.findJobItemList(title, money, company, pageIndex, 5);
         StringBuilder sb = new StringBuilder("为您提供如下岗位的信息：\n");
