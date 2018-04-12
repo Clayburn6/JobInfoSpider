@@ -20,10 +20,18 @@
         
 
         function query_by_title_company_money(){
-            var searchValue = $("#searchInput").val();
-            console.log(searchValue);
+            var url = window.location.href;
+            var ajaxUrl = "http://penggb.top/query/query";
+
+            // 如果存在参数
+            if (url.split("?")[1]) {
+                ajaxUrl = ajaxUrl + "?" + url.split("?")[1] + "&pageIndex=" + number + "&pageSize=" + size;
+            } else {
+                ajaxUrl = ajaxUrl + "?"+ "pageIndex=" + number + "&pageSize=" + size;
+            }
+
             $.ajax({
-                url: "http://localhost/query/query?searchValue=" + searchValue,
+                url: ajaxUrl,
                 type: "get",
                 dataType: "json",
                 success: function (result) {
@@ -47,6 +55,7 @@
                          */
                         var element_div_cell = document.createElement("div"); // 包围每个列表元素的
                         element_div_cell.setAttribute("class", "weui-media-box weui-media-box_text");
+                        element_div_cell.setAttribute("onclick", "jobDetail(" + result.content[i].id + ")");
 
                         var element_h4_title = document.createElement("h4"); // 包围列表元素标题
                         element_h4_title.setAttribute("class", "weui-media-box__title");
@@ -80,12 +89,12 @@
             } else {
                 number = number + 1;
             }
-            var title = $("#job_title").val();
-            var company = $("#job_company").val();
-            var money = $("#job_money").val();
-            history.pushState(null, "", location.href.split("?")[0] + "?title=" + title + "&company=" + company
-                + "&money=" + money + "&pageIndex=" + number + "&pageSize=" + size);
+
             query_by_title_company_money();
+        }
+
+        function  jobDetail(id) {
+            window.location.href = "http://penggb.top/detail.html?id=" + id;
         }
 
 
@@ -119,10 +128,6 @@
                 cancelSearch();
                 $searchInput.blur();
             });
-            
-            $search.on('click', function () {
-                
-            })
         });
 
     </script>
@@ -133,7 +138,7 @@
 <div class="page">
     <div class="page__bd">
         <div class="weui-search-bar" id="searchBar">
-            <div class="weui-search-bar__form" onsubmit="query_by_title_company_money()" >
+            <form class="weui-search-bar__form" action="http://penggb.top/index.html">
                 <div class="weui-search-bar__box">
                     <i class="weui-icon-search"></i>
                     <input type="search" class="weui-search-bar__input" id="searchInput" name="searchValue" placeholder="搜索" required/>
@@ -143,9 +148,8 @@
                     <i class="weui-icon-search"></i>
                     <span>职位 薪水 公司</span>
                 </label>
-            </div>
+            </form>
             <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
-            <a href="javascript:" class="weui-search-bar__cancel-btn" id="search">搜索</a>
         </div>
 
 
@@ -153,7 +157,7 @@
             <div class="weui-panel__bd">
                 <div id = "position_list">
                     <!--
-                    <div class="weui-media-box weui-media-box_text">
+                    <div class="weui-media-box weui-media-box_text" onclick="jobDetail(666)">
                         <h4 class="weui-media-box__title">标题一</h4>
                         <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
                         <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>

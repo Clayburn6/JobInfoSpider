@@ -49,6 +49,18 @@ public class LagouStore implements IStore {
         Elements tabInnerBox = doc.select("#job_detail").select("dd");
         String desc = tabInnerBox.text();
 
+        String jobAdvantage = "";
+        String jobBt = "";
+        String jobAdress = "";
+
+        if (tabInnerBox.size() >= 3) {
+            jobAdvantage = tabInnerBox.get(0).select("p").text();
+            jobBt = tabInnerBox.get(1).select("p").text();
+            jobAdress = tabInnerBox.get(2).select("a").text();
+            jobAdress = jobAdress.replace("查看地图", "");
+        }
+
+
         JobItem jobItem = new JobItem();
         jobItem.setTitle(title);
         jobItem.setCompany(company);
@@ -60,7 +72,9 @@ public class LagouStore implements IStore {
         jobItem.setType(type);
         jobItem.setUrl(response.getTask().getUrl());
         jobItem.setFromWhere("Lagou");
-        System.out.println(jobItem);
+        jobItem.setJobAdvantage(jobAdvantage);
+        jobItem.setJobBt(jobBt);
+        jobItem.setJobAddress(jobAdress);
 
         // 设置薪资范围
         money = money.toLowerCase();

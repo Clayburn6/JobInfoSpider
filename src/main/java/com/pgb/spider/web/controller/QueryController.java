@@ -35,9 +35,23 @@ public class QueryController {
 
         if (StringUtils.isNotBlank(searchValue)) {
             String[] strArray = searchValue.split("\\s");
+            if (strArray.length == 1) {
+                title = strArray[0];
+            } else if (strArray.length == 2) {
+                title = strArray[0];
+                try {
+                    money = Integer.parseInt(strArray[1]);
+                } catch (Exception e) {
+                    company = strArray[1];
+                }
+            }
             if (strArray.length == 3) {
                 title = strArray[0];
-                money = Integer.parseInt(strArray[1]);
+                try {
+                    money = Integer.parseInt(strArray[1]);
+                } catch (Exception e) {
+                    money = null;
+                }
                 company = strArray[2];
             }
         }

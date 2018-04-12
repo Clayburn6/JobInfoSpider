@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>职位详情</title>
-    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
     <script type = "text/javascript">
         var loc = location.href;
         var n1 = loc.length;//地址的总长度
@@ -14,6 +15,45 @@
             type: "get",
             dataType: "json",
             success: function (result) {
+                var h2 = document.createElement("h2");
+                h2.innerHTML = result.title;
+                $("#position_detail").append(h2);
+
+                var h5 = document.createElement("h5");
+                h5.innerHTML = result.money + result.place + result.experience + result.degree + result.type;
+                $("#position_detail").append(h5);
+
+                var h3_advantage = document.createElement("h3");
+                h3_advantage.innerHTML = '职位诱惑：';
+                $("#position_detail").append(h3_advantage);
+
+                var p_advantage = document.createElement("p");
+                p_advantage.innerHTML = result.jobAdvantage;
+                $("#position_detail").append(p_advantage);
+
+                var h3_bt = document.createElement("h3");
+                h3_bt.innerHTML = '职位描述：';
+                $("#position_detail").append(h3_bt);
+
+                var bt = result.jobBt + '';
+                var strArray = bt.split(/\s+/g);
+                for (var i = 0; i < strArray.length; i++) {
+                    var p = document.createElement("p");
+                    p.innerHTML = strArray[i];
+                    $("#position_detail").append(p);
+                }
+
+                var h3_address = document.createElement("h3");
+                h3_address.innerHTML = '工作地址：';
+                $("#position_detail").append(h3_address);
+
+                var p_address = document.createElement("p");
+                p_address.innerHTML = result.jobAddress;
+                $('#position_detail').append(p_address);
+
+                $("#job_url").attr("href", result.url);
+
+                /*
                 $("#job_title").text(result.title);
                 $("#job_company").text(result.company);
                 $("#job_type").text(result.type);
@@ -22,10 +62,15 @@
                 $("#job_place").text(result.place);
 
                 var desc = result.desc + "";
-                console.log(desc);
+                var strArray = desc.split("");
+                console.log(strArray.length);
+                for (var i = 0; i < strArray.length; i++) {
+                    console.log(strArray[i]);
+                }
                 desc = desc.replace(/\s+/g, "<br/>");
                 $("#job_desc").html(desc);
                 $("#job_url").attr("href", result.url);
+                */
             },
             error: function (result) {
                 alert("数据加载失败");
@@ -34,13 +79,10 @@
     </script>
 </head>
 <body>
-<label>职位名称：</label><span id="job_title"></span><br>
-<label>所属公司：</label><span id="job_company"></span><br>
-<label>任职类型：</label><span id="job_type"></span><br>
-<label>经验要求：</label><span id="job_experience"></span><br>
-<label>薪资待遇：</label><span id="job_money"></span><br>
-<label>工作地点：</label><span id="job_place"></span><br>
-<label>职位描述：</label><p id="job_desc"></p><br>
+<div id="position_detail">
+
+
+</div>
 <label>原网页地址：</label><a id="job_url" href="">点我访问拉钩网原网页</a><br>
 </body>
 </html>

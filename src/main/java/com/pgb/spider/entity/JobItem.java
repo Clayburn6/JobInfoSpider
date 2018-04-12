@@ -41,6 +41,37 @@ public class JobItem {
     private String url;
     @Column(name = "from_where")
     private String fromWhere;
+    @Column(name = "job_advantage")
+    private String jobAdvantage; // 职位诱惑
+    @Lob
+    @Column(name = "job_bt", length = 16777215)
+    private String jobBt; // 岗位职责
+    @Column(name = "job_address")
+    private String jobAddress;
+
+    public String getJobAdvantage() {
+        return jobAdvantage;
+    }
+
+    public void setJobAdvantage(String jobAdvantage) {
+        this.jobAdvantage = jobAdvantage;
+    }
+
+    public String getJobBt() {
+        return jobBt;
+    }
+
+    public void setJobBt(String jobBt) {
+        this.jobBt = jobBt;
+    }
+
+    public String getJobAddress() {
+        return jobAddress;
+    }
+
+    public void setJobAddress(String jobAddress) {
+        this.jobAddress = jobAddress;
+    }
 
     public Integer getMaxMoney() {
         return maxMoney;
