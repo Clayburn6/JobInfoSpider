@@ -1,9 +1,6 @@
 package com.pgb.spider.wechat.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -18,8 +15,10 @@ public class Collect implements Serializable{
     @GeneratedValue
     private Integer id;
 
+    @Column(name = "openid")
     private String openid;
 
+    @Column(name = "job_id")
     private Integer jobId;
 
     public Integer getId() {
