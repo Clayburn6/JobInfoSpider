@@ -143,6 +143,6 @@ public class UserInfoController {
         }
 
 
-        return userInfoDao.getByOpenidAndDeleteFlagFalse(openid);
+        return  userInfoDao.getByOpenidAndDeleteFlagFalse(openid);
     }
 }
