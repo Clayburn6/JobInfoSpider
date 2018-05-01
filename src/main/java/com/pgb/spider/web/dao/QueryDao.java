@@ -6,6 +6,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @author Clayburn
  * @date : 2018/2/8 12:08
@@ -16,4 +18,6 @@ public interface QueryDao extends JpaRepository<JobItem, Integer> {
                                                               String company, String money, Pageable pageable);
 
     JobItem getById(Integer id);
+
+    List<JobItem> getByIdIn(List<Integer> ids);
 }

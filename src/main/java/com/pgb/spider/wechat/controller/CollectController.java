@@ -1,5 +1,6 @@
 package com.pgb.spider.wechat.controller;
 
+import com.pgb.spider.entity.JobItem;
 import com.pgb.spider.wechat.service.CollectService;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -13,6 +14,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * @author Clayburn
@@ -90,5 +92,20 @@ public class CollectController {
         }
 
         return collectService.checkCollect(openid, jobId);
+    }
+
+    @RequestMapping(path = "/getCollect", method = RequestMethod.GET)
+    public List<JobItem> getCollect(HttpServletRequest request, HttpServletResponse response) {
+        Cookie[] cookies= request.getCookies();
+        String openid = null;
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("openid")) {
+                    openid = cookie.getValue();
+                }
+            }
+        }
+
+        return collectService.getCollect(openid);
     }
 }

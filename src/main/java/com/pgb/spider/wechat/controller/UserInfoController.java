@@ -128,4 +128,21 @@ public class UserInfoController {
 
         setUserInfo(request, response);
     }
+
+    @RequestMapping(value = "/wechat/getUserInfo", method = RequestMethod.GET)
+    @Transactional
+    public UserInfo getUserInfo(HttpServletRequest request, HttpServletResponse response) {
+        Cookie[] cookies= request.getCookies();
+        String openid = null;
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("openid")) {
+                    openid = cookie.getValue();
+                }
+            }
+        }
+
+
+        return userInfoDao.getByOpenidAndDeleteFlagFalse(openid);
+    }
 }

@@ -1,11 +1,16 @@
 package com.pgb.spider.wechat.service;
 
+import com.pgb.spider.entity.JobItem;
+import com.pgb.spider.web.dao.QueryDao;
+import com.pgb.spider.web.utils.Pagination;
 import com.pgb.spider.wechat.dao.CollectDao;
 import com.pgb.spider.wechat.entity.Collect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -18,6 +23,9 @@ import java.util.List;
 public class CollectServiceImpl implements CollectService {
     @Autowired
     private CollectDao collectDao;
+
+    @Autowired
+    private QueryDao queryDao;
 
 
     @Override
@@ -58,5 +66,25 @@ public class CollectServiceImpl implements CollectService {
             }
         }
         return false;
+    }
+
+    @Override
+    public List<JobItem> getCollect(String openid) {
+        List<Collect> collects = collectDao.findAllByOpenid(openid);
+
+        if (collects == null || collects.isEmpty()) {
+            return Collections.EMPTY_LIST;
+        }
+
+        List<Integer> jobIds = new ArrayList<Integer>();
+        for (Collect collect : collects) {
+            jobIds.add(collect.getJobId());
+        }
+
+        List<JobItem> jobItems = queryDao.getByIdIn(jobIds);
+        if (jobItems == null || jobItems.isEmpty()) {
+            return Collections.EMPTY_LIST;
+        }
+        return jobItems;
     }
 }

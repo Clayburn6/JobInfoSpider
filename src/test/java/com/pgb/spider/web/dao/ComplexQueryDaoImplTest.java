@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -40,6 +41,17 @@ public class ComplexQueryDaoImplTest {
         Integer i = complexQueryDao.countJobItem("Java开发工程师", 8000, "");
 
         Assert.assertNotNull(i);
+    }
+
+    @Test
+    public void idsIn() {
+        List<Integer> ids = new ArrayList<>();
+        ids.add(7);
+        ids.add(8);
+        ids.add(9);
+        List<JobItem> jobItems = queryDao.getByIdIn(ids);
+        Assert.assertNotNull(jobItems);
+        Assert.assertTrue(jobItems.size() == 3);
     }
 
 }
