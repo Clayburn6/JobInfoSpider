@@ -10,6 +10,7 @@
         var n1 = loc.length;//地址的总长度
         var n2 = loc.indexOf("=");//取得=号的位置
         var id = loc.substr(n2+1, n1-n2);//从=号后面的内容
+        var collectFlag = true;
         $.ajax({
             url: "http://penggb.top/query/detail?id=" + id,
             type: "get",
@@ -76,6 +77,36 @@
                 alert("数据加载失败");
             }
         });
+
+        $.ajax({ // 判断该职位是否已经收藏
+            url: "http://penggb.top/checkCollect?id=" + id,
+            type: "get",
+            dataType: "json",
+            success: function (result) {
+                if (result == "true") {
+                    collectFlag = true;
+                    $("#collect").innerHTML="取消收藏";
+                } else {
+                    collectFlag = false;
+                    $("#collect").innerHTML="点击收藏";
+                }
+            }
+        });
+
+        $("#collect").on("click", function () {
+            $.ajax({
+                url: "http://penggb.top/query/detail?id=" + id,
+                type: "get",
+                dataType: "json",
+                success: function (result) {
+
+                },
+                error: function (result) {
+                    alert("数据加载失败");
+                }
+            });
+            $("#collect").innerHTML="取消收藏";
+        })
     </script>
 </head>
 <body>
@@ -83,6 +114,6 @@
 
 
 </div>
-<label>原网页地址：</label><a id="job_url" href="">点我访问拉钩网原网页</a><br>
+<label>原网页地址：</label><a id="job_url" href="">点我访问拉钩网原网页</a>&nbsp;&nbsp;<a id="collect" href=""></a><br>
 </body>
 </html>
