@@ -11,7 +11,6 @@
         var n2 = loc.indexOf("=");//取得=号的位置
         var id = loc.substr(n2+1, n1-n2);//从=号后面的内容
         var collectFlag = true;
-        /*
         $.ajax({
             url: "http://penggb.top/query/detail?id=" + id,
             type: "get",
@@ -74,7 +73,6 @@
                 }
             }
         });
-        */
 
         function  collect() {
             if (collectFlag) { // 取消收藏
