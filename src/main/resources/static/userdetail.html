@@ -12,6 +12,7 @@
             type: "get",
             dataType: "json",
             success: function (result) {
+                console.log("请求个人信息成功")
                 $("job_title").html(result.title);
                 $("job_salary").html(result.salary);
                 $("job_company").html(result.company);
@@ -26,6 +27,8 @@
             type: "get",
             dataType: "json",
             success: function (result) {
+                console.log("请求我的收藏成功")
+
                 for (var i = 0; i < result.length; i++) {
                     var title = result[i].title;
                     var money = result[i].money;
@@ -35,7 +38,7 @@
 
                     var element_div_cell = document.createElement("div"); // 包围每个列表元素的
                     element_div_cell.setAttribute("class", "weui-media-box weui-media-box_text");
-                    element_div_cell.setAttribute("onclick", "jobDetail(" + result.content[i].id + ")");
+                    element_div_cell.setAttribute("onclick", "jobDetail(" + result[i].id + ")");
 
                     var element_h4_title = document.createElement("h4"); // 包围列表元素标题
                     element_h4_title.setAttribute("class", "weui-media-box__title");
@@ -89,7 +92,7 @@
             </div>
 
             <div class="weui-btn-area">
-                <a class="weui-btn weui-btn_primary" href="javascript:document.userinfo.submit();" id="showTooltips">确定</a>
+                <a class="weui-btn weui-btn_primary" href="" id="showTooltips">修改职位要求</a>
             </div>
         </div>
 
