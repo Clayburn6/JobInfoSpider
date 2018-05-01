@@ -59,7 +59,7 @@ public class UserInfoController {
                     String openid = cookie.getValue();
                     if (StringUtils.isNotBlank(openid)) {
                         logger.info("在cookie中获取到openid = {}", openid);
-                        response.sendRedirect("/userinfo.html");
+                        response.sendRedirect("/userdetail.html");
                         return;
                     }
                 }
@@ -100,7 +100,7 @@ public class UserInfoController {
         cookie.setPath("/");
         cookie.setMaxAge(30*24*60*60); // 一个月
         response.addCookie(cookie);
-        response.sendRedirect("/userinfo.html");
+        response.sendRedirect("/userdetail.html");
     }
 
     @Transactional
