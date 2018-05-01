@@ -119,7 +119,7 @@ public class UserInfoController {
                         userInfo.setTitle(title);
                         userInfo.setSalary(salary);
                         userInfo.setCompany(company);
-
+                        response.sendRedirect("/success.html");
                         return;
                     }
                 }
