@@ -53,25 +53,6 @@
                 $('#position_detail').append(p_address);
 
                 $("#job_url").attr("href", result.url);
-
-                /*
-                $("#job_title").text(result.title);
-                $("#job_company").text(result.company);
-                $("#job_type").text(result.type);
-                $("#job_experience").text(result.experience);
-                $("#job_money").text(result.money);
-                $("#job_place").text(result.place);
-
-                var desc = result.desc + "";
-                var strArray = desc.split("");
-                console.log(strArray.length);
-                for (var i = 0; i < strArray.length; i++) {
-                    console.log(strArray[i]);
-                }
-                desc = desc.replace(/\s+/g, "<br/>");
-                $("#job_desc").html(desc);
-                $("#job_url").attr("href", result.url);
-                */
             },
             error: function (result) {
                 alert("数据加载失败");
@@ -79,23 +60,23 @@
         });
 
         $.ajax({ // 判断该职位是否已经收藏
-            url: "http://penggb.top/checkCollect?id=" + id,
+            url: "http://penggb.top/checkCollect?jobId=" + id,
             type: "get",
             dataType: "json",
             success: function (result) {
                 if (result == "true") {
                     collectFlag = true;
-                    $("#collect").innerHTML="取消收藏";
+                    $("#collect").html("取消收藏");
                 } else {
                     collectFlag = false;
-                    $("#collect").innerHTML="点击收藏";
+                    $("#collect").html("点击收藏");
                 }
             }
         });
 
         $("#collect").on("click", function () {
             $.ajax({
-                url: "http://penggb.top/query/detail?id=" + id,
+                url: "http://penggb.top/query/detail?jobId=" + id,
                 type: "get",
                 dataType: "json",
                 success: function (result) {
