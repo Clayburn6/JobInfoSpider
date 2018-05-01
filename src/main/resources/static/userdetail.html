@@ -13,9 +13,9 @@
             dataType: "json",
             success: function (result) {
                 console.log("请求个人信息成功")
-                $("job_title").html(result.title);
-                $("job_salary").html(result.salary);
-                $("job_company").html(result.company);
+                document.getElementById("job_title").innerHTML = result.title;
+                document.getElementById("job_salary").innerHTML = result.salary;
+                document.getElementById("job_company").innerHTML = result.company;
             },
             error: function (data) {
                 console.log("数据加载失败");
