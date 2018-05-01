@@ -75,18 +75,35 @@
         });
 
         $("#collect").on("click", function () {
-            $.ajax({
-                url: "http://penggb.top/query/detail?jobId=" + id,
-                type: "get",
-                dataType: "json",
-                success: function (result) {
+            if (collectFlag) { // 取消收藏
+                $.ajax({
+                    url: "http://penggb.top/collect?jobId=" + id,
+                    type: "get",
+                    dataType: "json",
+                    success: function (result) {
+                        $("#collect").html("点击收藏");
+                    },
+                    error: function (result) {
+                        console.log("ajax请求异常");
+                    }
+                });
 
-                },
-                error: function (result) {
-                    alert("数据加载失败");
-                }
-            });
-            $("#collect").innerHTML="取消收藏";
+            } else { // 添加收藏
+                $.ajax({
+                    url: "http://penggb.top/collect?jobId=" + id,
+                    type: "get",
+                    dataType: "json",
+                    success: function (result) {
+                        $("#collect").html("点击收藏");
+                    },
+                    error: function (result) {
+                        console.log("数据加载失败");
+                    }
+                });
+
+            }
+
+
         })
     </script>
 </head>
