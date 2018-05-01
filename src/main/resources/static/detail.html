@@ -77,7 +77,7 @@
         function  collect() {
             if (collectFlag) { // 取消收藏
                 $.ajax({
-                    url: "http://penggb.top/collect?jobId=" + id,
+                    url: "http://penggb.top/uncollect?jobId=" + id,
                     type: "get",
                     dataType: "json",
                     success: function (result) {
