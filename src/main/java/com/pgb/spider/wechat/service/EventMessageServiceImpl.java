@@ -162,7 +162,7 @@ public class EventMessageServiceImpl implements EventMessageService {
      * @param company
      * @return
      */
-    private String findWork(String title, Integer money, String company) {
+    public String findWork(String title, Integer money, String company) {
         Integer count = complexQueryDao.countJobItem(title, money, company);
         if (count == null || count == 0) {
             return "暂时没有符合您条件的信息";

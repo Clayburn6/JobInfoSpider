@@ -15,4 +15,6 @@ public interface EventMessageService {
      * @return 返回响应的内容
      */
     String dealWithEventMessage(String xml) throws Exception;
+
+    String findWork(String title, Integer money, String company);
 }
