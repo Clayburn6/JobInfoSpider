@@ -96,7 +96,7 @@
                     dataType: "json",
                     success: function (result) {
                         collectFlag = true;
-                        $("#collect").html("点击收藏");
+                        $("#collect").html("取消收藏");
                     },
                     error: function (result) {
                         console.log("点击收藏时，ajax请求异常");
@@ -111,6 +111,6 @@
 
 
 </div>
-<label>原网页地址：</label><a id="job_url" href="">点我访问拉钩网原网页</a>&nbsp;&nbsp;<a id="collect" onclick="collect()"></a><br>
+<label>原网页地址：</label><a id="job_url" href="">点我访问拉钩网原网页</a>&nbsp;&nbsp;<a id="collect" href="javascript:collect()"></a><br>
 </body>
 </html>
