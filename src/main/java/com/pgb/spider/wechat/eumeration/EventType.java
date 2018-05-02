@@ -8,6 +8,7 @@ public enum EventType {
     CLICK("CLICK", "自定义菜单事件"),
     VIEW("VIEW", "跳转网页");
 
+
     private String code;
     private String description;
 

@@ -4,9 +4,6 @@ import com.pgb.spider.wechat.dom.DomUtils;
 import com.pgb.spider.wechat.eumeration.MsgType;
 import com.pgb.spider.wechat.service.EventMessageService;
 import com.pgb.spider.wechat.service.TextMessageService;
-import com.pgb.spider.wechat.xom.request.TextRequest;
-import com.pgb.spider.wechat.xom.response.TextResponse;
-import com.sun.xml.internal.bind.marshaller.CharacterEscapeHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Marshaller;
-import java.io.IOException;
-import java.io.StringWriter;
-import java.io.Writer;
+
 
 /**
  * 用来转发来自微信服务器的xml格式的消息
@@ -57,6 +49,10 @@ public class WeChatMessageDispatcherController {
                 break;
             case text: // 文本消息
                 result = textMessageService.dealWithText(requestBody);
+                break;
+            case MASSSENDJOBFINISH:
+                result = "success";
+                logger.info("群发消息成功");
                 break;
             default: // 回复"success"
                 result = "success";
