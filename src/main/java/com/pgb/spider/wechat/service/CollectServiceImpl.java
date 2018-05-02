@@ -61,7 +61,7 @@ public class CollectServiceImpl implements CollectService {
 
         // 查看是否已经被收藏
         for (Collect collect : collectList) {
-            if (collect.getJobId() == jobId) {
+            if (collect.getJobId().equals(jobId)) {
                 return true;
             }
         }
