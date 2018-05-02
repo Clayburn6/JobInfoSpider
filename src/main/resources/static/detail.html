@@ -55,7 +55,7 @@
                 $("#job_url").attr("href", result.url);
             },
             error: function (result) {
-                alert("数据加载失败");
+                console.log("获取职位详情时，ajax请求异常");;
             }
         });
 
@@ -84,7 +84,7 @@
                         $("#collect").html("点击收藏");
                     },
                     error: function (result) {
-                        console.log("ajax请求异常");
+                        console.log("取下收藏时，ajax请求异常");
                     }
                 });
 
@@ -97,7 +97,7 @@
                         $("#collect").html("点击收藏");
                     },
                     error: function (result) {
-                        console.log("数据加载失败");
+                        console.log("点击收藏时，ajax请求异常");
                     }
                 });
             }
