@@ -92,7 +92,7 @@ public class CollectController {
             response.sendRedirect("/fail.html");
             return false;
         }
-
+        log.info("检查是否已经被收藏：openid={}, jobId={}", openid, jobId);
         return collectService.checkCollect(openid, jobId);
     }
 
