@@ -45,11 +45,12 @@ public class CollectController {
             response.sendRedirect("/fail.html");
             return ;
         }
-
-        collectService.collectByOpenidAndJobId(openid, jobId);
+        if (!collectService.checkCollect(openid, jobId)) {
+            collectService.collectByOpenidAndJobId(openid, jobId);
+        }
         log.info("收藏成功！openid = {}, jobId = {}", openid, jobId);
 
-        response.sendRedirect("/detail.html?id=" + jobId);
+//        response.sendRedirect("/detail.html?id=" + jobId);
     }
     @RequestMapping(path = "/uncollect", method = RequestMethod.GET)
     public void uncollectJob(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -68,10 +69,11 @@ public class CollectController {
             response.sendRedirect("/fail.html");
             return ;
         }
-
-        collectService.unCollectByOpenidAndJobId(openid, jobId);
+        if (collectService.checkCollect(openid, jobId)) {
+            collectService.unCollectByOpenidAndJobId(openid, jobId);
+        }
         log.info("取消收藏成功！openid = {}, jobId = {}", openid, jobId);
-        response.sendRedirect("/detail.html?id=" + jobId);
+//        response.sendRedirect("/detail.html?id=" + jobId);
     }
     @RequestMapping(path = "/checkCollect", method = RequestMethod.GET)
     public boolean checkCollectJob(HttpServletRequest request, HttpServletResponse response) throws IOException {
