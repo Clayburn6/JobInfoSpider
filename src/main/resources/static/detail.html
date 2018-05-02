@@ -81,6 +81,7 @@
                     type: "get",
                     dataType: "json",
                     success: function (result) {
+                        collectFlag = false;
                         $("#collect").html("点击收藏");
                     },
                     error: function (result) {
@@ -94,6 +95,7 @@
                     type: "get",
                     dataType: "json",
                     success: function (result) {
+                        collectFlag = true;
                         $("#collect").html("点击收藏");
                     },
                     error: function (result) {
