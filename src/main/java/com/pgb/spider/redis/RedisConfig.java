@@ -14,7 +14,7 @@ import redis.clients.jedis.JedisPoolConfig;
 /**
  * @author Clayburn
  * @date : 2018/5/2 2:34
- * @description
+ * @description 用于spring
  */
 @Configuration
 @EnableAutoConfiguration
