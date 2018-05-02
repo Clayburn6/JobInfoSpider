@@ -53,6 +53,9 @@ public class EventMessageServiceImpl implements EventMessageService {
                 return dealWithUnSubcribe(xml);
             case CLICK:
                 return dealWithClick(xml);
+            case MASSSENDJOBFINISH:
+                logger.info("群发消息成功");
+                return "success";
             default:
                 return "success";
         }

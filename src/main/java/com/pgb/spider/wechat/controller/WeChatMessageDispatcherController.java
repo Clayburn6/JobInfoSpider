@@ -50,10 +50,6 @@ public class WeChatMessageDispatcherController {
             case text: // 文本消息
                 result = textMessageService.dealWithText(requestBody);
                 break;
-            case MASSSENDJOBFINISH:
-                result = "success";
-                logger.info("群发消息成功");
-                break;
             default: // 回复"success"
                 result = "success";
         }

@@ -4,8 +4,7 @@ import org.apache.commons.lang.StringUtils;
 
 public enum MsgType {
     text("text", "文本消息"),
-    event("event", "时间消息"),
-    MASSSENDJOBFINISH("MASSSENDJOBFINISH", "群发消息反馈");;
+    event("event", "时间消息");
 
     private String code;
     private String description;
