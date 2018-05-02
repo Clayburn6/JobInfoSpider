@@ -29,11 +29,18 @@ public class RedisTemplateFactory {
             factory.setPort(6379);
             factory.setPassword("penggb023");
             factory.setTimeout(0);
+            factory.afterPropertiesSet();
             logger.info("JedisConnectionFactory bean init success.");
 
             redisTemplate = new StringRedisTemplate(factory);
         }
 
         return redisTemplate;
+    }
+
+    public static void main(String[] args) {
+        RedisTemplate<String, String> redisTemplate = (RedisTemplate<String, String>) getRedisTemplate();
+
+        redisTemplate.opsForValue().set("hello", "你好啊！");
     }
 }

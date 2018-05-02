@@ -3,6 +3,8 @@ package com.pgb.spider.queue;
 import com.pgb.spider.executer.Task;
 import com.pgb.spider.redis.RedisTemplateFactory;
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 
 import java.security.MessageDigest;
@@ -17,13 +19,15 @@ import java.util.Set;
  */
 public class RedisQueue implements CrawlQueue {
 
+    private static final Logger log = LoggerFactory.getLogger(RedisQueue.class);
+
     private RedisTemplate<String, String> redisTemplate =
             (RedisTemplate<String, String>) RedisTemplateFactory.getRedisTemplate();
 
     // 返回一个，如果没有则返回空
     @Override
     public Task poll() throws Exception {
-        Set<String> set = redisTemplate.opsForZSet().range(Thread.currentThread().getName(), 0, 1);
+        Set<String> set = redisTemplate.opsForZSet().range("spiderZSet", 0, 1);
         if (set == null) {
             return null;
         }
@@ -31,7 +35,7 @@ public class RedisQueue implements CrawlQueue {
         String signature = null;
         if (iter.hasNext()) {
             signature = iter.next();
-            redisTemplate.opsForZSet().remove(Thread.currentThread().getName(), signature);
+            redisTemplate.opsForZSet().remove("spiderZSet", signature);
         }
         String url = redisTemplate.opsForValue().get(signature);
         return new Task(url);
@@ -43,12 +47,13 @@ public class RedisQueue implements CrawlQueue {
         Set<String> set = null;
         String signature = null;
         do {
-            set = redisTemplate.opsForZSet().range(Thread.currentThread().getName(), 0, 1);
+            set = redisTemplate.opsForZSet().range("spiderZSet", 0, 0);
             if (set != null && set.size() != 0) {
                 Iterator<String> iter = set.iterator();
                 signature = iter.next();
-                redisTemplate.opsForZSet().remove(Thread.currentThread().getName(), signature);
+                redisTemplate.opsForZSet().remove("spiderZSet", signature);
             }
+            log.debug("{}阻塞中", Thread.currentThread().getName());
         } while(set == null || set.size() == 0);
         String url = redisTemplate.opsForValue().get(signature);
         return new Task(url);
@@ -68,7 +73,10 @@ public class RedisQueue implements CrawlQueue {
         byte[] digest = messageDigest.digest(url.getBytes());
         //将字节数组转成字符串
         String signature = byteToStr(digest);
-        redisTemplate.opsForZSet().add(Thread.currentThread().getName()+"", signature, System.currentTimeMillis());
+        long scores = System.currentTimeMillis();
+        log.debug("添加到redis zset中，key={}， value={}, score={}", "spiderZSet", signature, scores);
+        redisTemplate.opsForZSet().add("spiderZSet", signature, scores);
+        log.debug("添加到redis value中，key={}， value={}", signature, url);
         redisTemplate.opsForValue().set(signature, url);
     }
 
