@@ -12308,3 +12308,828 @@
 [INFO] [2018-05-02 16:14:24][com.pgb.spider.schedulejob.PushJobTask]ssssssssssss
 [INFO] [2018-05-02 16:14:29][com.pgb.spider.schedulejob.PushJobTask]ssssssssssss
 [INFO] [2018-05-02 16:14:34][com.pgb.spider.schedulejob.PushJobTask]ssssssssssss
+[INFO] [2018-05-03 11:24:01][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.pgb.spider.schedulejob.PushJobTaskTest], using SpringBootContextLoader
+[INFO] [2018-05-03 11:24:01][org.springframework.test.context.support.AbstractContextLoader]Could not detect default resource locations for test class [com.pgb.spider.schedulejob.PushJobTaskTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+[INFO] [2018-05-03 11:24:01][org.springframework.test.context.support.AnnotationConfigContextLoaderUtils]Could not detect default configuration classes for test class [com.pgb.spider.schedulejob.PushJobTaskTest]: PushJobTaskTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO] [2018-05-03 11:24:02][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Found @SpringBootConfiguration com.pgb.spider.JobInfoSpiderApplication for test class com.pgb.spider.schedulejob.PushJobTaskTest
+[INFO] [2018-05-03 11:24:02][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] [2018-05-03 11:24:02][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2dde1bff, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@15bbf42f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@550ee7e5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5f9b2141, org.springframework.test.context.transaction.TransactionalTestExecutionListener@247d8ae, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@48974e45, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6a84a97d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6c130c45, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@50ad3bc1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@223aa2f7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6d3a388c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@193f604a]
+[INFO] [2018-05-03 11:24:05][com.pgb.spider.schedulejob.PushJobTaskTest]Starting PushJobTaskTest on DESKTOP-0LF8KCJ with PID 10456 (started by peng in E:\JobInfoSpider)
+[INFO] [2018-05-03 11:24:05][com.pgb.spider.schedulejob.PushJobTaskTest]No active profile set, falling back to default profiles: default
+[INFO] [2018-05-03 11:24:05][org.springframework.web.context.support.GenericWebApplicationContext]Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1869fbd2: startup date [Thu May 03 11:24:05 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:24:07][org.hibernate.validator.internal.util.Version]HV000001: Hibernate Validator 5.3.5.Final
+[INFO] [2018-05-03 11:24:10][org.springframework.data.repository.config.RepositoryConfigurationDelegate]Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO] [2018-05-03 11:24:10][org.springframework.data.repository.config.RepositoryConfigurationDelegate]Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO] [2018-05-03 11:24:11][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.web.dao.QueryDao.
+[INFO] [2018-05-03 11:24:11][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.SubscribeDao.
+[INFO] [2018-05-03 11:24:11][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.CollectDao.
+[INFO] [2018-05-03 11:24:11][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.TextRequestDao.
+[INFO] [2018-05-03 11:24:11][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.UserInfoDao.
+[INFO] [2018-05-03 11:24:14][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:24:14][org.hibernate.jpa.internal.util.LogHelper]HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO] [2018-05-03 11:24:14][org.hibernate.Version]HHH000412: Hibernate Core {5.2.6.Final}
+[INFO] [2018-05-03 11:24:14][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+[INFO] [2018-05-03 11:24:15][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO] [2018-05-03 11:24:18][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO] [2018-05-03 11:24:18][org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl]HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[INFO] [2018-05-03 11:24:21][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:24:23][com.pgb.spider.redis.RedisConfig]JedisConnectionFactory bean init success.
+[INFO] [2018-05-03 11:24:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@1869fbd2: startup date [Thu May 03 11:24:05 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:24:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/query],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.pgb.spider.web.utils.Pagination<com.pgb.spider.entity.JobItem> com.pgb.spider.web.controller.QueryController.query(java.lang.String,java.lang.Integer,java.lang.Integer)
+[INFO] [2018-05-03 11:24:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/hello],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.pgb.spider.web.controller.QueryController.test()
+[INFO] [2018-05-03 11:24:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/detail],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.pgb.spider.entity.JobItem com.pgb.spider.web.controller.QueryController.queryDetail(java.lang.Integer)
+[INFO] [2018-05-03 11:24:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getCollect],methods=[GET]}" onto public java.util.List<com.pgb.spider.entity.JobItem> com.pgb.spider.wechat.controller.CollectController.getCollect(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:24:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/uncollect],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.CollectController.uncollectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:24:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/checkCollect],methods=[GET]}" onto public boolean com.pgb.spider.wechat.controller.CollectController.checkCollectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:24:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/collect],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.CollectController.collectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:24:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.TokenCheckController.checkToken(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO] [2018-05-03 11:24:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/getUserInfo],methods=[GET]}" onto public com.pgb.spider.wechat.entity.UserInfo com.pgb.spider.wechat.controller.UserInfoController.getUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:24:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/getOpenid],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.getWechatOpenid(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String) throws java.io.IOException
+[INFO] [2018-05-03 11:24:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/checkOpenid],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.setUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:24:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/setUserInfo],methods=[POST]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.setUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.Integer,java.lang.String) throws java.io.IOException
+[INFO] [2018-05-03 11:24:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat],methods=[POST]}" onto public java.lang.String com.pgb.spider.wechat.controller.WeChatMessageDispatcherController.processWeChatRequest(javax.servlet.http.HttpServletRequest,java.lang.String) throws java.lang.Exception
+[INFO] [2018-05-03 11:24:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO] [2018-05-03 11:24:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:24:25][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:24:25][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:24:26][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:24:26][org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WelcomePageHandlerMapping]Adding welcome page: ServletContext resource [/index.html]
+[INFO] [2018-05-03 11:24:28][org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor]No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+[INFO] [2018-05-03 11:24:28][com.pgb.spider.schedulejob.PushJobTaskTest]Started PushJobTaskTest in 24.45 seconds (JVM running for 28.856)
+[INFO] [2018-05-03 11:24:28][org.hibernate.hql.internal.QueryTranslatorFactoryInitiator]HHH000397: Using ASTQueryTranslatorFactory
+[INFO] [2018-05-03 11:24:31][org.springframework.web.context.support.GenericWebApplicationContext]Closing org.springframework.web.context.support.GenericWebApplicationContext@1869fbd2: startup date [Thu May 03 11:24:05 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:24:31][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:29:18][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.pgb.spider.schedulejob.PushJobTaskTest], using SpringBootContextLoader
+[INFO] [2018-05-03 11:29:18][org.springframework.test.context.support.AbstractContextLoader]Could not detect default resource locations for test class [com.pgb.spider.schedulejob.PushJobTaskTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+[INFO] [2018-05-03 11:29:18][org.springframework.test.context.support.AnnotationConfigContextLoaderUtils]Could not detect default configuration classes for test class [com.pgb.spider.schedulejob.PushJobTaskTest]: PushJobTaskTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO] [2018-05-03 11:29:18][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Found @SpringBootConfiguration com.pgb.spider.JobInfoSpiderApplication for test class com.pgb.spider.schedulejob.PushJobTaskTest
+[INFO] [2018-05-03 11:29:18][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] [2018-05-03 11:29:18][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2dde1bff, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@15bbf42f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@550ee7e5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5f9b2141, org.springframework.test.context.transaction.TransactionalTestExecutionListener@247d8ae, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@48974e45, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6a84a97d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6c130c45, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@50ad3bc1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@223aa2f7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6d3a388c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@193f604a]
+[INFO] [2018-05-03 11:29:20][com.pgb.spider.schedulejob.PushJobTaskTest]Starting PushJobTaskTest on DESKTOP-0LF8KCJ with PID 752 (started by peng in E:\JobInfoSpider)
+[INFO] [2018-05-03 11:29:20][com.pgb.spider.schedulejob.PushJobTaskTest]No active profile set, falling back to default profiles: default
+[INFO] [2018-05-03 11:29:21][org.springframework.web.context.support.GenericWebApplicationContext]Refreshing org.springframework.web.context.support.GenericWebApplicationContext@74589991: startup date [Thu May 03 11:29:21 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:29:22][org.hibernate.validator.internal.util.Version]HV000001: Hibernate Validator 5.3.5.Final
+[INFO] [2018-05-03 11:29:24][org.springframework.data.repository.config.RepositoryConfigurationDelegate]Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO] [2018-05-03 11:29:24][org.springframework.data.repository.config.RepositoryConfigurationDelegate]Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO] [2018-05-03 11:29:24][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.web.dao.QueryDao.
+[INFO] [2018-05-03 11:29:24][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.SubscribeDao.
+[INFO] [2018-05-03 11:29:24][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.CollectDao.
+[INFO] [2018-05-03 11:29:24][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.TextRequestDao.
+[INFO] [2018-05-03 11:29:24][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.UserInfoDao.
+[INFO] [2018-05-03 11:29:27][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:29:27][org.hibernate.jpa.internal.util.LogHelper]HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO] [2018-05-03 11:29:27][org.hibernate.Version]HHH000412: Hibernate Core {5.2.6.Final}
+[INFO] [2018-05-03 11:29:27][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+[INFO] [2018-05-03 11:29:27][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO] [2018-05-03 11:29:30][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO] [2018-05-03 11:29:30][org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl]HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[INFO] [2018-05-03 11:29:32][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:29:34][com.pgb.spider.redis.RedisConfig]JedisConnectionFactory bean init success.
+[INFO] [2018-05-03 11:29:35][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@74589991: startup date [Thu May 03 11:29:21 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:29:36][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/query],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.pgb.spider.web.utils.Pagination<com.pgb.spider.entity.JobItem> com.pgb.spider.web.controller.QueryController.query(java.lang.String,java.lang.Integer,java.lang.Integer)
+[INFO] [2018-05-03 11:29:36][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/hello],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.pgb.spider.web.controller.QueryController.test()
+[INFO] [2018-05-03 11:29:36][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/detail],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.pgb.spider.entity.JobItem com.pgb.spider.web.controller.QueryController.queryDetail(java.lang.Integer)
+[INFO] [2018-05-03 11:29:36][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/collect],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.CollectController.collectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:29:36][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/checkCollect],methods=[GET]}" onto public boolean com.pgb.spider.wechat.controller.CollectController.checkCollectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:29:36][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getCollect],methods=[GET]}" onto public java.util.List<com.pgb.spider.entity.JobItem> com.pgb.spider.wechat.controller.CollectController.getCollect(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:29:36][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/uncollect],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.CollectController.uncollectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:29:36][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.TokenCheckController.checkToken(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO] [2018-05-03 11:29:36][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/getUserInfo],methods=[GET]}" onto public com.pgb.spider.wechat.entity.UserInfo com.pgb.spider.wechat.controller.UserInfoController.getUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:29:36][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/getOpenid],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.getWechatOpenid(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String) throws java.io.IOException
+[INFO] [2018-05-03 11:29:36][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/checkOpenid],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.setUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:29:36][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/setUserInfo],methods=[POST]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.setUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.Integer,java.lang.String) throws java.io.IOException
+[INFO] [2018-05-03 11:29:36][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat],methods=[POST]}" onto public java.lang.String com.pgb.spider.wechat.controller.WeChatMessageDispatcherController.processWeChatRequest(javax.servlet.http.HttpServletRequest,java.lang.String) throws java.lang.Exception
+[INFO] [2018-05-03 11:29:36][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO] [2018-05-03 11:29:36][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:29:36][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:29:36][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:29:36][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:29:36][org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WelcomePageHandlerMapping]Adding welcome page: ServletContext resource [/index.html]
+[INFO] [2018-05-03 11:29:37][org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor]No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+[INFO] [2018-05-03 11:29:37][com.pgb.spider.schedulejob.PushJobTaskTest]Started PushJobTaskTest in 18.335 seconds (JVM running for 20.8)
+[INFO] [2018-05-03 11:29:37][org.hibernate.hql.internal.QueryTranslatorFactoryInitiator]HHH000397: Using ASTQueryTranslatorFactory
+[INFO] [2018-05-03 11:29:41][org.springframework.web.context.support.GenericWebApplicationContext]Closing org.springframework.web.context.support.GenericWebApplicationContext@74589991: startup date [Thu May 03 11:29:21 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:29:41][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:31:27][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.pgb.spider.schedulejob.PushJobTaskTest], using SpringBootContextLoader
+[INFO] [2018-05-03 11:31:27][org.springframework.test.context.support.AbstractContextLoader]Could not detect default resource locations for test class [com.pgb.spider.schedulejob.PushJobTaskTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+[INFO] [2018-05-03 11:31:27][org.springframework.test.context.support.AnnotationConfigContextLoaderUtils]Could not detect default configuration classes for test class [com.pgb.spider.schedulejob.PushJobTaskTest]: PushJobTaskTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO] [2018-05-03 11:31:27][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Found @SpringBootConfiguration com.pgb.spider.JobInfoSpiderApplication for test class com.pgb.spider.schedulejob.PushJobTaskTest
+[INFO] [2018-05-03 11:31:27][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] [2018-05-03 11:31:27][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2dde1bff, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@15bbf42f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@550ee7e5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5f9b2141, org.springframework.test.context.transaction.TransactionalTestExecutionListener@247d8ae, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@48974e45, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6a84a97d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6c130c45, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@50ad3bc1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@223aa2f7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6d3a388c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@193f604a]
+[INFO] [2018-05-03 11:31:29][com.pgb.spider.schedulejob.PushJobTaskTest]Starting PushJobTaskTest on DESKTOP-0LF8KCJ with PID 1340 (started by peng in E:\JobInfoSpider)
+[INFO] [2018-05-03 11:31:29][com.pgb.spider.schedulejob.PushJobTaskTest]No active profile set, falling back to default profiles: default
+[INFO] [2018-05-03 11:31:29][org.springframework.web.context.support.GenericWebApplicationContext]Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2f67b837: startup date [Thu May 03 11:31:29 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:31:31][org.hibernate.validator.internal.util.Version]HV000001: Hibernate Validator 5.3.5.Final
+[INFO] [2018-05-03 11:31:33][org.springframework.data.repository.config.RepositoryConfigurationDelegate]Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO] [2018-05-03 11:31:33][org.springframework.data.repository.config.RepositoryConfigurationDelegate]Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO] [2018-05-03 11:31:33][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.web.dao.QueryDao.
+[INFO] [2018-05-03 11:31:33][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.SubscribeDao.
+[INFO] [2018-05-03 11:31:33][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.CollectDao.
+[INFO] [2018-05-03 11:31:33][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.TextRequestDao.
+[INFO] [2018-05-03 11:31:33][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.UserInfoDao.
+[INFO] [2018-05-03 11:31:36][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:31:36][org.hibernate.jpa.internal.util.LogHelper]HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO] [2018-05-03 11:31:36][org.hibernate.Version]HHH000412: Hibernate Core {5.2.6.Final}
+[INFO] [2018-05-03 11:31:36][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+[INFO] [2018-05-03 11:31:37][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO] [2018-05-03 11:31:39][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO] [2018-05-03 11:31:39][org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl]HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[INFO] [2018-05-03 11:31:41][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:31:43][com.pgb.spider.redis.RedisConfig]JedisConnectionFactory bean init success.
+[INFO] [2018-05-03 11:31:45][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@2f67b837: startup date [Thu May 03 11:31:29 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:31:45][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/query],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.pgb.spider.web.utils.Pagination<com.pgb.spider.entity.JobItem> com.pgb.spider.web.controller.QueryController.query(java.lang.String,java.lang.Integer,java.lang.Integer)
+[INFO] [2018-05-03 11:31:45][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/hello],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.pgb.spider.web.controller.QueryController.test()
+[INFO] [2018-05-03 11:31:45][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/detail],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.pgb.spider.entity.JobItem com.pgb.spider.web.controller.QueryController.queryDetail(java.lang.Integer)
+[INFO] [2018-05-03 11:31:45][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/uncollect],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.CollectController.uncollectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:31:45][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getCollect],methods=[GET]}" onto public java.util.List<com.pgb.spider.entity.JobItem> com.pgb.spider.wechat.controller.CollectController.getCollect(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:31:45][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/collect],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.CollectController.collectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:31:45][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/checkCollect],methods=[GET]}" onto public boolean com.pgb.spider.wechat.controller.CollectController.checkCollectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:31:45][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.TokenCheckController.checkToken(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO] [2018-05-03 11:31:45][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/getUserInfo],methods=[GET]}" onto public com.pgb.spider.wechat.entity.UserInfo com.pgb.spider.wechat.controller.UserInfoController.getUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:31:45][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/getOpenid],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.getWechatOpenid(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String) throws java.io.IOException
+[INFO] [2018-05-03 11:31:45][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/checkOpenid],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.setUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:31:45][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/setUserInfo],methods=[POST]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.setUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.Integer,java.lang.String) throws java.io.IOException
+[INFO] [2018-05-03 11:31:45][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat],methods=[POST]}" onto public java.lang.String com.pgb.spider.wechat.controller.WeChatMessageDispatcherController.processWeChatRequest(javax.servlet.http.HttpServletRequest,java.lang.String) throws java.lang.Exception
+[INFO] [2018-05-03 11:31:45][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO] [2018-05-03 11:31:45][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:31:45][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:31:45][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:31:45][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:31:46][org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WelcomePageHandlerMapping]Adding welcome page: ServletContext resource [/index.html]
+[INFO] [2018-05-03 11:31:47][org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor]No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+[INFO] [2018-05-03 11:31:47][com.pgb.spider.schedulejob.PushJobTaskTest]Started PushJobTaskTest in 19.199 seconds (JVM running for 21.766)
+[INFO] [2018-05-03 11:31:47][org.hibernate.hql.internal.QueryTranslatorFactoryInitiator]HHH000397: Using ASTQueryTranslatorFactory
+[INFO] [2018-05-03 11:31:50][org.springframework.web.context.support.GenericWebApplicationContext]Closing org.springframework.web.context.support.GenericWebApplicationContext@2f67b837: startup date [Thu May 03 11:31:29 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:31:50][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:32:52][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.pgb.spider.schedulejob.PushJobTaskTest], using SpringBootContextLoader
+[INFO] [2018-05-03 11:32:52][org.springframework.test.context.support.AbstractContextLoader]Could not detect default resource locations for test class [com.pgb.spider.schedulejob.PushJobTaskTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+[INFO] [2018-05-03 11:32:52][org.springframework.test.context.support.AnnotationConfigContextLoaderUtils]Could not detect default configuration classes for test class [com.pgb.spider.schedulejob.PushJobTaskTest]: PushJobTaskTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO] [2018-05-03 11:32:52][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Found @SpringBootConfiguration com.pgb.spider.JobInfoSpiderApplication for test class com.pgb.spider.schedulejob.PushJobTaskTest
+[INFO] [2018-05-03 11:32:52][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] [2018-05-03 11:32:52][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2dde1bff, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@15bbf42f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@550ee7e5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5f9b2141, org.springframework.test.context.transaction.TransactionalTestExecutionListener@247d8ae, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@48974e45, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6a84a97d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6c130c45, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@50ad3bc1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@223aa2f7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6d3a388c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@193f604a]
+[INFO] [2018-05-03 11:32:54][com.pgb.spider.schedulejob.PushJobTaskTest]Starting PushJobTaskTest on DESKTOP-0LF8KCJ with PID 5080 (started by peng in E:\JobInfoSpider)
+[INFO] [2018-05-03 11:32:54][com.pgb.spider.schedulejob.PushJobTaskTest]No active profile set, falling back to default profiles: default
+[INFO] [2018-05-03 11:32:54][org.springframework.web.context.support.GenericWebApplicationContext]Refreshing org.springframework.web.context.support.GenericWebApplicationContext@74589991: startup date [Thu May 03 11:32:54 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:32:56][org.hibernate.validator.internal.util.Version]HV000001: Hibernate Validator 5.3.5.Final
+[INFO] [2018-05-03 11:32:58][org.springframework.data.repository.config.RepositoryConfigurationDelegate]Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO] [2018-05-03 11:32:59][org.springframework.data.repository.config.RepositoryConfigurationDelegate]Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO] [2018-05-03 11:32:59][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.web.dao.QueryDao.
+[INFO] [2018-05-03 11:32:59][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.SubscribeDao.
+[INFO] [2018-05-03 11:32:59][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.CollectDao.
+[INFO] [2018-05-03 11:32:59][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.TextRequestDao.
+[INFO] [2018-05-03 11:32:59][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.UserInfoDao.
+[INFO] [2018-05-03 11:33:01][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:33:01][org.hibernate.jpa.internal.util.LogHelper]HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO] [2018-05-03 11:33:02][org.hibernate.Version]HHH000412: Hibernate Core {5.2.6.Final}
+[INFO] [2018-05-03 11:33:02][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+[INFO] [2018-05-03 11:33:02][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO] [2018-05-03 11:33:05][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO] [2018-05-03 11:33:05][org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl]HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[INFO] [2018-05-03 11:33:07][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:33:09][com.pgb.spider.redis.RedisConfig]JedisConnectionFactory bean init success.
+[INFO] [2018-05-03 11:33:10][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@74589991: startup date [Thu May 03 11:32:54 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:33:10][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/query],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.pgb.spider.web.utils.Pagination<com.pgb.spider.entity.JobItem> com.pgb.spider.web.controller.QueryController.query(java.lang.String,java.lang.Integer,java.lang.Integer)
+[INFO] [2018-05-03 11:33:10][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/hello],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.pgb.spider.web.controller.QueryController.test()
+[INFO] [2018-05-03 11:33:10][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/detail],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.pgb.spider.entity.JobItem com.pgb.spider.web.controller.QueryController.queryDetail(java.lang.Integer)
+[INFO] [2018-05-03 11:33:10][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/checkCollect],methods=[GET]}" onto public boolean com.pgb.spider.wechat.controller.CollectController.checkCollectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:33:10][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getCollect],methods=[GET]}" onto public java.util.List<com.pgb.spider.entity.JobItem> com.pgb.spider.wechat.controller.CollectController.getCollect(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:33:10][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/collect],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.CollectController.collectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:33:10][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/uncollect],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.CollectController.uncollectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:33:10][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.TokenCheckController.checkToken(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO] [2018-05-03 11:33:10][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/getUserInfo],methods=[GET]}" onto public com.pgb.spider.wechat.entity.UserInfo com.pgb.spider.wechat.controller.UserInfoController.getUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:33:10][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/getOpenid],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.getWechatOpenid(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String) throws java.io.IOException
+[INFO] [2018-05-03 11:33:10][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/checkOpenid],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.setUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:33:10][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/setUserInfo],methods=[POST]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.setUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.Integer,java.lang.String) throws java.io.IOException
+[INFO] [2018-05-03 11:33:10][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat],methods=[POST]}" onto public java.lang.String com.pgb.spider.wechat.controller.WeChatMessageDispatcherController.processWeChatRequest(javax.servlet.http.HttpServletRequest,java.lang.String) throws java.lang.Exception
+[INFO] [2018-05-03 11:33:10][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO] [2018-05-03 11:33:10][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:33:10][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:33:10][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:33:11][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:33:11][org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WelcomePageHandlerMapping]Adding welcome page: ServletContext resource [/index.html]
+[INFO] [2018-05-03 11:33:12][org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor]No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+[INFO] [2018-05-03 11:33:12][com.pgb.spider.schedulejob.PushJobTaskTest]Started PushJobTaskTest in 19.345 seconds (JVM running for 21.593)
+[INFO] [2018-05-03 11:33:12][org.hibernate.hql.internal.QueryTranslatorFactoryInitiator]HHH000397: Using ASTQueryTranslatorFactory
+[INFO] [2018-05-03 11:33:15][com.pgb.spider.schedulejob.PushJobTask]未查询到职位信息！
+[INFO] [2018-05-03 11:33:15][com.pgb.spider.schedulejob.PushJobTask]未查询到职位信息！
+[INFO] [2018-05-03 11:33:15][org.springframework.web.context.support.GenericWebApplicationContext]Closing org.springframework.web.context.support.GenericWebApplicationContext@74589991: startup date [Thu May 03 11:32:54 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:33:15][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:37:36][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.pgb.spider.schedulejob.PushJobTaskTest], using SpringBootContextLoader
+[INFO] [2018-05-03 11:37:36][org.springframework.test.context.support.AbstractContextLoader]Could not detect default resource locations for test class [com.pgb.spider.schedulejob.PushJobTaskTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+[INFO] [2018-05-03 11:37:36][org.springframework.test.context.support.AnnotationConfigContextLoaderUtils]Could not detect default configuration classes for test class [com.pgb.spider.schedulejob.PushJobTaskTest]: PushJobTaskTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO] [2018-05-03 11:37:36][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Found @SpringBootConfiguration com.pgb.spider.JobInfoSpiderApplication for test class com.pgb.spider.schedulejob.PushJobTaskTest
+[INFO] [2018-05-03 11:37:36][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] [2018-05-03 11:37:36][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2dde1bff, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@15bbf42f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@550ee7e5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5f9b2141, org.springframework.test.context.transaction.TransactionalTestExecutionListener@247d8ae, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@48974e45, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6a84a97d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6c130c45, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@50ad3bc1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@223aa2f7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6d3a388c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@193f604a]
+[INFO] [2018-05-03 11:37:38][com.pgb.spider.schedulejob.PushJobTaskTest]Starting PushJobTaskTest on DESKTOP-0LF8KCJ with PID 6708 (started by peng in E:\JobInfoSpider)
+[INFO] [2018-05-03 11:37:38][com.pgb.spider.schedulejob.PushJobTaskTest]No active profile set, falling back to default profiles: default
+[INFO] [2018-05-03 11:37:38][org.springframework.web.context.support.GenericWebApplicationContext]Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2f67b837: startup date [Thu May 03 11:37:38 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:37:39][org.hibernate.validator.internal.util.Version]HV000001: Hibernate Validator 5.3.5.Final
+[INFO] [2018-05-03 11:37:41][org.springframework.data.repository.config.RepositoryConfigurationDelegate]Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO] [2018-05-03 11:37:41][org.springframework.data.repository.config.RepositoryConfigurationDelegate]Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO] [2018-05-03 11:37:41][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.web.dao.QueryDao.
+[INFO] [2018-05-03 11:37:41][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.SubscribeDao.
+[INFO] [2018-05-03 11:37:41][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.CollectDao.
+[INFO] [2018-05-03 11:37:41][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.TextRequestDao.
+[INFO] [2018-05-03 11:37:41][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.UserInfoDao.
+[INFO] [2018-05-03 11:37:44][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:37:44][org.hibernate.jpa.internal.util.LogHelper]HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO] [2018-05-03 11:37:44][org.hibernate.Version]HHH000412: Hibernate Core {5.2.6.Final}
+[INFO] [2018-05-03 11:37:44][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+[INFO] [2018-05-03 11:37:44][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO] [2018-05-03 11:37:47][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO] [2018-05-03 11:37:47][org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl]HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[INFO] [2018-05-03 11:37:49][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:37:50][com.pgb.spider.redis.RedisConfig]JedisConnectionFactory bean init success.
+[INFO] [2018-05-03 11:37:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@2f67b837: startup date [Thu May 03 11:37:38 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:37:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/query],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.pgb.spider.web.utils.Pagination<com.pgb.spider.entity.JobItem> com.pgb.spider.web.controller.QueryController.query(java.lang.String,java.lang.Integer,java.lang.Integer)
+[INFO] [2018-05-03 11:37:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/hello],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.pgb.spider.web.controller.QueryController.test()
+[INFO] [2018-05-03 11:37:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/detail],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.pgb.spider.entity.JobItem com.pgb.spider.web.controller.QueryController.queryDetail(java.lang.Integer)
+[INFO] [2018-05-03 11:37:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getCollect],methods=[GET]}" onto public java.util.List<com.pgb.spider.entity.JobItem> com.pgb.spider.wechat.controller.CollectController.getCollect(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:37:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/collect],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.CollectController.collectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:37:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/checkCollect],methods=[GET]}" onto public boolean com.pgb.spider.wechat.controller.CollectController.checkCollectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:37:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/uncollect],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.CollectController.uncollectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:37:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.TokenCheckController.checkToken(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO] [2018-05-03 11:37:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/getUserInfo],methods=[GET]}" onto public com.pgb.spider.wechat.entity.UserInfo com.pgb.spider.wechat.controller.UserInfoController.getUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:37:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/setUserInfo],methods=[POST]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.setUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.Integer,java.lang.String) throws java.io.IOException
+[INFO] [2018-05-03 11:37:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/checkOpenid],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.setUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:37:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/getOpenid],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.getWechatOpenid(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String) throws java.io.IOException
+[INFO] [2018-05-03 11:37:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat],methods=[POST]}" onto public java.lang.String com.pgb.spider.wechat.controller.WeChatMessageDispatcherController.processWeChatRequest(javax.servlet.http.HttpServletRequest,java.lang.String) throws java.lang.Exception
+[INFO] [2018-05-03 11:37:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO] [2018-05-03 11:37:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:37:53][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:37:53][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:37:53][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:37:53][org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WelcomePageHandlerMapping]Adding welcome page: ServletContext resource [/index.html]
+[INFO] [2018-05-03 11:37:54][org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor]No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+[INFO] [2018-05-03 11:37:54][com.pgb.spider.schedulejob.PushJobTaskTest]Started PushJobTaskTest in 17.571 seconds (JVM running for 20.077)
+[INFO] [2018-05-03 11:37:54][org.hibernate.hql.internal.QueryTranslatorFactoryInitiator]HHH000397: Using ASTQueryTranslatorFactory
+[INFO] [2018-05-03 11:37:55][com.pgb.spider.schedulejob.PushJobTask]获取的职位信息：为您提供如下岗位的信息：
+
+【职位名称】
+测试
+【薪资待遇】
+4k-8k
+【招聘单位】
+深圳九道湾科技有限公司开发招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=18167">这里</a>访问详情
+
+【职位名称】
+嵌入式软件工程师
+【薪资待遇】
+10k-20k
+【招聘单位】
+越疆科技研发部-软件招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=52364">这里</a>访问详情
+
+【职位名称】
+云平台开发（python/Golang/C++)
+【薪资待遇】
+20k-35k
+【招聘单位】
+瓜子二手车直卖网云平台招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=79484">这里</a>访问详情
+
+[INFO] [2018-05-03 11:37:55][com.pgb.spider.schedulejob.PushJobTask]获取的职位信息：为您提供如下岗位的信息：
+
+【职位名称】
+测试
+【薪资待遇】
+4k-8k
+【招聘单位】
+深圳九道湾科技有限公司开发招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=18167">这里</a>访问详情
+
+【职位名称】
+嵌入式软件工程师
+【薪资待遇】
+10k-20k
+【招聘单位】
+越疆科技研发部-软件招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=52364">这里</a>访问详情
+
+【职位名称】
+云平台开发（python/Golang/C++)
+【薪资待遇】
+20k-35k
+【招聘单位】
+瓜子二手车直卖网云平台招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=79484">这里</a>访问详情
+
+[INFO] [2018-05-03 11:37:57][com.pgb.spider.schedulejob.PushJobTask]accessToken = 9_uMBkdhDmMF7w6Ngrv_v5jHe2gexjGVYbPxYTwrYxGuMO7XQqHPaTFn4_ovem2jxlFwS1lJyL73SBVrUZ7Aq5X_dYYplM8gbVqB93BS2mcXcKzuiVATcaDZc1s_wML3rVfX-oEBST20yjVEH3CIAeAIAXDV
+[INFO] [2018-05-03 11:37:57][com.pgb.spider.schedulejob.PushJobTask]accessToken = 9_buP2MJnHSQE-bb9zv_v5jHe2gexjGVYbPxYTwrYxGuMO7XQqHPaTFn4_ovfKB10tFnlUpeZQR4KZZDgl9VqhBODG6AA_WcpHleytdUy-euhCRpjW99cUiSYi-0TrUCtTtdlLTZp7BlPLpC78GOHeAIAJRK
+[ERROR] [2018-05-03 11:37:58][org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler]Unexpected error occurred in scheduled task.
+java.lang.IllegalStateException: closed
+	at okio.RealBufferedSource.rangeEquals(RealBufferedSource.java:398)
+	at okio.RealBufferedSource.rangeEquals(RealBufferedSource.java:392)
+	at okhttp3.internal.Util.bomAwareCharset(Util.java:431)
+	at okhttp3.ResponseBody.string(ResponseBody.java:174)
+	at com.pgb.spider.schedulejob.PushJobTask.pushJobTask(PushJobTask.java:102)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[INFO] [2018-05-03 11:37:58][org.springframework.web.context.support.GenericWebApplicationContext]Closing org.springframework.web.context.support.GenericWebApplicationContext@2f67b837: startup date [Thu May 03 11:37:38 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:37:58][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:39:30][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.pgb.spider.schedulejob.PushJobTaskTest], using SpringBootContextLoader
+[INFO] [2018-05-03 11:39:30][org.springframework.test.context.support.AbstractContextLoader]Could not detect default resource locations for test class [com.pgb.spider.schedulejob.PushJobTaskTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+[INFO] [2018-05-03 11:39:30][org.springframework.test.context.support.AnnotationConfigContextLoaderUtils]Could not detect default configuration classes for test class [com.pgb.spider.schedulejob.PushJobTaskTest]: PushJobTaskTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO] [2018-05-03 11:39:31][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Found @SpringBootConfiguration com.pgb.spider.JobInfoSpiderApplication for test class com.pgb.spider.schedulejob.PushJobTaskTest
+[INFO] [2018-05-03 11:39:31][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] [2018-05-03 11:39:31][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2dde1bff, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@15bbf42f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@550ee7e5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5f9b2141, org.springframework.test.context.transaction.TransactionalTestExecutionListener@247d8ae, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@48974e45, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6a84a97d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6c130c45, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@50ad3bc1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@223aa2f7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6d3a388c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@193f604a]
+[INFO] [2018-05-03 11:39:33][com.pgb.spider.schedulejob.PushJobTaskTest]Starting PushJobTaskTest on DESKTOP-0LF8KCJ with PID 4592 (started by peng in E:\JobInfoSpider)
+[INFO] [2018-05-03 11:39:33][com.pgb.spider.schedulejob.PushJobTaskTest]No active profile set, falling back to default profiles: default
+[INFO] [2018-05-03 11:39:33][org.springframework.web.context.support.GenericWebApplicationContext]Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1869fbd2: startup date [Thu May 03 11:39:33 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:39:34][org.hibernate.validator.internal.util.Version]HV000001: Hibernate Validator 5.3.5.Final
+[INFO] [2018-05-03 11:39:36][org.springframework.data.repository.config.RepositoryConfigurationDelegate]Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO] [2018-05-03 11:39:36][org.springframework.data.repository.config.RepositoryConfigurationDelegate]Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO] [2018-05-03 11:39:36][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.web.dao.QueryDao.
+[INFO] [2018-05-03 11:39:36][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.SubscribeDao.
+[INFO] [2018-05-03 11:39:36][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.CollectDao.
+[INFO] [2018-05-03 11:39:36][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.TextRequestDao.
+[INFO] [2018-05-03 11:39:36][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.UserInfoDao.
+[INFO] [2018-05-03 11:39:39][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:39:39][org.hibernate.jpa.internal.util.LogHelper]HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO] [2018-05-03 11:39:39][org.hibernate.Version]HHH000412: Hibernate Core {5.2.6.Final}
+[INFO] [2018-05-03 11:39:39][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+[INFO] [2018-05-03 11:39:39][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO] [2018-05-03 11:39:42][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO] [2018-05-03 11:39:42][org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl]HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[INFO] [2018-05-03 11:39:44][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:39:45][com.pgb.spider.redis.RedisConfig]JedisConnectionFactory bean init success.
+[INFO] [2018-05-03 11:39:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@1869fbd2: startup date [Thu May 03 11:39:33 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:39:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/query],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.pgb.spider.web.utils.Pagination<com.pgb.spider.entity.JobItem> com.pgb.spider.web.controller.QueryController.query(java.lang.String,java.lang.Integer,java.lang.Integer)
+[INFO] [2018-05-03 11:39:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/hello],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.pgb.spider.web.controller.QueryController.test()
+[INFO] [2018-05-03 11:39:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/detail],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.pgb.spider.entity.JobItem com.pgb.spider.web.controller.QueryController.queryDetail(java.lang.Integer)
+[INFO] [2018-05-03 11:39:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/uncollect],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.CollectController.uncollectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:39:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getCollect],methods=[GET]}" onto public java.util.List<com.pgb.spider.entity.JobItem> com.pgb.spider.wechat.controller.CollectController.getCollect(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:39:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/collect],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.CollectController.collectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:39:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/checkCollect],methods=[GET]}" onto public boolean com.pgb.spider.wechat.controller.CollectController.checkCollectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:39:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.TokenCheckController.checkToken(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO] [2018-05-03 11:39:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/getUserInfo],methods=[GET]}" onto public com.pgb.spider.wechat.entity.UserInfo com.pgb.spider.wechat.controller.UserInfoController.getUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:39:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/getOpenid],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.getWechatOpenid(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String) throws java.io.IOException
+[INFO] [2018-05-03 11:39:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/checkOpenid],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.setUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:39:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/setUserInfo],methods=[POST]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.setUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.Integer,java.lang.String) throws java.io.IOException
+[INFO] [2018-05-03 11:39:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat],methods=[POST]}" onto public java.lang.String com.pgb.spider.wechat.controller.WeChatMessageDispatcherController.processWeChatRequest(javax.servlet.http.HttpServletRequest,java.lang.String) throws java.lang.Exception
+[INFO] [2018-05-03 11:39:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO] [2018-05-03 11:39:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:39:47][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:39:47][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:39:47][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:39:47][org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WelcomePageHandlerMapping]Adding welcome page: ServletContext resource [/index.html]
+[INFO] [2018-05-03 11:39:49][org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor]No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+[INFO] [2018-05-03 11:39:49][com.pgb.spider.schedulejob.PushJobTaskTest]Started PushJobTaskTest in 17.285 seconds (JVM running for 20.096)
+[INFO] [2018-05-03 11:39:49][org.hibernate.hql.internal.QueryTranslatorFactoryInitiator]HHH000397: Using ASTQueryTranslatorFactory
+[INFO] [2018-05-03 11:39:50][com.pgb.spider.schedulejob.PushJobTask]获取的职位信息：为您提供如下岗位的信息：
+
+【职位名称】
+前端开发工程师
+【薪资待遇】
+10k-20k
+【招聘单位】
+贝尔机器人深圳贝尔招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=47770">这里</a>访问详情
+
+【职位名称】
+搜狗翻译-高级交互设计师-北京-02862
+【薪资待遇】
+20k-40k
+【招聘单位】
+搜狗招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=67106">这里</a>访问详情
+
+【职位名称】
+IOS开发工程师
+【薪资待遇】
+15k-30k
+【招聘单位】
+宜信技术研发中心招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=110821">这里</a>访问详情
+
+[INFO] [2018-05-03 11:39:50][com.pgb.spider.schedulejob.PushJobTask]获取的职位信息：为您提供如下岗位的信息：
+
+【职位名称】
+前端开发工程师
+【薪资待遇】
+10k-20k
+【招聘单位】
+贝尔机器人深圳贝尔招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=47770">这里</a>访问详情
+
+【职位名称】
+搜狗翻译-高级交互设计师-北京-02862
+【薪资待遇】
+20k-40k
+【招聘单位】
+搜狗招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=67106">这里</a>访问详情
+
+【职位名称】
+IOS开发工程师
+【薪资待遇】
+15k-30k
+【招聘单位】
+宜信技术研发中心招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=110821">这里</a>访问详情
+
+[INFO] [2018-05-03 11:39:51][com.pgb.spider.schedulejob.PushJobTask]accessToken = 9_f5HjOdd17-eYFSIBHpzX9p04GMMerDpMVaIlT0wpxHpU-cIEZCPvFMEi5eUImQgg-KnsIg6wM6wp76z7_j4lbZDe7TDcTnq7vzNmSkBtwL-OXBGEBmhhPjrcWfDZ7_2la30KwEtsQH65QgmaLPLgAEACGC
+[INFO] [2018-05-03 11:39:51][com.pgb.spider.schedulejob.PushJobTask]accessToken = 9_pqj07zxgOvNs2TE7HpzX9p04GMMerDpMVaIlT0wpxHpU-cIEZCPvFMEi5eW5DjdeEX-vZvcA80bc5Zl47sfaxmH9GlErJgHpNGBuc5-y1bM3RVd4tEIE8ziQFsRiGbOUFvBk1pqzNHgSdg_MWWFgAEARRA
+[ERROR] [2018-05-03 11:39:52][org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler]Unexpected error occurred in scheduled task.
+java.lang.IllegalStateException: closed
+	at okio.RealBufferedSource.rangeEquals(RealBufferedSource.java:398)
+	at okio.RealBufferedSource.rangeEquals(RealBufferedSource.java:392)
+	at okhttp3.internal.Util.bomAwareCharset(Util.java:431)
+	at okhttp3.ResponseBody.string(ResponseBody.java:174)
+	at com.pgb.spider.schedulejob.PushJobTask.pushJobTask(PushJobTask.java:102)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[INFO] [2018-05-03 11:39:52][org.springframework.web.context.support.GenericWebApplicationContext]Closing org.springframework.web.context.support.GenericWebApplicationContext@1869fbd2: startup date [Thu May 03 11:39:33 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:39:52][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:41:08][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.pgb.spider.schedulejob.PushJobTaskTest], using SpringBootContextLoader
+[INFO] [2018-05-03 11:41:08][org.springframework.test.context.support.AbstractContextLoader]Could not detect default resource locations for test class [com.pgb.spider.schedulejob.PushJobTaskTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+[INFO] [2018-05-03 11:41:08][org.springframework.test.context.support.AnnotationConfigContextLoaderUtils]Could not detect default configuration classes for test class [com.pgb.spider.schedulejob.PushJobTaskTest]: PushJobTaskTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO] [2018-05-03 11:41:08][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Found @SpringBootConfiguration com.pgb.spider.JobInfoSpiderApplication for test class com.pgb.spider.schedulejob.PushJobTaskTest
+[INFO] [2018-05-03 11:41:08][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] [2018-05-03 11:41:08][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2dde1bff, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@15bbf42f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@550ee7e5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5f9b2141, org.springframework.test.context.transaction.TransactionalTestExecutionListener@247d8ae, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@48974e45, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6a84a97d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6c130c45, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@50ad3bc1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@223aa2f7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6d3a388c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@193f604a]
+[INFO] [2018-05-03 11:41:10][com.pgb.spider.schedulejob.PushJobTaskTest]Starting PushJobTaskTest on DESKTOP-0LF8KCJ with PID 6312 (started by peng in E:\JobInfoSpider)
+[INFO] [2018-05-03 11:41:10][com.pgb.spider.schedulejob.PushJobTaskTest]No active profile set, falling back to default profiles: default
+[INFO] [2018-05-03 11:41:10][org.springframework.web.context.support.GenericWebApplicationContext]Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1869fbd2: startup date [Thu May 03 11:41:10 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:41:11][org.hibernate.validator.internal.util.Version]HV000001: Hibernate Validator 5.3.5.Final
+[INFO] [2018-05-03 11:41:13][org.springframework.data.repository.config.RepositoryConfigurationDelegate]Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO] [2018-05-03 11:41:13][org.springframework.data.repository.config.RepositoryConfigurationDelegate]Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO] [2018-05-03 11:41:13][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.web.dao.QueryDao.
+[INFO] [2018-05-03 11:41:13][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.SubscribeDao.
+[INFO] [2018-05-03 11:41:13][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.CollectDao.
+[INFO] [2018-05-03 11:41:13][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.TextRequestDao.
+[INFO] [2018-05-03 11:41:13][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.UserInfoDao.
+[INFO] [2018-05-03 11:41:16][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:41:16][org.hibernate.jpa.internal.util.LogHelper]HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO] [2018-05-03 11:41:16][org.hibernate.Version]HHH000412: Hibernate Core {5.2.6.Final}
+[INFO] [2018-05-03 11:41:16][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+[INFO] [2018-05-03 11:41:17][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO] [2018-05-03 11:41:19][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO] [2018-05-03 11:41:19][org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl]HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[INFO] [2018-05-03 11:41:21][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:41:23][com.pgb.spider.redis.RedisConfig]JedisConnectionFactory bean init success.
+[INFO] [2018-05-03 11:41:24][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@1869fbd2: startup date [Thu May 03 11:41:10 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:41:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/query],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.pgb.spider.web.utils.Pagination<com.pgb.spider.entity.JobItem> com.pgb.spider.web.controller.QueryController.query(java.lang.String,java.lang.Integer,java.lang.Integer)
+[INFO] [2018-05-03 11:41:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/hello],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.pgb.spider.web.controller.QueryController.test()
+[INFO] [2018-05-03 11:41:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/detail],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.pgb.spider.entity.JobItem com.pgb.spider.web.controller.QueryController.queryDetail(java.lang.Integer)
+[INFO] [2018-05-03 11:41:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/uncollect],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.CollectController.uncollectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:41:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/checkCollect],methods=[GET]}" onto public boolean com.pgb.spider.wechat.controller.CollectController.checkCollectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:41:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/collect],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.CollectController.collectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:41:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getCollect],methods=[GET]}" onto public java.util.List<com.pgb.spider.entity.JobItem> com.pgb.spider.wechat.controller.CollectController.getCollect(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:41:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.TokenCheckController.checkToken(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO] [2018-05-03 11:41:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/getUserInfo],methods=[GET]}" onto public com.pgb.spider.wechat.entity.UserInfo com.pgb.spider.wechat.controller.UserInfoController.getUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:41:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/getOpenid],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.getWechatOpenid(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String) throws java.io.IOException
+[INFO] [2018-05-03 11:41:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/checkOpenid],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.setUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:41:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/setUserInfo],methods=[POST]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.setUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.Integer,java.lang.String) throws java.io.IOException
+[INFO] [2018-05-03 11:41:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat],methods=[POST]}" onto public java.lang.String com.pgb.spider.wechat.controller.WeChatMessageDispatcherController.processWeChatRequest(javax.servlet.http.HttpServletRequest,java.lang.String) throws java.lang.Exception
+[INFO] [2018-05-03 11:41:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO] [2018-05-03 11:41:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:41:25][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:41:25][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:41:25][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:41:25][org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WelcomePageHandlerMapping]Adding welcome page: ServletContext resource [/index.html]
+[INFO] [2018-05-03 11:41:27][org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor]No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+[INFO] [2018-05-03 11:41:27][com.pgb.spider.schedulejob.PushJobTaskTest]Started PushJobTaskTest in 18.334 seconds (JVM running for 21.045)
+[INFO] [2018-05-03 11:41:27][org.hibernate.hql.internal.QueryTranslatorFactoryInitiator]HHH000397: Using ASTQueryTranslatorFactory
+[INFO] [2018-05-03 11:41:28][com.pgb.spider.schedulejob.PushJobTask]获取的职位信息：为您提供如下岗位的信息：
+
+【职位名称】
+研究员
+【薪资待遇】
+6k-8k
+【招聘单位】
+投哪网机构部招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=1893">这里</a>访问详情
+
+【职位名称】
+语音识别/语音合成/语音技术研究员
+【薪资待遇】
+20k-35k
+【招聘单位】
+东芝(中国)有限公司研发中心招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=91584">这里</a>访问详情
+
+【职位名称】
+iOS工程师
+【薪资待遇】
+15k-25k
+【招聘单位】
+纵乐招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=114306">这里</a>访问详情
+
+[INFO] [2018-05-03 11:41:28][com.pgb.spider.schedulejob.PushJobTask]获取的职位信息：为您提供如下岗位的信息：
+
+【职位名称】
+研究员
+【薪资待遇】
+6k-8k
+【招聘单位】
+投哪网机构部招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=1893">这里</a>访问详情
+
+【职位名称】
+语音识别/语音合成/语音技术研究员
+【薪资待遇】
+20k-35k
+【招聘单位】
+东芝(中国)有限公司研发中心招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=91584">这里</a>访问详情
+
+【职位名称】
+iOS工程师
+【薪资待遇】
+15k-25k
+【招聘单位】
+纵乐招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=114306">这里</a>访问详情
+
+[INFO] [2018-05-03 11:41:30][com.pgb.spider.schedulejob.PushJobTask]accessToken = 9_XsfiPwPI2Sz_Iz96yF2V-BirbixrKos7dNQFqWyWbxsIyNNLi0VyZz8JLzEuOky9u34Hb2MZCpsPnuaS6rEDsDBsMbYJEE3UMFRiFIeNme4JVnpWQQuVqp5Wc2JCiydNtdzfqKzj5jz8uIljZFMgAHASYF
+[INFO] [2018-05-03 11:41:30][com.pgb.spider.schedulejob.PushJobTask]accessToken = 9_mCzEDHgTzxRBriWcyF2V-BirbixrKos7dNQFqWyWbxsIyNNLi0VyZz8JLzHMWsESbR-XDVr1xZAOVvc_k1o0U94PNE7aRu26lPWrJ8yTKaeD2yQ8WCpZOcmcPydh6y1pvUB-22Xgxcq_tr1yLFHgAHABVX
+[INFO] [2018-05-03 11:41:31][com.pgb.spider.schedulejob.PushJobTask]empty content hint: [Y00887ge31]
+[INFO] [2018-05-03 11:46:12][com.pgb.spider.schedulejob.PushJobTask]empty content hint: [qoeEVA0887ge31]
+[INFO] [2018-05-03 11:46:12][org.springframework.web.context.support.GenericWebApplicationContext]Closing org.springframework.web.context.support.GenericWebApplicationContext@1869fbd2: startup date [Thu May 03 11:41:10 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:46:12][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:47:15][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.pgb.spider.schedulejob.PushJobTaskTest], using SpringBootContextLoader
+[INFO] [2018-05-03 11:47:15][org.springframework.test.context.support.AbstractContextLoader]Could not detect default resource locations for test class [com.pgb.spider.schedulejob.PushJobTaskTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+[INFO] [2018-05-03 11:47:15][org.springframework.test.context.support.AnnotationConfigContextLoaderUtils]Could not detect default configuration classes for test class [com.pgb.spider.schedulejob.PushJobTaskTest]: PushJobTaskTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO] [2018-05-03 11:47:15][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Found @SpringBootConfiguration com.pgb.spider.JobInfoSpiderApplication for test class com.pgb.spider.schedulejob.PushJobTaskTest
+[INFO] [2018-05-03 11:47:15][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] [2018-05-03 11:47:15][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2dde1bff, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@15bbf42f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@550ee7e5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5f9b2141, org.springframework.test.context.transaction.TransactionalTestExecutionListener@247d8ae, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@48974e45, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6a84a97d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6c130c45, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@50ad3bc1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@223aa2f7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6d3a388c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@193f604a]
+[INFO] [2018-05-03 11:47:17][com.pgb.spider.schedulejob.PushJobTaskTest]Starting PushJobTaskTest on DESKTOP-0LF8KCJ with PID 9608 (started by peng in E:\JobInfoSpider)
+[INFO] [2018-05-03 11:47:17][com.pgb.spider.schedulejob.PushJobTaskTest]No active profile set, falling back to default profiles: default
+[INFO] [2018-05-03 11:47:17][org.springframework.web.context.support.GenericWebApplicationContext]Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2f67b837: startup date [Thu May 03 11:47:17 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:47:18][org.hibernate.validator.internal.util.Version]HV000001: Hibernate Validator 5.3.5.Final
+[INFO] [2018-05-03 11:47:20][org.springframework.data.repository.config.RepositoryConfigurationDelegate]Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO] [2018-05-03 11:47:20][org.springframework.data.repository.config.RepositoryConfigurationDelegate]Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO] [2018-05-03 11:47:20][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.web.dao.QueryDao.
+[INFO] [2018-05-03 11:47:20][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.SubscribeDao.
+[INFO] [2018-05-03 11:47:20][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.CollectDao.
+[INFO] [2018-05-03 11:47:20][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.TextRequestDao.
+[INFO] [2018-05-03 11:47:20][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.UserInfoDao.
+[INFO] [2018-05-03 11:47:23][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:47:23][org.hibernate.jpa.internal.util.LogHelper]HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO] [2018-05-03 11:47:23][org.hibernate.Version]HHH000412: Hibernate Core {5.2.6.Final}
+[INFO] [2018-05-03 11:47:23][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+[INFO] [2018-05-03 11:47:23][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO] [2018-05-03 11:47:26][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO] [2018-05-03 11:47:26][org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl]HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[INFO] [2018-05-03 11:47:28][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:47:29][com.pgb.spider.redis.RedisConfig]JedisConnectionFactory bean init success.
+[INFO] [2018-05-03 11:47:31][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@2f67b837: startup date [Thu May 03 11:47:17 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:47:32][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/query],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.pgb.spider.web.utils.Pagination<com.pgb.spider.entity.JobItem> com.pgb.spider.web.controller.QueryController.query(java.lang.String,java.lang.Integer,java.lang.Integer)
+[INFO] [2018-05-03 11:47:32][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/hello],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.pgb.spider.web.controller.QueryController.test()
+[INFO] [2018-05-03 11:47:32][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/detail],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.pgb.spider.entity.JobItem com.pgb.spider.web.controller.QueryController.queryDetail(java.lang.Integer)
+[INFO] [2018-05-03 11:47:32][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/checkCollect],methods=[GET]}" onto public boolean com.pgb.spider.wechat.controller.CollectController.checkCollectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:47:32][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getCollect],methods=[GET]}" onto public java.util.List<com.pgb.spider.entity.JobItem> com.pgb.spider.wechat.controller.CollectController.getCollect(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:47:32][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/uncollect],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.CollectController.uncollectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:47:32][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/collect],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.CollectController.collectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:47:32][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.TokenCheckController.checkToken(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO] [2018-05-03 11:47:32][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/getUserInfo],methods=[GET]}" onto public com.pgb.spider.wechat.entity.UserInfo com.pgb.spider.wechat.controller.UserInfoController.getUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:47:32][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/getOpenid],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.getWechatOpenid(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String) throws java.io.IOException
+[INFO] [2018-05-03 11:47:32][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/checkOpenid],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.setUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:47:32][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/setUserInfo],methods=[POST]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.setUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.Integer,java.lang.String) throws java.io.IOException
+[INFO] [2018-05-03 11:47:32][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat],methods=[POST]}" onto public java.lang.String com.pgb.spider.wechat.controller.WeChatMessageDispatcherController.processWeChatRequest(javax.servlet.http.HttpServletRequest,java.lang.String) throws java.lang.Exception
+[INFO] [2018-05-03 11:47:32][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO] [2018-05-03 11:47:32][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:47:32][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:47:32][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:47:32][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:47:32][org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WelcomePageHandlerMapping]Adding welcome page: ServletContext resource [/index.html]
+[INFO] [2018-05-03 11:47:33][org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor]No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+[INFO] [2018-05-03 11:47:33][com.pgb.spider.schedulejob.PushJobTaskTest]Started PushJobTaskTest in 17.875 seconds (JVM running for 20.459)
+[INFO] [2018-05-03 11:47:33][org.hibernate.hql.internal.QueryTranslatorFactoryInitiator]HHH000397: Using ASTQueryTranslatorFactory
+[INFO] [2018-05-03 11:47:35][com.pgb.spider.schedulejob.PushJobTask]获取的职位信息：为您提供如下岗位的信息：
+
+【职位名称】
+架构师
+【薪资待遇】
+25k-40k
+【招聘单位】
+麦子金服招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=19914">这里</a>访问详情
+
+【职位名称】
+市场研究员
+【薪资待遇】
+7k-10k
+【招聘单位】
+Q房网市场研究部招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=23125">这里</a>访问详情
+
+【职位名称】
+海外运营专员（游戏）
+【薪资待遇】
+5k-7k
+【招聘单位】
+万达院线游戏海外发行中心招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=118388">这里</a>访问详情
+
+[INFO] [2018-05-03 11:47:35][com.pgb.spider.schedulejob.PushJobTask]获取的职位信息：为您提供如下岗位的信息：
+
+【职位名称】
+架构师
+【薪资待遇】
+25k-40k
+【招聘单位】
+麦子金服招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=19914">这里</a>访问详情
+
+【职位名称】
+市场研究员
+【薪资待遇】
+7k-10k
+【招聘单位】
+Q房网市场研究部招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=23125">这里</a>访问详情
+
+【职位名称】
+海外运营专员（游戏）
+【薪资待遇】
+5k-7k
+【招聘单位】
+万达院线游戏海外发行中心招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=118388">这里</a>访问详情
+
+[INFO] [2018-05-03 11:47:36][com.pgb.spider.schedulejob.PushJobTask]accessToken = 9_yzSxSD9KR19upLXhtIC6cakhtaCyU5CfhJEr33st__9r98dNDnTOPGxDbjZucZk9Fpwebd4tqNfIoFH_Ky5TT5vPGr42-DfIy_N5Bf7e9_P5vPmv8pNvvsAHVP0SJVeAFAJAM
+[INFO] [2018-05-03 11:47:36][com.pgb.spider.schedulejob.PushJobTask]accessToken = 9_qOh6eLTVIY5aMC-UtIC6cakhtaCyU5CfhJEr33st__9r98dNDnTOPGxDbjbOjZEPIwcLc__57D-b_fxkpdaVIZM8FFIFwES9ATvpHAePP_WOePwTUsB8D258W88UOQeAFAYSU
+[INFO] [2018-05-03 11:47:37][com.pgb.spider.schedulejob.PushJobTask]send job submission success
+[INFO] [2018-05-03 11:48:41][com.pgb.spider.schedulejob.PushJobTask]same clientmsgid retry too fast hint: [yw4EDA0254ge32]
+[INFO] [2018-05-03 11:48:41][org.springframework.web.context.support.GenericWebApplicationContext]Closing org.springframework.web.context.support.GenericWebApplicationContext@2f67b837: startup date [Thu May 03 11:47:17 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:48:41][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:53:54][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.pgb.spider.schedulejob.PushJobTaskTest], using SpringBootContextLoader
+[INFO] [2018-05-03 11:53:54][org.springframework.test.context.support.AbstractContextLoader]Could not detect default resource locations for test class [com.pgb.spider.schedulejob.PushJobTaskTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+[INFO] [2018-05-03 11:53:54][org.springframework.test.context.support.AnnotationConfigContextLoaderUtils]Could not detect default configuration classes for test class [com.pgb.spider.schedulejob.PushJobTaskTest]: PushJobTaskTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[INFO] [2018-05-03 11:53:54][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Found @SpringBootConfiguration com.pgb.spider.JobInfoSpiderApplication for test class com.pgb.spider.schedulejob.PushJobTaskTest
+[INFO] [2018-05-03 11:53:54][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] [2018-05-03 11:53:54][org.springframework.boot.test.context.SpringBootTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2dde1bff, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@15bbf42f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@550ee7e5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5f9b2141, org.springframework.test.context.transaction.TransactionalTestExecutionListener@247d8ae, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@48974e45, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6a84a97d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6c130c45, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@50ad3bc1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@223aa2f7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6d3a388c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@193f604a]
+[INFO] [2018-05-03 11:53:56][com.pgb.spider.schedulejob.PushJobTaskTest]Starting PushJobTaskTest on DESKTOP-0LF8KCJ with PID 7972 (started by peng in E:\JobInfoSpider)
+[INFO] [2018-05-03 11:53:56][com.pgb.spider.schedulejob.PushJobTaskTest]No active profile set, falling back to default profiles: default
+[INFO] [2018-05-03 11:53:56][org.springframework.web.context.support.GenericWebApplicationContext]Refreshing org.springframework.web.context.support.GenericWebApplicationContext@74589991: startup date [Thu May 03 11:53:56 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:53:58][org.hibernate.validator.internal.util.Version]HV000001: Hibernate Validator 5.3.5.Final
+[INFO] [2018-05-03 11:54:00][org.springframework.data.repository.config.RepositoryConfigurationDelegate]Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO] [2018-05-03 11:54:00][org.springframework.data.repository.config.RepositoryConfigurationDelegate]Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO] [2018-05-03 11:54:00][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.web.dao.QueryDao.
+[INFO] [2018-05-03 11:54:00][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.SubscribeDao.
+[INFO] [2018-05-03 11:54:00][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.CollectDao.
+[INFO] [2018-05-03 11:54:00][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.TextRequestDao.
+[INFO] [2018-05-03 11:54:00][org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport]Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.pgb.spider.wechat.dao.UserInfoDao.
+[INFO] [2018-05-03 11:54:04][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:54:04][org.hibernate.jpa.internal.util.LogHelper]HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO] [2018-05-03 11:54:04][org.hibernate.Version]HHH000412: Hibernate Core {5.2.6.Final}
+[INFO] [2018-05-03 11:54:04][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+[INFO] [2018-05-03 11:54:04][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO] [2018-05-03 11:54:08][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO] [2018-05-03 11:54:08][org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl]HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[INFO] [2018-05-03 11:54:10][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2018-05-03 11:54:11][com.pgb.spider.redis.RedisConfig]JedisConnectionFactory bean init success.
+[INFO] [2018-05-03 11:54:13][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@74589991: startup date [Thu May 03 11:53:56 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:54:13][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/query],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.pgb.spider.web.utils.Pagination<com.pgb.spider.entity.JobItem> com.pgb.spider.web.controller.QueryController.query(java.lang.String,java.lang.Integer,java.lang.Integer)
+[INFO] [2018-05-03 11:54:13][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/hello],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.pgb.spider.web.controller.QueryController.test()
+[INFO] [2018-05-03 11:54:13][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/query/detail],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.pgb.spider.entity.JobItem com.pgb.spider.web.controller.QueryController.queryDetail(java.lang.Integer)
+[INFO] [2018-05-03 11:54:13][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/getCollect],methods=[GET]}" onto public java.util.List<com.pgb.spider.entity.JobItem> com.pgb.spider.wechat.controller.CollectController.getCollect(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:54:13][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/uncollect],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.CollectController.uncollectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:54:13][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/checkCollect],methods=[GET]}" onto public boolean com.pgb.spider.wechat.controller.CollectController.checkCollectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:54:13][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/collect],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.CollectController.collectJob(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:54:13][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.TokenCheckController.checkToken(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO] [2018-05-03 11:54:13][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/getUserInfo],methods=[GET]}" onto public com.pgb.spider.wechat.entity.UserInfo com.pgb.spider.wechat.controller.UserInfoController.getUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:54:13][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/getOpenid],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.getWechatOpenid(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String) throws java.io.IOException
+[INFO] [2018-05-03 11:54:13][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/checkOpenid],methods=[GET]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.setUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[INFO] [2018-05-03 11:54:13][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/setUserInfo],methods=[POST]}" onto public void com.pgb.spider.wechat.controller.UserInfoController.setUserInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.Integer,java.lang.String) throws java.io.IOException
+[INFO] [2018-05-03 11:54:13][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat],methods=[POST]}" onto public java.lang.String com.pgb.spider.wechat.controller.WeChatMessageDispatcherController.processWeChatRequest(javax.servlet.http.HttpServletRequest,java.lang.String) throws java.lang.Exception
+[INFO] [2018-05-03 11:54:13][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO] [2018-05-03 11:54:13][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2018-05-03 11:54:13][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:54:13][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:54:13][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2018-05-03 11:54:13][org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WelcomePageHandlerMapping]Adding welcome page: ServletContext resource [/index.html]
+[INFO] [2018-05-03 11:54:14][org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor]No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+[INFO] [2018-05-03 11:54:14][com.pgb.spider.schedulejob.PushJobTaskTest]Started PushJobTaskTest in 19.569 seconds (JVM running for 22.44)
+[INFO] [2018-05-03 11:54:14][org.hibernate.hql.internal.QueryTranslatorFactoryInitiator]HHH000397: Using ASTQueryTranslatorFactory
+[INFO] [2018-05-03 11:54:15][com.pgb.spider.schedulejob.PushJobTask]获取的职位信息：为您提供如下岗位的信息：
+
+【职位名称】
+产品专员
+【薪资待遇】
+6k-12k
+【招聘单位】
+万融大数据产品部招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=29546">这里</a>访问详情
+
+【职位名称】
+SEO市场经理-用户增长方向
+【薪资待遇】
+15k-25k
+【招聘单位】
+会小二网推广部招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=133390">这里</a>访问详情
+
+【职位名称】
+深度学习图像视频工程师
+【薪资待遇】
+15k-30k
+【招聘单位】
+ZOOMVideo招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=152675">这里</a>访问详情
+
+[INFO] [2018-05-03 11:54:15][com.pgb.spider.schedulejob.PushJobTask]获取的职位信息：为您提供如下岗位的信息：
+
+【职位名称】
+产品专员
+【薪资待遇】
+6k-12k
+【招聘单位】
+万融大数据产品部招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=29546">这里</a>访问详情
+
+【职位名称】
+SEO市场经理-用户增长方向
+【薪资待遇】
+15k-25k
+【招聘单位】
+会小二网推广部招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=133390">这里</a>访问详情
+
+【职位名称】
+深度学习图像视频工程师
+【薪资待遇】
+15k-30k
+【招聘单位】
+ZOOMVideo招聘
+【岗位要求】
+点击<a href="http://penggb.top/detail.html?id=152675">这里</a>访问详情
+
+[INFO] [2018-05-03 11:54:17][com.pgb.spider.schedulejob.PushJobTask]accessToken = 9_LzCHfjlov_LK5H0JnQmYWJA_Sksnh0VMKfVLxPixILzh3e0qnPRAvC3kxZ_sEDPn7xVvQ-hG0MmIXxrS9QVruTINxIoSaKh4r5vBFS8WaetIhUAbozB5mkTcG9wvV26uX5JQ4UX_er-6THQfVRGeACAQMB
+[INFO] [2018-05-03 11:54:17][com.pgb.spider.schedulejob.PushJobTask]accessToken = 9_egO33yieovxm3-UNnQmYWJA_Sksnh0VMKfVLxPixILzh3e0qnPRAvC3kxZ8T4s4FYHNeSURAkwOpNmFNLzv79CZ-o0yyL9OBgvNIwUtHEgcwTkfuWn7WOeyt9GN0OqDgu2ajzlX1y_9BGvSOWMUeACASIQ
+[INFO] [2018-05-03 11:54:18][com.pgb.spider.schedulejob.PushJobTask]same clientmsgid retry too fast hint: [ws7BQa0655ge25]
+[INFO] [2018-05-03 11:54:18][com.pgb.spider.schedulejob.PushJobTask]send job submission success
+[INFO] [2018-05-03 11:54:18][org.springframework.web.context.support.GenericWebApplicationContext]Closing org.springframework.web.context.support.GenericWebApplicationContext@74589991: startup date [Thu May 03 11:53:56 CST 2018]; root of context hierarchy
+[INFO] [2018-05-03 11:54:18][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]Closing JPA EntityManagerFactory for persistence unit 'default'

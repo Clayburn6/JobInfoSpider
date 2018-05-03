@@ -8,7 +8,6 @@ import com.pgb.spider.wechat.eumeration.Constant;
 import com.pgb.spider.wechat.eumeration.UrlUtils;
 import com.pgb.spider.wechat.xom.response.OpenIdResponse;
 import net.sf.json.JSONObject;
-import net.sf.json.util.JSONUtils;
 import okhttp3.Request;
 import okhttp3.Response;
 import org.apache.commons.lang.StringUtils;
