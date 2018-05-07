@@ -44,8 +44,8 @@ public class TokenCheckController {
      *
      */
     @RequestMapping(path = "/wechat", method = RequestMethod.GET)
-    public void checkToken(HttpServletRequest request
-            , HttpServletResponse response) throws Exception {
+    public void checkToken(HttpServletRequest request,
+                           HttpServletResponse response) throws Exception {
         String signature = request.getParameter("signature");
         signature = StringUtils.isBlank(signature) ? "" : signature;
         String timestamp = request.getParameter("timestamp");

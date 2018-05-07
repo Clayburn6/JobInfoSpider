@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>用户信息</title>
+    <link rel="stylesheet" href="./css/weui.css"/>
+    <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $.ajax({ // 请求个人信息
+            url: "http://penggb.top/wechat/getUserInfo",
+            type: "get",
+            dataType: "json",
+            success: function (result) {
+                console.log("请求个人信息成功")
+                document.getElementById("job_title").innerHTML = result.title;
+                document.getElementById("job_salary").innerHTML = result.salary;
+                document.getElementById("job_company").innerHTML = result.company;
+            },
+            error: function (data) {
+                console.log("数据加载失败");
+            }
+        });
+
+        $.ajax({ // 请求个人收藏
+            url: "http://penggb.top/getCollect",
+            type: "get",
+            dataType: "json",
+            success: function (result) {
+                console.log("请求我的收藏成功")
+
+                for (var i = 0; i < result.length; i++) {
+                    var title = result[i].title;
+                    var money = result[i].money;
+                    var company = result[i].company;
+                    var experience = result[i].experience;
+                    var degree = result[i].degree;
+
+                    var element_div_cell = document.createElement("div"); // 包围每个列表元素的
+                    element_div_cell.setAttribute("class", "weui-media-box weui-media-box_text");
+                    element_div_cell.setAttribute("onclick", "jobDetail(" + result[i].id + ")");
+
+                    var element_h4_title = document.createElement("h4"); // 包围列表元素标题
+                    element_h4_title.setAttribute("class", "weui-media-box__title");
+                    element_h4_title.innerHTML = ''+ title ;
+
+                    var element_p_req = document.createElement("p"); // 包围岗位要求的
+                    element_p_req.setAttribute("class", "weui-media-box__desc");
+                    element_p_req.innerHTML = '' + (degree + experience + money);
+
+                    var element_p_company = document.createElement("p");// 包围招聘单位的
+                    element_p_company.setAttribute("class", "weui-media-box__desc");
+                    element_p_company.innerHTML = '' + company;
+
+                    element_div_cell.appendChild(element_h4_title);
+                    element_div_cell.appendChild(element_p_req);
+                    element_div_cell.appendChild(element_p_company);
+
+                    $("#position_list").append(element_div_cell);
+
+                }
+            },
+            error: function (data) {
+                console.log("数据加载失败");
+            }
+        });
+
+        function  jobDetail(id) {
+            window.location.href = "http://penggb.top/detail.html?id=" + id;
+        }
+
+
+    </script>
+</head>
+<body>
+<div class="page">
+    <div class="page__bd">
+        <div class="weui-cells__title">个人信息</div>
+        <div class="weui-cells">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>职位要求</p>
+                </div>
+                <div class="weui-cell__ft" id="job_title"></div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>期望薪资</p>
+                </div>
+                <div class="weui-cell__ft" id="job_salary"></div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>所属公司</p>
+                </div>
+                <div class="weui-cell__ft" id="job_company"></div>
+            </div>
+
+            <div class="weui-btn-area">
+                <a class="weui-btn weui-btn_primary" href="http://penggb.top/userinfo.html" id="showTooltips">修改职位要求</a>
+            </div>
+        </div>
+
+        <div class="weui-cells__title">我的收藏</div>
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__bd">
+                <div id = "position_list">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

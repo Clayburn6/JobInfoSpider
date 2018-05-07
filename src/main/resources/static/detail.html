@@ -10,6 +10,7 @@
         var n1 = loc.length;//地址的总长度
         var n2 = loc.indexOf("=");//取得=号的位置
         var id = loc.substr(n2+1, n1-n2);//从=号后面的内容
+        var collectFlag = true;
         $.ajax({
             url: "http://penggb.top/query/detail?id=" + id,
             type: "get",
@@ -52,30 +53,57 @@
                 $('#position_detail').append(p_address);
 
                 $("#job_url").attr("href", result.url);
-
-                /*
-                $("#job_title").text(result.title);
-                $("#job_company").text(result.company);
-                $("#job_type").text(result.type);
-                $("#job_experience").text(result.experience);
-                $("#job_money").text(result.money);
-                $("#job_place").text(result.place);
-
-                var desc = result.desc + "";
-                var strArray = desc.split("");
-                console.log(strArray.length);
-                for (var i = 0; i < strArray.length; i++) {
-                    console.log(strArray[i]);
-                }
-                desc = desc.replace(/\s+/g, "<br/>");
-                $("#job_desc").html(desc);
-                $("#job_url").attr("href", result.url);
-                */
             },
             error: function (result) {
-                alert("数据加载失败");
+                console.log("获取职位详情时，ajax请求异常");;
             }
         });
+
+        $.ajax({ // 判断该职位是否已经收藏
+            url: "http://penggb.top/checkCollect?jobId=" + id,
+            type: "get",
+            dataType: "json",
+            success: function (result) {
+                if (result == true) {
+                    collectFlag = true;
+                    $("#collect").html("取消收藏");
+                } else {
+                    collectFlag = false;
+                    $("#collect").html("点击收藏");
+                }
+            }
+        });
+
+        function  collect() {
+            if (collectFlag) { // 取消收藏
+                $.ajax({
+                    url: "http://penggb.top/uncollect?jobId=" + id,
+                    type: "get",
+                    dataType: "json",
+                    success: function (result) {
+                        collectFlag = false;
+                        $("#collect").html("点击收藏");
+                    },
+                    error: function (result) {
+                        console.log("取下收藏时，ajax请求异常");
+                    }
+                });
+
+            } else { // 添加收藏
+                $.ajax({
+                    url: "http://penggb.top/collect?jobId=" + id,
+                    type: "get",
+                    dataType: "json",
+                    success: function (result) {
+                        collectFlag = true;
+                        $("#collect").html("取消收藏");
+                    },
+                    error: function (result) {
+                        console.log("点击收藏时，ajax请求异常");
+                    }
+                });
+            }
+        }
     </script>
 </head>
 <body>
@@ -83,6 +111,6 @@
 
 
 </div>
-<label>原网页地址：</label><a id="job_url" href="">点我访问拉钩网原网页</a><br>
+<label>原网页地址：</label><a id="job_url" href="">点我访问拉钩网原网页</a>&nbsp;&nbsp;<a id="collect" href="javascript:collect()"></a><br>
 </body>
 </html>

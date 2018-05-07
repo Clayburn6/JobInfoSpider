@@ -3,6 +3,8 @@ package com.pgb.spider;
 import com.pgb.spider.config.SpiderConfig;
 import com.pgb.spider.executer.Task;
 import com.pgb.spider.http.client.okhttp.OkHttpClient;
+import com.pgb.spider.queue.CrawlQueue;
+import com.pgb.spider.queue.RedisQueue;
 import com.pgb.spider.queue.TaskQueue;
 import com.pgb.spider.store.LagouStore;
 
@@ -25,7 +27,11 @@ public class JobInfoSpiderMainClass {
                 .addHttpHeader("Accept","text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8")
                 .setStore(LagouStore.class);
         JobInfoSpiderContext context = new JobInfoSpiderContext(config);
-        TaskQueue queue = TaskQueue.of();
+
+//        TaskQueue queue = TaskQueue.of();
+//        queue.push(new Task("https://www.lagou.com/"));
+
+        CrawlQueue queue = new RedisQueue();
         queue.push(new Task("https://www.lagou.com/"));
 //        for (int i = 1; i <= 30; i++) {
 //            queue.push(new Task("https://www.lagou.com/zhaopin/Java/" + i + "/?filterOption=" + i));

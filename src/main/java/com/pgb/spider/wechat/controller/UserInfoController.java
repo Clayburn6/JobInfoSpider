@@ -8,7 +8,6 @@ import com.pgb.spider.wechat.eumeration.Constant;
 import com.pgb.spider.wechat.eumeration.UrlUtils;
 import com.pgb.spider.wechat.xom.response.OpenIdResponse;
 import net.sf.json.JSONObject;
-import net.sf.json.util.JSONUtils;
 import okhttp3.Request;
 import okhttp3.Response;
 import org.apache.commons.lang.StringUtils;
@@ -59,7 +58,7 @@ public class UserInfoController {
                     String openid = cookie.getValue();
                     if (StringUtils.isNotBlank(openid)) {
                         logger.info("在cookie中获取到openid = {}", openid);
-                        response.sendRedirect("/userinfo.html");
+                        response.sendRedirect("/userdetail.html");
                         return;
                     }
                 }
@@ -100,7 +99,7 @@ public class UserInfoController {
         cookie.setPath("/");
         cookie.setMaxAge(30*24*60*60); // 一个月
         response.addCookie(cookie);
-        response.sendRedirect("/userinfo.html");
+        response.sendRedirect("/userdetail.html");
     }
 
     @Transactional
@@ -119,7 +118,7 @@ public class UserInfoController {
                         userInfo.setTitle(title);
                         userInfo.setSalary(salary);
                         userInfo.setCompany(company);
-
+                        response.sendRedirect("/userdetail.html");
                         return;
                     }
                 }
@@ -127,5 +126,22 @@ public class UserInfoController {
         }
 
         setUserInfo(request, response);
+    }
+
+    @RequestMapping(value = "/wechat/getUserInfo", method = RequestMethod.GET)
+    @Transactional
+    public UserInfo getUserInfo(HttpServletRequest request, HttpServletResponse response) {
+        Cookie[] cookies= request.getCookies();
+        String openid = null;
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("openid")) {
+                    openid = cookie.getValue();
+                }
+            }
+        }
+
+
+        return  userInfoDao.getByOpenidAndDeleteFlagFalse(openid);
     }
 }
