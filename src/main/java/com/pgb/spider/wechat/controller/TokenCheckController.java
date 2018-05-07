@@ -30,7 +30,8 @@ import java.util.List;
 
 @RestController
 public class TokenCheckController {
-    private static final Logger logger = LoggerFactory.getLogger(TokenCheckController.class);
+    private static final Logger logger = LoggerFactory
+            .getLogger(TokenCheckController.class);
     private static final String token = "Penggongbo023";
 
     /**
@@ -43,7 +44,8 @@ public class TokenCheckController {
      *
      */
     @RequestMapping(path = "/wechat", method = RequestMethod.GET)
-    public void checkToken(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public void checkToken(HttpServletRequest request
+            , HttpServletResponse response) throws Exception {
         String signature = request.getParameter("signature");
         signature = StringUtils.isBlank(signature) ? "" : signature;
         String timestamp = request.getParameter("timestamp");
@@ -87,6 +89,11 @@ public class TokenCheckController {
         }
 
     }
+
+
+
+
+
     //将加密后的字节数组变成字符串
     private static String byteToStr(byte[] byteArray) {
         String strDigest = "";

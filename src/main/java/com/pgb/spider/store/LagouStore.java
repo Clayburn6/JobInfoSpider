@@ -19,14 +19,6 @@ import java.io.IOException;
 public class LagouStore implements IStore {
     @Override
     public void store(TaskResponse response) throws IOException {
-//        System.out.println(response.getContent());
-
-//        String url = "https://www.lagou.com/jobs/3891964.html?source=pl&i=pl-0";
-//        Document doc = Jsoup.connect(url)
-//                .data("query", "Java")
-//                .userAgent("Mozilla")
-//                .cookie("auth", "token")
-//                .timeout(3000).get();
 
         Document doc = response.getDocument();
         String title = doc.select(".job-name").attr("title");

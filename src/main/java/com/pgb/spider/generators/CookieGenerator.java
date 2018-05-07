@@ -27,7 +27,7 @@ public class CookieGenerator implements StringGenerator {
         cookieMap.put("login", "true");
         cookieMap.put("unick", "%E5%BD%AD%E5%8A%9F%E6%B3%A2");
         cookieMap.put("gate_login_token", "4989770c290f880736332b545e6e5ba6ab6744e9d1481658");
-        cookieMap.put("index_location_city", "%E5%8C%97%E4%BA%AC");
+        cookieMap.put("index_location_city", "%e5%8c%97%e4%ba%ac");
         cookieMap.put("_gat", "1");
         cookieMap.put("Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6", "1516893437");
         cookieMap.put("LGRID", "20180125231718-d51bcfb7-01e2-11e8-9bf1-525400f775ce");
